@@ -3,38 +3,760 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>iPostal1 地址筛选</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f6f7f9;
-      color: #222;
+      background: #f5f6f8;
+      color: #1d1d1f;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
+      width: min(1200px, calc(100% - 32px));
+      margin: 48px auto;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 38px;
+      letter-spacing: -1px;
     }
 
     .subtitle {
-      color: #666;
-      margin-bottom: 30px;
+      margin-top: 12px;
+      color: #6e6e73;
+      font-size: 17px;
+    }
+
+    .stats {
+      margin-top: 12px;
+      color: #6e6e73;
+      font-size: 14px;
     }
 
     .filters {
-      background: white;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+
+      margin-top: 30px;
+      margin-bottom: 22px;
+
       padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+      background: #ffffff;
+      border-radius: 18px;
+
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.06);
     }
+
+    input,
+    select {
+      width: 100%;
+
+      height: 46px;
+
+      border: 1px solid #d2d2d7;
+      border-radius: 10px;
+
+      padding: 0 14px;
+
+      font-size: 15px;
+
+      background: #fff;
+
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #0071e3;
+    }
+
+    .result-info {
+      margin-bottom: 14px;
+      color: #6e6e73;
+      font-size: 14px;
+    }
+
+    .card {
+      background: #ffffff;
+
+      padding: 20px 22px;
+
+      border-radius: 16px;
+
+      margin-bottom: 12px;
+
+      box-shadow:
+        0 3px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .street {
+      font-size: 18px;
+      font-weight: 700;
+
+      margin-bottom: 6px;
+    }
+
+    .location {
+      color: #6e6e73;
+      font-size: 15px;
+    }
+
+    .tags {
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+
+      background: #f1f4f9;
+
+      border-radius: 7px;
+
+      padding: 5px 9px;
+
+      margin-right: 6px;
+      margin-top: 4px;
+
+      font-size: 13px;
+    }
+
+    .source {
+      display: inline-block;
+
+      margin-top: 12px;
+
+      color: #0071e3;
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .empty,
+    .loading,
+    .error {
+      background: #ffffff;
+
+      padding: 30px;
+
+      text-align: center;
+
+      border-radius: 16px;
+
+      color: #6e6e73;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-top: 24px;
+      margin-bottom: 50px;
+    }
+
+    button {
+      border: none;
+
+      background: #ffffff;
+
+      padding: 10px 16px;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    #pageText {
+      color: #6e6e73;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+
+      .container {
+        margin-top: 28px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <h1>iPostal1 地址筛选</h1>
+
+    <div class="subtitle">
+      搜索并筛选 iPostal1 地址
+    </div>
+
+    <div
+      id="stats"
+      class="stats"
+    >
+      正在读取地址数据...
+    </div>
+
+
+    <div class="filters">
+
+      <input
+        id="keyword"
+        type="text"
+        placeholder="搜索地址 / 城市 / 州 / ZIP"
+      />
+
+      <select id="state">
+
+        <option value="">
+          全部州
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div
+      id="resultInfo"
+      class="result-info"
+    ></div>
+
+
+    <div id="results">
+
+      <div class="loading">
+        正在加载 addresses.json...
+      </div>
+
+    </div>
+
+
+    <div
+      id="pagination"
+      class="pagination"
+      style="display:none;"
+    >
+
+      <button id="prevBtn">
+        上一页
+      </button>
+
+      <span id="pageText"></span>
+
+      <button id="nextBtn">
+        下一页
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    let allAddresses = [];
+
+    let filteredAddresses = [];
+
+    let currentPage = 1;
+
+    const pageSize = 30;
+
+
+    const keywordInput =
+      document.getElementById("keyword");
+
+    const stateSelect =
+      document.getElementById("state");
+
+    const results =
+      document.getElementById("results");
+
+    const stats =
+      document.getElementById("stats");
+
+    const resultInfo =
+      document.getElementById("resultInfo");
+
+    const pagination =
+      document.getElementById("pagination");
+
+    const prevBtn =
+      document.getElementById("prevBtn");
+
+    const nextBtn =
+      document.getElementById("nextBtn");
+
+    const pageText =
+      document.getElementById("pageText");
+
+
+    async function loadAddresses() {
+
+      try {
+
+        const response =
+          await fetch(
+            "addresses.json?v=" + Date.now()
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "无法读取 addresses.json"
+          );
+
+        }
+
+
+        const data =
+          await response.json();
+
+
+        allAddresses =
+          Array.isArray(data)
+          ? data
+          : [];
+
+
+        filteredAddresses =
+          [...allAddresses];
+
+
+        populateStates();
+
+
+        stats.textContent =
+          `当前共读取 ${allAddresses.length} 个地址`;
+
+
+        render();
+
+
+      }
+      catch (error) {
+
+        console.error(error);
+
+
+        stats.textContent =
+          "地址数据读取失败";
+
+
+        results.innerHTML = `
+          <div class="error">
+
+            无法读取 addresses.json
+
+            <br><br>
+
+            请确认 GitHub Actions
+            已成功生成地址文件。
+
+          </div>
+        `;
+
+      }
+
+    }
+
+
+    function populateStates() {
+
+      const states =
+        [
+          ...new Set(
+            allAddresses
+              .map(item => item.state)
+              .filter(Boolean)
+          )
+        ].sort();
+
+
+      states.forEach(state => {
+
+        const option =
+          document.createElement("option");
+
+        option.value = state;
+
+        option.textContent = state;
+
+        stateSelect.appendChild(option);
+
+      });
+
+    }
+
+
+    function applyFilters() {
+
+      const keyword =
+        keywordInput.value
+          .trim()
+          .toLowerCase();
+
+
+      const state =
+        stateSelect.value;
+
+
+      filteredAddresses =
+        allAddresses.filter(item => {
+
+          const searchText = `
+
+            ${item.street || ""}
+
+            ${item.city || ""}
+
+            ${item.state || ""}
+
+            ${item.zip || ""}
+
+          `.toLowerCase();
+
+
+          const keywordMatch =
+            !keyword ||
+            searchText.includes(keyword);
+
+
+          const stateMatch =
+            !state ||
+            item.state === state;
+
+
+          return (
+            keywordMatch &&
+            stateMatch
+          );
+
+        });
+
+
+      currentPage = 1;
+
+      render();
+
+    }
+
+
+    function render() {
+
+      resultInfo.textContent =
+        `找到 ${filteredAddresses.length} 个结果`;
+
+
+      if (
+        filteredAddresses.length === 0
+      ) {
+
+        results.innerHTML = `
+          <div class="empty">
+
+            没有找到符合条件的地址
+
+          </div>
+        `;
+
+
+        pagination.style.display =
+          "none";
+
+        return;
+
+      }
+
+
+      const totalPages =
+        Math.ceil(
+          filteredAddresses.length /
+          pageSize
+        );
+
+
+      if (
+        currentPage > totalPages
+      ) {
+
+        currentPage =
+          totalPages;
+
+      }
+
+
+      const start =
+        (currentPage - 1) *
+        pageSize;
+
+
+      const pageItems =
+        filteredAddresses.slice(
+          start,
+          start + pageSize
+        );
+
+
+      results.innerHTML =
+        pageItems
+          .map(item => {
+
+            const sourceLink =
+              item.source
+              ? `
+                <a
+                  class="source"
+                  href="${item.source}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  查看 iPostal1 来源
+                </a>
+              `
+              : "";
+
+
+            return `
+
+              <div class="card">
+
+                <div class="street">
+
+                  ${escapeHtml(
+                    item.street || "未知地址"
+                  )}
+
+                </div>
+
+
+                <div class="location">
+
+                  ${escapeHtml(
+                    item.city || ""
+                  )}
+
+                  ${item.city ? "," : ""}
+
+                  ${escapeHtml(
+                    item.state || ""
+                  )}
+
+                  ${escapeHtml(
+                    item.zip || ""
+                  )}
+
+                </div>
+
+
+                <div class="tags">
+
+                  ${
+                    item.state
+                    ? `
+                      <span class="tag">
+
+                        State:
+                        ${escapeHtml(
+                          item.state
+                        )}
+
+                      </span>
+                    `
+                    : ""
+                  }
+
+
+                  ${
+                    item.zip
+                    ? `
+                      <span class="tag">
+
+                        ZIP:
+                        ${escapeHtml(
+                          item.zip
+                        )}
+
+                      </span>
+                    `
+                    : ""
+                  }
+
+                </div>
+
+
+                ${sourceLink}
+
+              </div>
+
+            `;
+
+          })
+          .join("");
+
+
+      pagination.style.display =
+        "flex";
+
+
+      pageText.textContent =
+        `第 ${currentPage} / ${totalPages} 页`;
+
+
+      prevBtn.disabled =
+        currentPage <= 1;
+
+
+      nextBtn.disabled =
+        currentPage >= totalPages;
+
+    }
+
+
+    function escapeHtml(value) {
+
+      return String(value)
+
+        .replaceAll(
+          "&",
+          "&amp;"
+        )
+
+        .replaceAll(
+          "<",
+          "&lt;"
+        )
+
+        .replaceAll(
+          ">",
+          "&gt;"
+        )
+
+        .replaceAll(
+          '"',
+          "&quot;"
+        )
+
+        .replaceAll(
+          "'",
+          "&#039;"
+        );
+
+    }
+
+
+    keywordInput.addEventListener(
+      "input",
+      applyFilters
+    );
+
+
+    stateSelect.addEventListener(
+      "change",
+      applyFilters
+    );
+
+
+    prevBtn.addEventListener(
+      "click",
+      () => {
+
+        if (
+          currentPage > 1
+        ) {
+
+          currentPage--;
+
+          render();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+
+      }
+    );
+
+
+    nextBtn.addEventListener(
+      "click",
+      () => {
+
+        const totalPages =
+          Math.ceil(
+            filteredAddresses.length /
+            pageSize
+          );
+
+
+        if (
+          currentPage < totalPages
+        ) {
+
+          currentPage++;
+
+          render();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+
+      }
+    );
+
+
+    loadAddresses();
+
+  </script>
+
+</body>
+</html>    }
 
     .filters input,
     .filters select {
