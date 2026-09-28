@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iPostal1 地址筛选</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f7f9;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .filters {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .filters input,
+    .filters select {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .address {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      margin-right: 6px;
+      border-radius: 6px;
+      background: #eef2ff;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>iPostal1 地址筛选</h1>
+    <div class="subtitle">
+      用于筛选州、城市、Residential、CMRA 等属性
+    </div>
+
+    <div class="filters">
+      <input
+        type="text"
+        id="keyword"
+        placeholder="搜索地址 / 城市 / ZIP"
+        oninput="filterAddresses()"
+      />
+
+      <select id="state" onchange="filterAddresses()">
+        <option value="">全部州</option>
+        <option value="CA">California</option>
+        <option value="NY">New York</option>
+        <option value="TX">Texas</option>
+        <option value="FL">Florida</option>
+      </select>
+
+      <select id="rdi" onchange="filterAddresses()">
+        <option value="">全部 RDI</option>
+        <option value="Residential">Residential</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+
+      <select id="cmra" onchange="filterAddresses()">
+        <option value="">全部 CMRA</option>
+        <option value="No">CMRA No</option>
+        <option value="Yes">CMRA Yes</option>
+      </select>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const addresses = [
+      {
+        address: "123 Main St",
+        city: "Los Angeles",
+        state: "CA",
+        zip: "90001",
+        rdi: "Residential",
+        cmra: "No"
+      },
+      {
+        address: "456 Market St",
+        city: "San Francisco",
+        state: "CA",
+        zip: "94105",
+        rdi: "Commercial",
+        cmra: "Yes"
+      },
+      {
+        address: "789 Broadway",
+        city: "New York",
+        state: "NY",
+        zip: "10003",
+        rdi: "Residential",
+        cmra: "No"
+      },
+      {
+        address: "321 Ocean Dr",
+        city: "Miami",
+        state: "FL",
+        zip: "33139",
+        rdi: "Residential",
+        cmra: "Yes"
+      }
+    ];
+
+    function renderAddresses(list) {
+      const container = document.getElementById("results");
+
+      if (list.length === 0) {
+        container.innerHTML = "<p>没有找到符合条件的地址。</p>";
+        return;
+      }
+
+      container.innerHTML = list.map(item => `
+        <div class="card">
+          <div class="address">
+            ${item.address}
+          </div>
+
+          <div class="meta">
+            ${item.city}, ${item.state} ${item.zip}
+          </div>
+
+          <span class="tag">
+            RDI: ${item.rdi}
+          </span>
+
+          <span class="tag">
+            CMRA: ${item.cmra}
+          </span>
+        </div>
+      `).join("");
+    }
+
+    function filterAddresses() {
+      const keyword =
+        document.getElementById("keyword").value.toLowerCase();
+
+      const state =
+        document.getElementById("state").value;
+
+      const rdi =
+        document.getElementById("rdi").value;
+
+      const cmra =
+        document.getElementById("cmra").value;
+
+      const filtered = addresses.filter(item => {
+        const text =
+          `${item.address} ${item.city} ${item.state} ${item.zip}`
+          .toLowerCase();
+
+        return (
+          text.includes(keyword) &&
+          (!state || item.state === state) &&
+          (!rdi || item.rdi === rdi) &&
+          (!cmra || item.cmra === cmra)
+        );
+      });
+
+      renderAddresses(filtered);
+    }
+
+    renderAddresses(addresses);
+  </script>
+</body>
+</html>
