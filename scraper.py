@@ -9,21 +9,27 @@ HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120 Safari/537.36"
+        "Chrome/140 Safari/537.36"
     )
 }
 
 response = requests.get(
     URL,
     headers=HEADERS,
-    timeout=30
+    timeout=60
 )
 
 response.raise_for_status()
 
-soup = BeautifulSoup(response.text, "html.parser")
+soup = BeautifulSoup(
+    response.text,
+    "html.parser"
+)
 
-text = soup.get_text("\n")
+text = soup.get_text(
+    "\n",
+    strip=True
+)
 
 lines = [
     line.strip()
@@ -31,43 +37,84 @@ lines = [
     if line.strip()
 ]
 
-addresses = []
-
-state_zip_pattern = re.compile(
+# US city/state/ZIP
+city_pattern = re.compile(
     r"^(.+?),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$"
 )
 
+# Address unit lines
+unit_pattern = re.compile(
+    r"^(Suite|Ste|Unit|PMB|#)\s*.+$",
+    re.IGNORECASE
+)
+
+addresses = []
+
 for i, line in enumerate(lines):
 
-    match = state_zip_pattern.match(line)
+    match = city_pattern.match(line)
 
     if not match:
         continue
 
-    city = match.group(1)
-    state = match.group(2)
-    zip_code = match.group(3)
+    city = match.group(1).strip()
+    state = match.group(2).strip()
+    zip_code = match.group(3).strip()
 
-    previous_lines = []
+    # Only US addresses
+    if not state or not zip_code:
+        continue
 
-    j = i - 1
+    address_parts = []
 
-    while j >= 0 and len(previous_lines) < 3:
+    # City line前面一行通常是街道，
+    # 如果有 Suite / Ste，则再向前取一行
+    if i >= 1:
+        previous = lines[i - 1].strip()
 
-        candidate = lines[j]
+        if unit_pattern.match(previous):
 
-        if (
-            "Virtual Address in" not in candidate
-            and not candidate.startswith("Virtual Addresses")
-            and not state_zip_pattern.match(candidate)
-        ):
-            previous_lines.insert(0, candidate)
+            address_parts.insert(
+                0,
+                previous
+            )
 
-        j -= 1
+            if i >= 2:
 
-    street = " ".join(previous_lines).strip()
+                street = lines[i - 2].strip()
+
+                # 排除栏目标题
+                if (
+                    "Virtual Address in" not in street
+                    and "Virtual Addresses" not in street
+                ):
+                    address_parts.insert(
+                        0,
+                        street
+                    )
+
+        else:
+
+            if (
+                "Virtual Address in" not in previous
+                and "Virtual Addresses" not in previous
+            ):
+                address_parts.append(
+                    previous
+                )
+
+    street = " ".join(
+        address_parts
+    ).strip()
 
     if not street:
+        continue
+
+    # 排除明显不是地址的数据
+    if (
+        "Virtual Address" in street
+        or "Choose a highlighted state" in street
+    ):
         continue
 
     item = {
@@ -78,7 +125,23 @@ for i, line in enumerate(lines):
         "source": URL
     }
 
-    if item not in addresses:
+    # 去重
+    key = (
+        street.lower(),
+        city.lower(),
+        state,
+        zip_code
+    )
+
+    if not any(
+        (
+            x["street"].lower(),
+            x["city"].lower(),
+            x["state"],
+            x["zip"]
+        ) == key
+        for x in addresses
+    ):
         addresses.append(item)
 
 
@@ -105,6 +168,5 @@ with open(
 
 
 print(
-    f"Saved {len(addresses)} addresses "
-    "to addresses.json"
+    f"Saved {len(addresses)} US addresses"
 )
