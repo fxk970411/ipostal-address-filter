@@ -1790,7 +1790,16 @@
     "state": "CA",
     "zip": "95370",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1171 Sanguinetti Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.97381,-120.36758",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1171+Sanguinetti+Rd.%2C+Sonora%2C+CA+95370"
   },
   {
     "street": "9740 Campo Rd.",
@@ -1798,7 +1807,16 @@
     "state": "CA",
     "zip": "91977",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "9740 Campo Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.74807,-116.98626",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=9740+Campo+Rd.%2C+Spring+Valley%2C+CA+91977"
   },
   {
     "street": "11260 Donner Pass Road C1",
@@ -1806,7 +1824,16 @@
     "state": "CA",
     "zip": "96161",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "11260 Donner Pass Rd Ste C1",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=39.32617,-120.20623",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=11260+Donner+Pass+Road+C1%2C+Truckee%2C+CA+96161"
   },
   {
     "street": "1850 Countryside Drive",
@@ -1814,7 +1841,16 @@
     "state": "CA",
     "zip": "95380",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1850 Countryside Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.50966,-120.87635",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1850+Countryside+Drive%2C+Turlock%2C+CA+95380"
   },
   {
     "street": "1010 Helen Power Dr",
@@ -1822,7 +1858,16 @@
     "state": "CA",
     "zip": "95687",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1010 Helen Power Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.36546,-121.96137",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1010+Helen+Power+Dr%2C+Vacaville%2C+CA+95687"
   },
   {
     "street": "3069 Alamo Drive",
@@ -1830,7 +1875,16 @@
     "state": "CA",
     "zip": "95687",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Residential",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3069 Alamo Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.33546,-121.95673",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3069+Alamo+Drive%2C+Vacaville%2C+CA+95687"
   },
   {
     "street": "235 Vista Village Drive",
@@ -1838,7 +1892,16 @@
     "state": "CA",
     "zip": "92083",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "235 Vista Village Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.20088,-117.24614",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=235+Vista+Village+Drive%2C+Vista%2C+CA+92083"
   },
   {
     "street": "2052 Bundy Drive",
@@ -1846,7 +1909,16 @@
     "state": "CA",
     "zip": "90025",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2052 S Bundy Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.03332,-118.45467",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2052+Bundy+Drive%2C+West+Los+Angeles%2C+CA+90025"
   },
   {
     "street": "5760 Lindero Canyon Rd.",
@@ -1854,7 +1926,16 @@
     "state": "CA",
     "zip": "91362",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5760 Lindero Canyon Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.15427,-118.79613",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5760+Lindero+Canyon+Rd.%2C+Westlake+Village%2C+CA+91362"
   },
   {
     "street": "228 Windsor River Rd",
@@ -1862,7 +1943,16 @@
     "state": "CA",
     "zip": "95492-9206",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "228 Windsor River Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.54722,-122.81359",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=228+Windsor+River+Rd%2C+Windsor%2C+CA+95492-9206"
   },
   {
     "street": "1724 S Circle Dr",
@@ -1870,7 +1960,16 @@
     "state": "CO",
     "zip": "80910",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1724 S Circle Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.80688,-104.78042",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1724+S+Circle+Dr%2C+Colorado+Springs%2C+CO+80910"
   },
   {
     "street": "7661 McLaughlin Rd",
@@ -1878,7 +1977,16 @@
     "state": "CO",
     "zip": "80831",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "7661 McLaughlin Rd",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Mixed/Office Non-CMRA)",
+    "c1_reason": "USPS: Active delivery point & Non-CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.94395,-104.60279",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7661+McLaughlin+Rd%2C+Falcon%2C+CO+80831"
   },
   {
     "street": "4333 Corbett Drive",
@@ -1886,7 +1994,16 @@
     "state": "CO",
     "zip": "80525",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4333 Corbett Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.53824,-105.03042",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4333+Corbett+Drive%2C+Fort+Collins%2C+CO+80525"
   },
   {
     "street": "113 Mill Plain Rd",
@@ -1894,7 +2011,16 @@
     "state": "CT",
     "zip": "06811",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "113 Mill Plain Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39191,-73.52122",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=113+Mill+Plain+Rd%2C+Danbury%2C+CT+06811"
   },
   {
     "street": "310R Flanders Rd Rear PMB#",
@@ -1902,7 +2028,16 @@
     "state": "CT",
     "zip": "06333",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Residential",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "310R Flanders Rd Rear PMB #",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.3639,-72.20931",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=310R+Flanders+Rd+Rear+PMB%23%2C+East+Lyme%2C+CT+06333"
   },
   {
     "street": "2079 Killingly Commons Drive",
@@ -1910,7 +2045,16 @@
     "state": "CT",
     "zip": "06241",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2079 Killingly Commons Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.8432,-71.88358",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2079+Killingly+Commons+Drive%2C+Killingly%2C+CT+06241"
   },
   {
     "street": "1371 Boston Post Road",
@@ -1918,7 +2062,16 @@
     "state": "CT",
     "zip": "06460",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1371 Boston Post Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.24043,-73.03365",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1371+Boston+Post+Road%2C+Milford%2C+CT+06460"
   },
   {
     "street": "292 S Frontage Rd",
@@ -1926,7 +2079,16 @@
     "state": "CT",
     "zip": "06320",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "292 S Frontage Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.36716,-72.11245",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=292+S+Frontage+Rd%2C+New+London%2C+CT+06320"
   },
   {
     "street": "122 Danbury Rd",
@@ -1934,7 +2096,16 @@
     "state": "CT",
     "zip": "06776",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "122 Danbury Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.56142,-73.41582",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=122+Danbury+Rd%2C+New+Milford%2C+CT+06776"
   },
   {
     "street": "1000 Boston Post Road",
@@ -1942,7 +2113,16 @@
     "state": "CT",
     "zip": "06475",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1000 Boston Post Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.28921,-72.38754",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1000+Boston+Post+Road%2C+Old+Saybrook%2C+CT+06475"
   },
   {
     "street": "3 Armstrong Road",
@@ -1950,7 +2130,16 @@
     "state": "CT",
     "zip": "06484",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3 Armstrong Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.26571,-73.12767",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3+Armstrong+Road%2C+Shelton%2C+CT+06484"
   },
   {
     "street": "456 Glenbrook Rd",
@@ -1958,7 +2147,16 @@
     "state": "CT",
     "zip": "06906",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "456 Glenbrook Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.06967,-73.52039",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=456+Glenbrook+Rd%2C+Stamford%2C+CT+06906"
   },
   {
     "street": "938 White Plains Rd",
@@ -1966,7 +2164,16 @@
     "state": "CT",
     "zip": "06611",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "938 White Plains Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.2454,-73.19714",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=938+White+Plains+Rd%2C+Trumbull%2C+CT+06611"
   },
   {
     "street": "1763 Columbia Rd NW",
@@ -1974,7 +2181,16 @@
     "state": "DC",
     "zip": "20009",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "1763 Columbia Rd NW",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.92363,-77.04141",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1763+Columbia+Rd+NW%2C+Washington%2C+DC+20009"
   },
   {
     "street": "192 Bear Christiana Rd",
@@ -1982,7 +2198,16 @@
     "state": "DE",
     "zip": "19701",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "192 Bear Christiana Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=39.64856,-75.64706",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=192+Bear+Christiana+Rd%2C+Bear%2C+DE+19701"
   },
   {
     "street": "124 Broadkill Rd",
@@ -1990,7 +2215,16 @@
     "state": "DE",
     "zip": "19968",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "124 Broadkill Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.78846,-75.31418",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=124+Broadkill+Rd%2C+Milton%2C+DE+19968"
   },
   {
     "street": "1070 Montgomery Rd",
@@ -1998,7 +2232,16 @@
     "state": "FL",
     "zip": "32714",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1070 Montgomery Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.68562,-81.40275",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1070+Montgomery+Rd%2C+Altamonte+Springs%2C+FL+32714"
   },
   {
     "street": "5379 Lyons Rd",
@@ -2006,7 +2249,16 @@
     "state": "FL",
     "zip": "33073-2810",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Residential",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5379 Lyons Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.29771,-80.18667",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5379+Lyons+Rd%2C+Coconut+Creek%2C+FL+33073-2810"
   },
   {
     "street": "2139 N University Dr",
@@ -2014,7 +2266,16 @@
     "state": "FL",
     "zip": "33071",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2139 N University Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.25705,-80.25059",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2139+N+University+Dr%2C+Coral+Springs%2C+FL+33071"
   },
   {
     "street": "5944 Coral Ridge Dr",
@@ -2022,7 +2283,16 @@
     "state": "FL",
     "zip": "33076",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5944 Coral Ridge Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.30408,-80.27897",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5944+Coral+Ridge+Dr%2C+Coral+Springs%2C+FL+33076"
   },
   {
     "street": "7830 Lake Wilson Rd",
@@ -2030,7 +2300,16 @@
     "state": "FL",
     "zip": "33896",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7830 Lake Wilson Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.25992,-81.57943",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7830+Lake+Wilson+Rd%2C+Davenport%2C+FL+33896"
   },
   {
     "street": "4474 Weston Rd",
@@ -2038,7 +2317,16 @@
     "state": "FL",
     "zip": "33331",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4474 Weston Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.06369,-80.36227",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4474+Weston+Rd%2C+Davie%2C+FL+33331"
   },
   {
     "street": "407 Plaza Dr",
@@ -2046,7 +2334,16 @@
     "state": "FL",
     "zip": "32726",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "407 Plaza Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.82565,-81.69075",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=407+Plaza+Dr%2C+Eustis%2C+FL+32726"
   },
   {
     "street": "1445 Sadler Road",
@@ -2054,7 +2351,16 @@
     "state": "FL",
     "zip": "32034",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1445 Sadler Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.63987,-81.45157",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1445+Sadler+Road%2C+Fernandina+Beach%2C+FL+32034"
   },
   {
     "street": "1931 Cordova Road",
@@ -2062,7 +2368,16 @@
     "state": "FL",
     "zip": "33316",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1931 Cordova Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.09716,-80.13014",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1931+Cordova+Road%2C+Fort+Lauderdale%2C+FL+33316"
   },
   {
     "street": "3413 Galt Ocean Drive",
@@ -2070,7 +2385,16 @@
     "state": "FL",
     "zip": "33308",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "3413 Galt Ocean Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.16994,-80.09927",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3413+Galt+Ocean+Drive%2C+Fort+Lauderdale%2C+FL+33308"
   },
   {
     "street": "8958 W State Road 84",
@@ -2078,7 +2402,16 @@
     "state": "FL",
     "zip": "33324",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "8958 W State Road 84",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.10387,-80.27181",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=8958+W+State+Road+84%2C+Fort+Lauderdale%2C+FL+33324"
   },
   {
     "street": "1166 Angle Road",
@@ -2086,7 +2419,16 @@
     "state": "FL",
     "zip": "34947",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1166 Angle Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.46021,-80.36865",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1166+Angle+Road%2C+Fort+Pierce%2C+FL+34947"
   },
   {
     "street": "4539 Bartelt Rd",
@@ -2094,7 +2436,16 @@
     "state": "FL",
     "zip": "34690",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4539 Bartelt Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.18476,-82.73882",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4539+Bartelt+Rd%2C+Holiday%2C+FL+34690"
   },
   {
     "street": "13700 Little Road",
@@ -2102,7 +2453,16 @@
     "state": "FL",
     "zip": "34667",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "13700 Little Rd",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Mixed/Office Non-CMRA)",
+    "c1_reason": "USPS: Active delivery point & Non-CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.35777,-82.66643",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=13700+Little+Road%2C+Hudson%2C+FL+34667"
   },
   {
     "street": "1431 Simpson Road",
@@ -2110,7 +2470,16 @@
     "state": "FL",
     "zip": "34744",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1431 Simpson Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.30046,-81.35327",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1431+Simpson+Road%2C+Kissimmee%2C+FL+34744"
   },
   {
     "street": "2509 State Road 60 E",
@@ -2118,7 +2487,16 @@
     "state": "FL",
     "zip": "33898",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2509 State Road 60 E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.89438,-81.54773",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2509+State+Road+60+E%2C+Lake+Wales%2C+FL+33898"
   },
   {
     "street": "7765 Lake Worth Road",
@@ -2126,7 +2504,16 @@
     "state": "FL",
     "zip": "33467",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7765 Lake Worth Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.61753,-80.16931",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7765+Lake+Worth+Road%2C+Lake+Worth%2C+FL+33467"
   },
   {
     "street": "7364 Kathleen Road",
@@ -2134,7 +2521,16 @@
     "state": "FL",
     "zip": "33810",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7364 Kathleen Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.13558,-82.02342",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7364+Kathleen+Road%2C+Lakeland%2C+FL+33810"
   },
   {
     "street": "25200 Sawyer Francis Ln",
@@ -2142,7 +2538,16 @@
     "state": "FL",
     "zip": "33559",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "25200 Sawyer Francis Ln",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.1791,-82.42426",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25200+Sawyer+Francis+Ln%2C+Lutz%2C+FL+33559"
   },
   {
     "street": "2751 E County Line Rd",
@@ -2150,7 +2555,16 @@
     "state": "FL",
     "zip": "33559",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2751 E County Line Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.10681,-82.42322",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2751+E+County+Line+Rd%2C+Lutz%2C+FL+33559"
   },
   {
     "street": "1755 Banks Road",
@@ -2158,7 +2572,16 @@
     "state": "FL",
     "zip": "33063",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1755 Banks Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.25213,-80.1946",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1755+Banks+Road%2C+Margate%2C+FL+33063"
   },
   {
     "street": "6300 N Wickham Rd # 130",
@@ -2166,7 +2589,16 @@
     "state": "FL",
     "zip": "32940",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "6300 N Wickham Rd Ste 130",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.21487,-80.6729",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=6300+N+Wickham+Rd+%23+130%2C+Melbourne%2C+FL+32940"
   },
   {
     "street": "13640 North Kendall Drive",
@@ -2174,7 +2606,16 @@
     "state": "FL",
     "zip": "33186",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "13640 N Kendall Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=25.68527,-80.41591",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=13640+North+Kendall+Drive%2C+Miami%2C+FL+33186"
   },
   {
     "street": "2462 Laurel Rd E",
@@ -2182,7 +2623,16 @@
     "state": "FL",
     "zip": "34275",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2462 Laurel Rd E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.13737,-82.41862",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2462+Laurel+Rd+E%2C+Nokomis%2C+FL+34275"
   },
   {
     "street": "1728 NE Miami Gardens Dr",
@@ -2190,7 +2640,16 @@
     "state": "FL",
     "zip": "33179",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1728 NE Miami Gardens Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=25.94484,-80.16703",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1728+NE+Miami+Gardens+Dr%2C+North+Miami+Beach%2C+FL+33179"
   },
   {
     "street": "37 W Prospect Rd",
@@ -2198,7 +2657,16 @@
     "state": "FL",
     "zip": "33309",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "37 W Prospect Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.18137,-80.14734",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=37+W+Prospect+Rd%2C+Oakland+Park%2C+FL+33309"
   },
   {
     "street": "9311 SE Maricamp Rd",
@@ -2206,7 +2674,16 @@
     "state": "FL",
     "zip": "34472",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "9311 SE Maricamp Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.08055,-81.98598",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=9311+SE+Maricamp+Rd%2C+Ocala%2C+FL+34472"
   },
   {
     "street": "10576 W Colonial Drive",
@@ -2214,7 +2691,16 @@
     "state": "FL",
     "zip": "34761",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "10576 W Colonial Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.55155,-81.53317",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10576+W+Colonial+Drive%2C+Ocoee%2C+FL+34761"
   },
   {
     "street": "1746 E Silver Star Rd",
@@ -2222,7 +2708,16 @@
     "state": "FL",
     "zip": "34761",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1746 E Silver Star Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.57389,-81.51544",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1746+E+Silver+Star+Rd%2C+Ocoee%2C+FL+34761"
   },
   {
     "street": "2445 S Hiawassee Rd",
@@ -2230,7 +2725,16 @@
     "state": "FL",
     "zip": "32835-6347",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2445 S Hiawassee Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.51699,-81.4838",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2445+S+Hiawassee+Rd%2C+Orlando%2C+FL+32835-6347"
   },
   {
     "street": "3019 Edgewater Dr",
@@ -2238,7 +2742,16 @@
     "state": "FL",
     "zip": "32804",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "3019 Edgewater Dr",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Mixed/Office Non-CMRA)",
+    "c1_reason": "USPS: Active delivery point & Non-CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.57852,-81.38945",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3019+Edgewater+Dr%2C+Orlando%2C+FL+32804"
   },
   {
     "street": "5036 Dr Phillips Blvd",
@@ -2246,7 +2759,16 @@
     "state": "FL",
     "zip": "32819",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5036 Dr Phillips Blvd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.49127,-81.49097",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5036+Dr+Phillips+Blvd%2C+Orlando%2C+FL+32819"
   },
   {
     "street": "7157 Narcoossee Road",
@@ -2254,7 +2776,16 @@
     "state": "FL",
     "zip": "32822",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7157 Narcoossee Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.46324,-81.27371",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7157+Narcoossee+Road%2C+Orlando%2C+FL+32822"
   },
   {
     "street": "3762 Roscommon Dr",
@@ -2262,7 +2793,16 @@
     "state": "FL",
     "zip": "32174",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "3762 Roscommon Dr",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Mixed/Office Non-CMRA)",
+    "c1_reason": "USPS: Active delivery point & Non-CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.40228,-81.14793",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3762+Roscommon+Dr%2C+Ormond+Beach%2C+FL+32174"
   },
   {
     "street": "5568 Woodbine Rd",
@@ -2270,7 +2810,16 @@
     "state": "FL",
     "zip": "32571",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5568 Woodbine Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.63821,-87.18173",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5568+Woodbine+Rd%2C+Pace%2C+FL+32571"
   },
   {
     "street": "327 N State Road 19",
@@ -2278,7 +2827,16 @@
     "state": "FL",
     "zip": "32177",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "327 N State Road 19",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.65156,-81.67237",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=327+N+State+Road+19%2C+Palatka%2C+FL+32177"
   },
   {
     "street": "1595 Palm Bay Rd.",
@@ -2286,7 +2844,16 @@
     "state": "FL",
     "zip": "32905",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "1595 Palm Bay Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.03521,-80.6231",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1595+Palm+Bay+Rd.%2C+Palm+Bay%2C+FL+32905"
   },
   {
     "street": "7957 N University Dr",
@@ -2294,7 +2861,16 @@
     "state": "FL",
     "zip": "33067",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7957 N University Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.31952,-80.24601",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7957+N+University+Dr%2C+Parkland%2C+FL+33067"
   },
   {
     "street": "12233 Pembroke Road",
@@ -2302,7 +2878,16 @@
     "state": "FL",
     "zip": "33025",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "12233 Pembroke Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=25.99337,-80.3087",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=12233+Pembroke+Road%2C+Pembroke+Pines%2C+FL+33025"
   },
   {
     "street": "2114 N Flamingo Road",
@@ -2310,7 +2895,16 @@
     "state": "FL",
     "zip": "33028-3501",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2114 N Flamingo Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.02922,-80.31269",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2114+N+Flamingo+Road%2C+Pembroke+Pines%2C+FL+33028-3501"
   },
   {
     "street": "1257 S Pine Island Rd",
@@ -2318,7 +2912,16 @@
     "state": "FL",
     "zip": "33324",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1257 S Pine Island Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.10733,-80.2636",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1257+S+Pine+Island+Rd%2C+Plantation%2C+FL+33324"
   },
   {
     "street": "4324 Peters Rd",
@@ -2326,7 +2929,16 @@
     "state": "FL",
     "zip": "33317",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4324 Peters Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.1058,-80.20586",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4324+Peters+Rd%2C+Plantation%2C+FL+33317"
   },
   {
     "street": "1552 SE Floresta Dr",
@@ -2334,7 +2946,16 @@
     "state": "FL",
     "zip": "34983",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1552 SE Floresta Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.29416,-80.32678",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1552+SE+Floresta+Dr%2C+Port+Saint+Lucie%2C+FL+34983"
   },
   {
     "street": "11232 Boyette Rd",
@@ -2342,7 +2963,16 @@
     "state": "FL",
     "zip": "33569",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "11232 Boyette Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.8536,-82.31332",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=11232+Boyette+Rd%2C+Riverview%2C+FL+33569"
   },
   {
     "street": "2165 Nolte Rd",
@@ -2350,7 +2980,16 @@
     "state": "FL",
     "zip": "34772-8762",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2165 Nolte Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.22399,-81.29396",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2165+Nolte+Rd%2C+Saint+Cloud%2C+FL+34772-8762"
   },
   {
     "street": "5342 Clark Rd",
@@ -2358,7 +2997,16 @@
     "state": "FL",
     "zip": "34233",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5342 Clark Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.26899,-82.46382",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5342+Clark+Rd%2C+Sarasota%2C+FL+34233"
   },
   {
     "street": "6547 Midnight Pass Road",
@@ -2366,7 +3014,16 @@
     "state": "FL",
     "zip": "34242",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "6547 Midnight Pass Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.25084,-82.53455",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=6547+Midnight+Pass+Road%2C+Siesta+Key%2C+FL+34242"
   },
   {
     "street": "4210 Commercial Way",
@@ -2374,7 +3031,16 @@
     "state": "FL",
     "zip": "34606",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4210 Commercial Way",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.49101,-82.59936",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4210+Commercial+Way%2C+Spring+Hill%2C+FL+34606"
   },
   {
     "street": "2301 Dr. MLK Street South",
@@ -2382,7 +3048,16 @@
     "state": "FL",
     "zip": "33705",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2301 Dr Martin Luther King St S",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.74705,-82.64666",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2301+Dr.+MLK+Street+South%2C+St.+Petersburg%2C+FL+33705"
   },
   {
     "street": "4543 N Pine Island Rd",
@@ -2390,7 +3065,16 @@
     "state": "FL",
     "zip": "33351",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4543 N Pine Island Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.17925,-80.26787",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4543+N+Pine+Island+Rd%2C+Sunrise%2C+FL+33351"
   },
   {
     "street": "8029 West McNab Rd",
@@ -2398,7 +3082,16 @@
     "state": "FL",
     "zip": "33321",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "8029 W McNab Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=26.20848,-80.2611",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=8029+West+McNab+Rd%2C+Tamarac%2C+FL+33321"
   },
   {
     "street": "4522 W Village Dr",
@@ -2406,7 +3099,16 @@
     "state": "FL",
     "zip": "33624-3429",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4522 W Village Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.07433,-82.52989",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4522+W+Village+Dr%2C+Tampa%2C+FL+33624-3429"
   },
   {
     "street": "2010 State Road 19",
@@ -2414,7 +3116,16 @@
     "state": "FL",
     "zip": "32778",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "2010 State Road 19",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Mixed/Office Non-CMRA)",
+    "c1_reason": "USPS: Active delivery point & Non-CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.78646,-81.74311",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2010+State+Road+19%2C+Tavares%2C+FL+32778"
   },
   {
     "street": "2113 Everglades Lane",
@@ -2422,7 +3133,16 @@
     "state": "FL",
     "zip": "32163",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2113 Everglades Ln",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.79975,-82.01261",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2113+Everglades+Lane%2C+The+Villages%2C+FL+32163"
   },
   {
     "street": "6252 Commercial Way",
@@ -2430,7 +3150,16 @@
     "state": "FL",
     "zip": "34613",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "6252 Commercial Way",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.52216,-82.56998",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=6252+Commercial+Way%2C+Weeki+Wachee%2C+FL+34613"
   },
   {
     "street": "3065 Daniels Road",
@@ -2438,7 +3167,16 @@
     "state": "FL",
     "zip": "34787",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3065 Daniels Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.52551,-81.58503",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3065+Daniels+Road%2C+Winter+Garden%2C+FL+34787"
   },
   {
     "street": "5840 Red Bug Lake Road",
@@ -2446,7 +3184,16 @@
     "state": "FL",
     "zip": "32708",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5840 Red Bug Lake Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.64776,-81.26632",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5840+Red+Bug+Lake+Road%2C+Winter+Springs%2C+FL+32708"
   },
   {
     "street": "4850 Allen Rd",
@@ -2454,7 +3201,16 @@
     "state": "FL",
     "zip": "33541",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4850 Allen Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.22847,-82.20491",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4850+Allen+Rd%2C+Zephyrhills%2C+FL+33541"
   },
   {
     "street": "945 North Point Drive",
@@ -2462,7 +3218,16 @@
     "state": "GA",
     "zip": "30022",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "945 N Point Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.05092,-84.28319",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=945+North+Point+Drive%2C+Alpharetta%2C+GA+30022"
   },
   {
     "street": "1954 Airport Road",
@@ -2470,7 +3235,16 @@
     "state": "GA",
     "zip": "30341",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "D",
+    "validated_address": "1954 Airport Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Uncertain",
+    "c1_reason": "Incomplete DPV match",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.87661,-84.30754",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1954+Airport+Road%2C+Atlanta%2C+GA+30341"
   },
   {
     "street": "285 West Wieuca Road NE",
@@ -2478,7 +3252,16 @@
     "state": "GA",
     "zip": "30342",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "285 W Wieuca Rd NE",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.87616,-84.37862",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=285+West+Wieuca+Road+NE%2C+Atlanta%2C+GA+30342"
   },
   {
     "street": "58 Altama Village Drive",
@@ -2486,7 +3269,16 @@
     "state": "GA",
     "zip": "31525",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "58 Altama Village Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=31.20431,-81.48426",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=58+Altama+Village+Drive%2C+Brunswick%2C+GA+31525"
   },
   {
     "street": "589 Palisade Drive",
@@ -2494,7 +3286,16 @@
     "state": "GA",
     "zip": "31523",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "589 Palisade Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=31.13995,-81.58649",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=589+Palisade+Drive%2C+Brunswick%2C+GA+31523"
   },
   {
     "street": "2100 Westshore Dr",
@@ -2502,7 +3303,16 @@
     "state": "GA",
     "zip": "30041",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2100 Westshore Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.23069,-84.05168",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2100+Westshore+Dr%2C+Cumming%2C+GA+30041"
   },
   {
     "street": "2860 Old Atlanta Rd",
@@ -2510,7 +3320,16 @@
     "state": "GA",
     "zip": "30041",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2860 Old Atlanta Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.1172,-84.1551",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2860+Old+Atlanta+Rd%2C+Cumming%2C+GA+30041"
   },
   {
     "street": "3292 Thompson Bridge Rd",
@@ -2518,7 +3337,16 @@
     "state": "GA",
     "zip": "30506",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3292 Thompson Bridge Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.35668,-83.8605",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3292+Thompson+Bridge+Rd%2C+Gainesville%2C+GA+30506"
   },
   {
     "street": "127 Jonesboro Rd",
@@ -2526,7 +3354,16 @@
     "state": "GA",
     "zip": "30236",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "127 Jonesboro Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.53656,-84.35169",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=127+Jonesboro+Rd%2C+Jonesboro%2C+GA+30236"
   },
   {
     "street": "240 New Franklin Road",
@@ -2534,7 +3371,16 @@
     "state": "GA",
     "zip": "30240",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "240 New Franklin Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.05729,-85.02849",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=240+New+Franklin+Road%2C+LaGrange%2C+GA+30240"
   },
   {
     "street": "267 Langley Dr",
@@ -2542,7 +3388,16 @@
     "state": "GA",
     "zip": "30046-6907",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "267 Langley Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.95644,-83.99803",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=267+Langley+Dr%2C+Lawrenceville%2C+GA+30046-6907"
   },
   {
     "street": "1762 Lee Rd",
@@ -2550,7 +3405,16 @@
     "state": "GA",
     "zip": "30122",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1762 Lee Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.75827,-84.65094",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1762+Lee+Rd%2C+Lithia+Springs%2C+GA+30122"
   },
   {
     "street": "1512-L Eatonton Rd",
@@ -2558,7 +3422,16 @@
     "state": "GA",
     "zip": "30650",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1512 Eatonton Rd Ste L",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.56897,-83.47799",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1512-L+Eatonton+Rd%2C+Madison%2C+GA+30650"
   },
   {
     "street": "2086 Jodeco Road",
@@ -2566,7 +3439,16 @@
     "state": "GA",
     "zip": "30253",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2086 Jodeco Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.48371,-84.22591",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2086+Jodeco+Road%2C+McDonough%2C+GA+30253"
   },
   {
     "street": "1440 Mount Zion Rd",
@@ -2574,7 +3456,16 @@
     "state": "GA",
     "zip": "30260",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1440 Mount Zion Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.5714,-84.3423",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1440+Mount+Zion+Rd%2C+Morrow%2C+GA+30260"
   },
   {
     "street": "2250 Lake Harbin Rd #122",
@@ -2582,7 +3473,16 @@
     "state": "GA",
     "zip": "30260",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2250 Lake Harbin Rd Ste 122",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "USPS: Registered CMRA",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.58312,-84.31686",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2250+Lake+Harbin+Rd+%23122%2C+Morrow%2C+GA+30260"
   },
   {
     "street": "7507 Roswell Rd",
