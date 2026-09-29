@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>US Address Intelligence | 商业与住宅风控检索系统</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,26 +23,24 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .card-load { animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    /* 自定义纤细滚动条 */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #090d16; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #334155; }
   </style>
 </head>
 <body class="bg-[#070a0f] text-slate-200 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- 浮动复制提示 (Toast) -->
+  <!-- 复制 Toast -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-slate-900/90 backdrop-blur-md text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700/60 text-xs font-bold">
     <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
     <span id="toast-text">地址已复制到剪贴板</span>
   </div>
 
-  <!-- 顶部科技感导航栏 -->
+  <!-- 顶部导航栏 -->
   <header class="bg-[#0b101b]/80 backdrop-blur-xl border-b border-slate-800/80 sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/10 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/10 border border-white/10">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
@@ -51,13 +48,13 @@
         <div>
           <div class="flex items-center gap-2">
             <h1 class="text-sm sm:text-base font-extrabold text-white tracking-tight">US Address Intelligence</h1>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wide uppercase">CIP Verified</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-500/10 text-amber-400 border border-amber-500/20 tracking-wide uppercase">All Platforms Live</span>
           </div>
-          <p class="text-[11px] text-slate-400 font-medium">四大虚拟信箱平台 · 商业与住宅 (RDI) · CMRA 数据库</p>
+          <p class="text-[11px] text-slate-400 font-medium">极小众法定居住地 · 高端自持办公 · 商业与住宅 (RDI) 数据库</p>
         </div>
       </div>
 
-      <!-- 数据全局统计 -->
+      <!-- 全局数据统计 -->
       <div class="flex items-center gap-2 text-xs font-semibold">
         <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/60 rounded-xl text-slate-300 border border-slate-700/50">
           <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
@@ -74,7 +71,7 @@
     </div>
   </header>
 
-  <!-- 主体区域 -->
+  <!-- 主体工作区 -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
 
     <!-- 筛选面板 -->
@@ -82,27 +79,36 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5">
         
-        <!-- 关键词搜索 -->
+        <!-- 搜索框 -->
         <div class="lg:col-span-4">
           <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">关键词搜索</label>
           <div class="relative">
             <input type="text" id="filter-search" placeholder="输入街道、城市或 5 位邮编..." 
-              class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3.5 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pl-9 text-white placeholder-slate-500" />
+              class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3.5 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all pl-9 text-white placeholder-slate-500" />
             <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
           </div>
         </div>
 
-        <!-- 平台选择 -->
+        <!-- 来源平台 (整合全量) -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">来源平台</label>
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">信箱平台 (Platform)</label>
           <select id="filter-platform" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
-            <option value="ALL">全部四大平台 (All)</option>
-            <option value="Escapees RV Club">⛺ Escapees RV Club</option>
-            <option value="Sasquatch Mail">🟢 Sasquatch Mail</option>
-            <option value="Anytime Mailbox">🟣 Anytime Mailbox</option>
-            <option value="iPostal1">🔵 iPostal1</option>
+            <option value="ALL">全部平台 (All)</option>
+            <option value="NICHE_ALL">⭐ 仅看极小众与高端自持平台</option>
+            <option value="St. Brendan's Isle">⛵ St. Brendan's Isle (FL海员)</option>
+            <option value="Texas Home Base">🤠 Texas Home Base (TX自营)</option>
+            <option value="DakotaPost">🌾 DakotaPost (SD常住落户)</option>
+            <option value="America's Mailbox">🚐 America's Mailbox (SD)</option>
+            <option value="MyRVMail">🏕️ MyRVMail (FL房车俱乐部)</option>
+            <option value="Escapees RV Club">⛺ Escapees RV Club (法定住所)</option>
+            <option value="Northwest Agent">🏛️ Northwest Agent (自购写字楼)</option>
+            <option value="Expansive">🏢 Expansive (自持整栋大楼)</option>
+            <option value="Opus Offices">💼 Opus Offices (高端商务)</option>
+            <option value="Sasquatch Mail">🟢 Sasquatch Mail (独栋低调)</option>
+            <option value="Anytime Mailbox">🟣 Anytime Mailbox (偏远下沉)</option>
+            <option value="iPostal1">🔵 iPostal1 (主流加盟)</option>
           </select>
         </div>
 
@@ -114,7 +120,7 @@
           </select>
         </div>
 
-        <!-- 地址属性 (RDI) -->
+        <!-- 地址属性 RDI -->
         <div class="lg:col-span-2">
           <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">住宅 / 商业 (RDI)</label>
           <select id="filter-rdi" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
@@ -126,11 +132,11 @@
 
         <!-- CMRA 状态 -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">代收转运标记 (CMRA)</label>
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">转运标记 (CMRA)</label>
           <select id="filter-cmra" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
             <option value="ALL">全部 (All)</option>
-            <option value="No">🛡️ CMRA: No (非转运机构)</option>
-            <option value="Yes">⚠️ CMRA: Yes (代收转运点)</option>
+            <option value="No">🛡️ CMRA: No (非代收机构)</option>
+            <option value="Yes">⚠️ CMRA: Yes (代收点)</option>
           </select>
         </div>
 
@@ -141,8 +147,8 @@
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-slate-500 font-bold text-[11px]">快捷预设:</span>
           
-          <button id="btn-quick-escapees" class="px-2.5 py-1 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 rounded-lg transition-colors font-bold border border-amber-500/30 flex items-center gap-1">
-            <span>⛺ Escapees 常住住所</span>
+          <button id="btn-quick-niche" class="px-2.5 py-1 bg-amber-500/15 text-amber-300 hover:bg-amber-500/25 rounded-lg transition-colors font-bold border border-amber-500/30 flex items-center gap-1 shadow-sm">
+            <span>⭐ 极小众与高端自持专区</span>
           </button>
 
           <button id="btn-quick-c1" class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 rounded-lg transition-colors font-bold border border-emerald-500/30 flex items-center gap-1">
@@ -150,15 +156,11 @@
           </button>
           
           <button id="btn-quick-taxfree" class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 rounded-lg transition-colors font-bold border border-indigo-500/30 flex items-center gap-1">
-            <span>🏝️ 免税州 (AK, FL, NV, TX, WA)</span>
-          </button>
-
-          <button id="btn-quick-sasquatch" class="px-2.5 py-1 bg-teal-500/10 text-teal-300 hover:bg-teal-500/20 rounded-lg transition-colors font-bold border border-teal-500/30 flex items-center gap-1">
-            <span>🟢 Sasquatch 独栋平房</span>
+            <span>🏝️ 免税州 (AK, FL, NV, TX, WA, SD, WY)</span>
           </button>
 
           <button id="btn-quick-anytime" class="px-2.5 py-1 bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 rounded-lg transition-colors font-bold border border-purple-500/30 flex items-center gap-1">
-            <span>🟣 Anytime 下沉小镇</span>
+            <span>🟣 Anytime 下沉网点</span>
           </button>
         </div>
 
@@ -180,26 +182,26 @@
       <div class="flex items-center gap-1.5">
         <span>匹配到</span>
         <span id="stat-filtered-count" class="font-extrabold text-sm text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">0</span>
-        <span>个完全符合条件的地址</span>
+        <span>个合规可用地址</span>
       </div>
       <div>
         <span>分页模式 · 30 条 / 页</span>
       </div>
     </div>
 
-    <!-- 地址列表卡片容器 -->
+    <!-- 卡片栅格 -->
     <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-    <!-- 无结果空状态 -->
+    <!-- 空状态 -->
     <div id="empty-state" class="hidden text-center py-20 bg-[#0d1322] rounded-2xl border border-slate-800 shadow-xl">
       <div class="w-12 h-12 mx-auto mb-3 text-slate-600">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
       </div>
-      <h3 class="text-sm font-bold text-slate-300">未找到符合当前条件的地址</h3>
+      <h3 class="text-sm font-bold text-slate-300">未找到符合条件的地址</h3>
       <p class="text-xs text-slate-500 mt-1">请尝试清除部分筛选条件或重置筛选。</p>
     </div>
 
-    <!-- 分页条 -->
+    <!-- 分页控件 -->
     <div id="pagination" class="flex items-center justify-center gap-1.5 py-6"></div>
 
   </main>
@@ -210,6 +212,11 @@
     let currentPage = 1;
     const PAGE_SIZE = 30;
     const TAX_FREE_STATES = ["AK", "FL", "NV", "SD", "TN", "TX", "WA", "WY"];
+    const NICHE_PLATFORMS = [
+      "St. Brendan's Isle", "Texas Home Base", "DakotaPost", 
+      "America's Mailbox", "MyRVMail", "Escapees RV Club", 
+      "Northwest Agent", "Expansive", "Opus Offices"
+    ];
 
     let bookmarks = [];
     try {
@@ -219,7 +226,6 @@
     }
     let showBookmarksOnly = false;
 
-    // DOM 引用
     const filterSearch = document.getElementById("filter-search");
     const filterPlatform = document.getElementById("filter-platform");
     const filterState = document.getElementById("filter-state");
@@ -244,20 +250,6 @@
         if (!Array.isArray(rawAddresses) || rawAddresses.length === 0) {
           throw new Error("addresses.json 文件为空");
         }
-
-        rawAddresses.forEach(item => {
-          if (!item.platform) {
-            if (item.source && item.source.includes("escapees")) {
-              item.platform = "Escapees RV Club";
-            } else if (item.source && item.source.includes("sasquatch")) {
-              item.platform = "Sasquatch Mail";
-            } else if (item.source && item.source.includes("anytimemailbox")) {
-              item.platform = "Anytime Mailbox";
-            } else {
-              item.platform = "iPostal1";
-            }
-          }
-        });
 
         initStatesDropdown();
         readUrlParams();
@@ -316,7 +308,13 @@
         const fullAddr = `${item.validated_address || item.street || ''}, ${item.city || ''}, ${item.state || ''} ${item.zip || ''}`;
 
         if (showBookmarksOnly && !bookmarks.includes(fullAddr)) return false;
-        if (platform !== "ALL" && item.platform !== platform) return false;
+
+        if (platform === "NICHE_ALL") {
+          if (!NICHE_PLATFORMS.includes(item.platform)) return false;
+        } else if (platform !== "ALL" && item.platform !== platform) {
+          return false;
+        }
+
         if (state !== "ALL" && item.state !== state) return false;
         if (rdi !== "ALL" && item.rdi !== rdi) return false;
         if (cmra !== "ALL" && item.cmra !== cmra) return false;
@@ -346,16 +344,19 @@
     }
 
     function getPlatformStyle(platform) {
-      switch(platform) {
-        case "Escapees RV Club":
-          return "bg-amber-500/15 text-amber-300 border-amber-500/30";
-        case "Sasquatch Mail":
-          return "bg-teal-500/15 text-teal-300 border-teal-500/30";
-        case "Anytime Mailbox":
-          return "bg-purple-500/15 text-purple-300 border-purple-500/30";
-        default:
-          return "bg-blue-500/15 text-blue-300 border-blue-500/30";
+      if (["St. Brendan's Isle", "Texas Home Base", "DakotaPost", "America's Mailbox", "MyRVMail", "Escapees RV Club"].includes(platform)) {
+        return "bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold";
       }
+      if (["Northwest Agent", "Expansive", "Opus Offices"].includes(platform)) {
+        return "bg-rose-500/20 text-rose-300 border-rose-500/40 font-bold";
+      }
+      if (platform === "Sasquatch Mail") {
+        return "bg-teal-500/15 text-teal-300 border-teal-500/30";
+      }
+      if (platform === "Anytime Mailbox") {
+        return "bg-purple-500/15 text-purple-300 border-purple-500/30";
+      }
+      return "bg-blue-500/15 text-blue-300 border-blue-500/30";
     }
 
     function renderCards() {
@@ -412,7 +413,7 @@
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-md border ${platformStyle}">
+                <span class="px-2 py-0.5 text-[10px] uppercase tracking-wider rounded-md border ${platformStyle}">
                   ${item.platform || 'iPostal1'}
                 </span>
                 <span class="text-xs font-bold text-white bg-slate-800 px-2 py-0.5 rounded-md border border-slate-700">
@@ -553,9 +554,10 @@
       applyFilters();
     };
 
-    document.getElementById("btn-quick-escapees").onclick = () => {
+    // 快捷按钮监听
+    document.getElementById("btn-quick-niche").onclick = () => {
       showBookmarksOnly = false;
-      filterPlatform.value = "Escapees RV Club";
+      filterPlatform.value = "NICHE_ALL";
       filterState.value = "ALL";
       filterRdi.value = "ALL";
       filterCmra.value = "ALL";
@@ -577,15 +579,6 @@
       filterRdi.value = "ALL";
       filterCmra.value = "No";
       filterSearch.value = "";
-      applyFilters();
-    };
-
-    document.getElementById("btn-quick-sasquatch").onclick = () => {
-      showBookmarksOnly = false;
-      filterPlatform.value = "Sasquatch Mail";
-      filterState.value = "ALL";
-      filterCmra.value = "ALL";
-      filterRdi.value = "ALL";
       applyFilters();
     };
 
@@ -619,7 +612,7 @@
       const encodedUri = encodeURI(csvContent);
       const link = document.createElement("a");
       link.href = encodedUri;
-      link.download = `c1_addresses_${new Date().toISOString().slice(0,10)}.csv`;
+      link.download = `addresses_${new Date().toISOString().slice(0,10)}.csv`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
