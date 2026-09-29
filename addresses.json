@@ -454,350 +454,548 @@
     "city": "Pine Bluff",
     "state": "AR",
     "zip": "71601",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2910 E Harding Ave"
   },
   {
     "street": "4021 West Walnut Street",
     "city": "Rogers",
     "state": "AR",
     "zip": "72756",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4021 W Walnut St"
   },
   {
     "street": "2101 E Parkway Dr",
     "city": "Russellville",
     "state": "AR",
     "zip": "72802",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2101 E Parkway Dr"
   },
   {
     "street": "1004 S Mount Olive St Ste A",
     "city": "Siloam Springs",
     "state": "AR",
     "zip": "72761",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1004 S Mount Olive St Ste A"
   },
   {
     "street": "711 Fayetteville Rd Suite A",
     "city": "Van Buren",
     "state": "AR",
     "zip": "72956",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "711 Fayetteville Rd Ste A"
   },
   {
     "street": "995 W 4th St Ste B",
     "city": "Benson",
     "state": "AZ",
     "zip": "85602-6566",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "995 W 4th St Ste B"
   },
   {
     "street": "19580 W Indian School Rd Ste 105",
     "city": "Buckeye",
     "state": "AZ",
     "zip": "85396",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "19580 W Indian School Rd Ste 105"
   },
   {
     "street": "25560 W US Highway 85 Suite 3",
     "city": "Buckeye",
     "state": "AZ",
     "zip": "85326",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "25560 W US Highway 85 Ste 3"
   },
   {
     "street": "A-114",
     "city": "Buckeye",
     "state": "AZ",
     "zip": "85326-6303",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Unknown",
+    "cmra": "Unknown"
   },
   {
     "street": "1812 Hwy 95 Ste 14",
     "city": "Bullhead City",
     "state": "AZ",
     "zip": "86442",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1812 Highway 95 Ste 14"
   },
   {
     "street": "939 Hancock Rd Suite 3",
     "city": "Bullhead City",
     "state": "AZ",
     "zip": "86442",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "939 Hancock Rd Ste 3"
   },
   {
     "street": "29834 N. Cave Creek Rd Suite 118",
     "city": "Cave Creek",
     "state": "AZ",
     "zip": "85331",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "29834 N Cave Creek Rd Ste 118"
   },
   {
     "street": "1820 E Ray Rd",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85225",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1820 E Ray Rd"
   },
   {
     "street": "1909 E Ray Rd Ste 9",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85225",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1909 E Ray Rd Ste 9"
   },
   {
     "street": "2820 S Alma School Rd Ste 18",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85286",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2820 S Alma School Rd Ste 18"
   },
   {
     "street": "2840 E Germann Rd",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85286",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2840 E Germann Rd"
   },
   {
     "street": "3133 W Frye Road STE 101",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85226",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3133 W Frye Rd Ste 101"
   },
   {
     "street": "4240 S Arizona Ave",
     "city": "Chandler",
     "state": "AZ",
     "zip": "85248",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4240 S Arizona Ave"
   },
   {
     "street": "1415 N Arizona Blvd",
     "city": "Coolidge",
     "state": "AZ",
     "zip": "85128",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1415 N Arizona Blvd"
   },
   {
     "street": "2625 S Woodlands Village Blvd Suite 100",
     "city": "Flagstaff",
     "state": "AZ",
     "zip": "86001",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2625 S Woodlands Village Blvd Ste 100"
   },
   {
     "street": "809 W Riordan Rd Ste 100",
     "city": "Flagstaff",
     "state": "AZ",
     "zip": "86001",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "809 W Riordan Rd Ste 100"
   },
   {
     "street": "1525 S Higley Rd.  Suite 104",
     "city": "Gilbert",
     "state": "AZ",
     "zip": "85296",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1525 S Higley Rd Ste 104"
   },
   {
     "street": "2473 S Higley Road Ste 104",
     "city": "Gilbert",
     "state": "AZ",
     "zip": "85295",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2473 S Higley Rd Ste 104"
   },
   {
     "street": "2700 S Gilbert Rd #5",
     "city": "Gilbert",
     "state": "AZ",
     "zip": "85286",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2700 S Gilbert Rd Ste 5"
   },
   {
     "street": "865 East Baseline Rd",
     "city": "Gilbert",
     "state": "AZ",
     "zip": "85233",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "865 E Baseline Rd"
   },
   {
     "street": "929 N Val Vista Dr Ste 109",
     "city": "Gilbert",
     "state": "AZ",
     "zip": "85234",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "929 N Val Vista Dr Ste 109"
   },
   {
     "street": "4350 W Camelback Rd",
     "city": "Glendale",
     "state": "AZ",
     "zip": "85301",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4350 W Camelback Rd"
   },
   {
     "street": "5541 N 59th Ave",
     "city": "Glendale",
     "state": "AZ",
     "zip": "85301",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5541 N 59th Ave"
   },
   {
     "street": "5830 W Thunderbird Rd Suite B8",
     "city": "Glendale",
     "state": "AZ",
     "zip": "85306-4655",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5830 W Thunderbird Rd Ste B8"
   },
   {
     "street": "13291 W Mcdowell Rd. Suite E-5",
     "city": "Goodyear",
     "state": "AZ",
     "zip": "85395",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "13291 W McDowell Rd Ste E5"
   },
   {
     "street": "1755 North Pebblecreek Parkway",
     "city": "Goodyear",
     "state": "AZ",
     "zip": "85395",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1755 N Pebble Creek Pkwy"
   },
   {
     "street": "3320 N Stockton Hill Rd Bldg C",
     "city": "Kingman",
     "state": "AZ",
     "zip": "86409",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3320 N Stockton Hill Rd Ste C"
   },
   {
     "street": "1642 McCulloch Boulevard N",
     "city": "Lake Havasu City",
     "state": "AZ",
     "zip": "86403",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1642 McCulloch Blvd N"
   },
   {
     "street": "1851 Kiowa Ave",
     "city": "Lake Havasu City",
     "state": "AZ",
     "zip": "86403",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1851 Kiowa Ave"
   },
   {
     "street": "13881 N Casa Grande Hwy",
     "city": "Marana",
     "state": "AZ",
     "zip": "85653",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "13881 N Casa Grande Hwy"
   },
   {
     "street": "114 W Main St",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85201",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "114 W Main St"
   },
   {
     "street": "1155 S Power Rd Ste 114",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85206",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1155 S Power Rd Ste 114"
   },
   {
     "street": "2253 E. University Drive",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85213",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "2253 E University Dr"
   },
   {
     "street": "4406 E Main St Suite 102",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85205",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4406 E Main St Ste 102"
   },
   {
     "street": "4535 E. McKellips Rd",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85215",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4535 E McKellips Rd"
   },
   {
     "street": "5050 E University Drive Ste 105",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85205",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5050 E University Dr Ste 105"
   },
   {
     "street": "535 E Southern Ave Suite 6",
     "city": "Mesa",
     "state": "AZ",
     "zip": "85204",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "535 E Southern Ave Ste 6"
   },
   {
     "street": "922 N Grand Ave Suite A",
     "city": "Nogales",
     "state": "AZ",
     "zip": "85621",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "922 N Grand Ave Ste A"
   },
   {
     "street": "1846 E Innovation Park Dr. Suite 500",
     "city": "Oro Valley",
     "state": "AZ",
     "zip": "85755",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1846 E Innovation Park Dr PMB 500"
   },
   {
     "street": "1000 N Beeline Hwy",
     "city": "Payson",
     "state": "AZ",
     "zip": "85541",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1000 N Beeline Hwy"
   },
   {
     "street": "29751 N El Mirage Rd Suite 105",
     "city": "Peoria",
     "state": "AZ",
     "zip": "85383",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "29751 N El Mirage Rd Unit 105"
   },
   {
     "street": "7865 West Bell Road",
     "city": "Peoria",
     "state": "AZ",
     "zip": "85382",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7865 W Bell Rd"
   },
   {
     "street": "9015 W Union Hills Dr Ste 107",
     "city": "Peoria",
     "state": "AZ",
     "zip": "85382",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "9015 W Union Hills Dr Ste 107"
   },
   {
     "street": "101 North First Avenue Suite 2325",
     "city": "Phoenix",
     "state": "AZ",
     "zip": "85003",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "101 N 1st Ave Ste 2325"
   },
   {
     "street": "106 West Osborn Rd",
     "city": "Phoenix",
     "state": "AZ",
     "zip": "85013",
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "106 W Osborn Rd"
   },
   {
     "street": "10625 N. 35th Avenue Suite A",
