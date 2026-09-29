@@ -6,16 +6,7 @@
     "zip": "32043",
     "monthly_price": 13.99,
     "platform": "St. Brendan's Isle",
-    "source": "https://www.sbimailservice.com",
-    "rdi": "Commercial",
-    "cmra": "Yes",
-    "dpv_match_code": "Y",
-    "validated_address": "411 Walnut St",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "c1_reason": "USPS CMRA Flagged",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.99313,-81.67941",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=411+Walnut+St%2C+Green+Cove+Springs%2C+FL+32043"
+    "source": "https://www.sbimailservice.com"
   },
   {
     "street": "1530 Midwestern Pkwy",
@@ -24,12 +15,7 @@
     "zip": "76302",
     "monthly_price": 12.5,
     "platform": "Texas Home Base",
-    "source": "https://texashomebase.com",
-    "rdi": "Unknown",
-    "cmra": "Unknown",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1530+Midwestern+Pkwy%2C+Wichita+Falls%2C+TX+76302"
+    "source": "https://texashomebase.com"
   },
   {
     "street": "3916 N Pottstown Ave",
@@ -38,12 +24,7 @@
     "zip": "57704",
     "monthly_price": 15.0,
     "platform": "DakotaPost",
-    "source": "https://dakotapost.net",
-    "rdi": "Unknown",
-    "cmra": "Unknown",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3916+N+Pottstown+Ave%2C+Sioux+Falls%2C+SD+57704"
+    "source": "https://dakotapost.net"
   },
   {
     "street": "514 Americas Way",
@@ -52,16 +33,7 @@
     "zip": "57719",
     "monthly_price": 17.0,
     "platform": "America's Mailbox",
-    "source": "https://americasmailbox.com",
-    "rdi": "Commercial",
-    "cmra": "Yes",
-    "dpv_match_code": "Y",
-    "validated_address": "514 Americas Way",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "c1_reason": "USPS CMRA Flagged",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=44.10438,-103.1453",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=514+Americas+Way%2C+Box+Elder%2C+SD+57719"
+    "source": "https://americasmailbox.com"
   },
   {
     "street": "2260 S Ferdon Blvd",
@@ -70,16 +42,7 @@
     "zip": "32536",
     "monthly_price": 19.0,
     "platform": "MyRVMail",
-    "source": "https://myrvmail.com",
-    "rdi": "Commercial",
-    "cmra": "Yes",
-    "dpv_match_code": "Y",
-    "validated_address": "2260 S Ferdon Blvd",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "c1_reason": "USPS CMRA Flagged",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.73652,-86.56554",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2260+S+Ferdon+Blvd%2C+Crestview%2C+FL+32536"
+    "source": "https://myrvmail.com"
   },
   {
     "street": "100 Rainbow Dr",
@@ -88,16 +51,7 @@
     "zip": "77399",
     "monthly_price": 13.0,
     "platform": "Escapees RV Club",
-    "source": "https://www.escapees.com",
-    "rdi": "Commercial",
-    "cmra": "Unknown",
-    "dpv_match_code": "Y",
-    "validated_address": "100 Rainbow Dr",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Uncertain",
-    "c1_reason": "Incomplete DPV match",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.64307,-94.87305",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=100+Rainbow+Dr%2C+Livingston%2C+TX+77399"
+    "source": "https://www.escapees.com"
   },
   {
     "street": "2067 County Road 472",
@@ -106,12 +60,7 @@
     "zip": "33513",
     "monthly_price": 13.0,
     "platform": "Escapees RV Club",
-    "source": "https://www.escapees.com",
-    "rdi": "Unknown",
-    "cmra": "Unknown",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=2067+County+Road+472%2C+Bushnell%2C+FL+33513"
+    "source": "https://www.escapees.com"
   },
   {
     "street": "11116 US Highway 14A",
@@ -120,12 +69,7 @@
     "zip": "57785",
     "monthly_price": 13.0,
     "platform": "Escapees RV Club",
-    "source": "https://www.escapees.com",
-    "rdi": "Unknown",
-    "cmra": "Unknown",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=11116+US+Highway+14A%2C+Sturgis%2C+SD+57785"
+    "source": "https://www.escapees.com"
   },
   {
     "street": "30 N Gould St Ste N",
@@ -134,16 +78,7 @@
     "zip": "82801",
     "monthly_price": 29.0,
     "platform": "Northwest Agent",
-    "source": "https://www.northwestregisteredagent.com",
-    "rdi": "Commercial",
-    "cmra": "Yes",
-    "dpv_match_code": "Y",
-    "validated_address": "30 N Gould St PMB N",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "c1_reason": "USPS CMRA Flagged",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=44.79769,-106.95468",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=30+N+Gould+St+Ste+N%2C+Sheridan%2C+WY+82801"
+    "source": "https://www.northwestregisteredagent.com"
   },
   {
     "street": "7901 4th St N Ste 300",
@@ -152,16 +87,7 @@
     "zip": "33702",
     "monthly_price": 29.0,
     "platform": "Northwest Agent",
-    "source": "https://www.northwestregisteredagent.com",
-    "rdi": "Commercial",
-    "cmra": "No",
-    "dpv_match_code": "Y",
-    "validated_address": "7901 4th St N Ste 300",
-    "c1_acceptable": true,
-    "c1_approval_tier": "Medium (Business Non-CMRA)",
-    "c1_reason": "USPS Non-CMRA active delivery point",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=27.84393,-82.63863",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7901+4th+St+N+Ste+300%2C+St.+Petersburg%2C+FL+33702"
+    "source": "https://www.northwestregisteredagent.com"
   },
   {
     "street": "522 W Riverside Ave Ste N",
@@ -170,16 +96,7 @@
     "zip": "99201",
     "monthly_price": 29.0,
     "platform": "Northwest Agent",
-    "source": "https://www.northwestregisteredagent.com",
-    "rdi": "Commercial",
-    "cmra": "No",
-    "dpv_match_code": "Y",
-    "validated_address": "522 W Riverside Ave Ste N",
-    "c1_acceptable": true,
-    "c1_approval_tier": "Medium (Business Non-CMRA)",
-    "c1_reason": "USPS Non-CMRA active delivery point",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=47.65804,-117.41989",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=522+W+Riverside+Ave+Ste+N%2C+Spokane%2C+WA+99201"
+    "source": "https://www.northwestregisteredagent.com"
   },
   {
     "street": "1801 Main St",
@@ -188,16 +105,7 @@
     "zip": "77002",
     "monthly_price": 49.0,
     "platform": "Expansive",
-    "source": "https://expansive.com",
-    "rdi": "Residential",
-    "cmra": "No",
-    "dpv_match_code": "D",
-    "validated_address": "1801 Main St",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Uncertain",
-    "c1_reason": "Incomplete DPV match",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.75094,-95.36957",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1801+Main+St%2C+Houston%2C+TX+77002"
+    "source": "https://expansive.com"
   },
   {
     "street": "83 S King St",
@@ -206,16 +114,7 @@
     "zip": "98104",
     "monthly_price": 49.0,
     "platform": "Expansive",
-    "source": "https://expansive.com",
-    "rdi": "Commercial",
-    "cmra": "No",
-    "dpv_match_code": "D",
-    "validated_address": "83 S King St",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Uncertain",
-    "c1_reason": "Incomplete DPV match",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=47.59958,-122.31979",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=83+S+King+St%2C+Seattle%2C+WA+98104"
+    "source": "https://expansive.com"
   },
   {
     "street": "1000 Brickell Ave",
@@ -224,16 +123,7 @@
     "zip": "33131",
     "monthly_price": 99.0,
     "platform": "Opus Offices",
-    "source": "https://www.opusvirtualoffices.com",
-    "rdi": "Commercial",
-    "cmra": "No",
-    "dpv_match_code": "Y",
-    "validated_address": "1000 Brickell Ave",
-    "c1_acceptable": true,
-    "c1_approval_tier": "Medium (Business Non-CMRA)",
-    "c1_reason": "USPS Non-CMRA active delivery point",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=25.76389,-80.19139",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1000+Brickell+Ave%2C+Miami%2C+FL+33131"
+    "source": "https://www.opusvirtualoffices.com"
   },
   {
     "street": "304 S Jones Blvd",
@@ -242,16 +132,7 @@
     "zip": "89107",
     "monthly_price": 99.0,
     "platform": "Opus Offices",
-    "source": "https://www.opusvirtualoffices.com",
-    "rdi": "Commercial",
-    "cmra": "Yes",
-    "dpv_match_code": "Y",
-    "validated_address": "304 S Jones Blvd",
-    "c1_acceptable": false,
-    "c1_approval_tier": "Rejected",
-    "c1_reason": "USPS CMRA Flagged",
-    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.16796,-115.22374",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=304+S+Jones+Blvd%2C+Las+Vegas%2C+NV+89107"
+    "source": "https://www.opusvirtualoffices.com"
   },
   {
     "street": "170 Brothers Rd",
