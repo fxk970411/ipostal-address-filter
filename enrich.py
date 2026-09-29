@@ -12,23 +12,29 @@ INPUT_FILE = "addresses.json"
 OUTPUT_FILE = "addresses.json"
 API_URL = "https://us-street.api.smarty.com/street-address"
 
-# 每次执行最多调用的 API 次数（保护月度额度）
-BATCH_SIZE = 100
+# 每次执行验证的最大 API 调用数 (可设为 100~500)
+BATCH_SIZE = 150
 
-# 1. 明确的商业摩天楼 / 虚拟办公室特征（直接本地剔除，0 消耗 API）
+# 极小众与高端商务平台清单 (拥有顶级 API 验证优先级)
+PRIORITY_PLATFORMS = {
+    "St. Brendan's Isle", "Texas Home Base", "DakotaPost", 
+    "America's Mailbox", "MyRVMail", "Escapees RV Club", 
+    "Northwest Agent", "Expansive", "Opus Offices"
+}
+
+# 明确的商业摩天楼 / 虚拟代收特征 (直接本地排除，0 消耗 API)
 STRICT_COMMERCIAL_PATTERNS = re.compile(
     r"\b("
-    r"PMB\s*\d+|"                               # 法定转运信箱
-    r"(?:Suite|Ste)\s*[1-9]\d{3,}|"             # 四位数以上大写字间 (如 Suite 1200)
-    r"Floor|Fl\s*\d+|"                          # 楼层 (如 4th Floor, Fl 12)
+    r"PMB\s*\d+|"                               # 显式转运信箱
+    r"(?:Suite|Ste)\s*[1-9]\d{3,}|"             # 四位数以上大写字间
+    r"Floor|Fl\s*\d+|"                          # 楼层
     r"Tower|Towers|"                            # 大厦
-    r"Corporate\s*(?:Park|Center)|"             # 科技/企业园区
-    r"Executive\s*Suite"                        # 虚拟办公室
+    r"Corporate\s*(?:Park|Center)"              # 科技园区
     r")\b",
     re.IGNORECASE
 )
 
-# 2. 常见隐蔽连锁代收点名称（即便 USPS 库滞后显示 CMRA=No，也进行风控降级）
+# 常见隐蔽连锁代收点
 FRANCHISE_MAILBOX_KEYWORDS = re.compile(
     r"\b(PostalAnnex|PostNet|Pak\s*Mail|Safe\s*Ship|Mail\s*Boxes|Goin\s*Postal|AIM\s*Mail|The\s*UPS\s*Store)\b",
     re.IGNORECASE
@@ -36,42 +42,40 @@ FRANCHISE_MAILBOX_KEYWORDS = re.compile(
 
 def evaluate_address_potential(item):
     """
-    计算地址住宅潜力分（分数越低，越像低密度民宅或街区小门面，排在越前优先调用 API）
+    计算优先级分 (分数越低，越优先调用 Smarty API 校验)
     """
+    platform = item.get("platform", "")
     street = item.get("street", "")
     price = item.get("monthly_price", 9.99)
     score = 50
 
-    # 包含不可逆的死刑词 -> 999 分（直接本地拦截，不调 API）
+    # 1. 极小众 / 高端自持平台 -> 直接给予最高优先级 (-100 分)
+    if platform in PRIORITY_PLATFORMS:
+        return -100, f"High priority niche platform: {platform}"
+
+    # 2. 命中死刑词 -> 999 分 (本地拦截，不耗 API)
     if STRICT_COMMERCIAL_PATTERNS.search(street):
         return 999, "Definite commercial tower/PMB"
 
-    # 无任何 Suite/Unit 后缀的纯门牌 -> 潜力最高 (-30 分)
+    # 3. 独立纯门牌 -> (-30 分)
     if not re.search(r"\b(suite|ste|unit|#)\b", street, re.IGNORECASE):
         score -= 30
-    
-    # 含有字母 Suite (如 Ste A, Unit B) -> 极为常见的平房/排屋分租写法 (-15 分)
+    # 字母 Suite -> (-15 分)
     elif re.search(r"\b(suite|ste|unit|#)\s*[A-E]\b", street, re.IGNORECASE):
         score -= 15
-        
-    # 含有小号 Suite (如 Ste 1, Suite 101) -> 一层低矮沿街房 (-10 分)
+    # 小号 Suite -> (-10 分)
     elif re.search(r"\b(suite|ste|unit|#)\s*([1-9]|[1-2]\d{2})\b", street, re.IGNORECASE):
         score -= 10
 
-    # 常见住宅后缀 Ln, Ct, Way, Rd -> 加分项 (-5 分)
-    if re.search(r"\b(Ln|Lane|Ct|Court|Way|Dr|Drive|Rd|Road)\b", street, re.IGNORECASE):
-        score -= 5
-
-    # 价格过高（$25+）的大概率是 CBD 虚拟办公室，降级
-    if price and price >= 25.0:
-        score += 40
+    if price and price >= 35.0 and platform not in PRIORITY_PLATFORMS:
+        score += 30
 
     return score, "Candidate"
 
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     addresses = json.load(f)
 
-# 按照住宅潜力分排序，把最有希望过审的地址排在最前面
+# 排序：极小众平台与高潜力独栋排在最前列
 addresses.sort(key=lambda x: evaluate_address_potential(x)[0])
 
 api_called = 0
@@ -88,7 +92,7 @@ for item in addresses:
 
     score, reason = evaluate_address_potential(item)
 
-    # 1. 命中死刑词：直接本地拦截，不耗 API 额度
+    # 1. 命中死刑词：直接本地剔除，省下一次 API
     if score >= 900:
         item["rdi"] = "Commercial"
         item["cmra"] = "Yes"
@@ -99,7 +103,6 @@ for item in addresses:
         item["google_maps_url"] = f"https://www.google.com/maps/search/?api=1&query={encoded_addr}"
         item["google_street_view_url"] = f"https://www.google.com/maps/@?api=1&map_action=pano&query={encoded_addr}"
         processed_count += 1
-        print(f"[SKIP API - Heavy Commercial] {street}")
         continue
 
     # 2. 调用 Smarty 验证高价值候选地址
@@ -134,32 +137,29 @@ for item in addresses:
             dpv_match = analysis.get("dpv_match_code", "")
             item["dpv_match_code"] = dpv_match
             
-            # 细节修复：拼接 line 1 和 line 2，防止遗漏 Suite 分室号
             line1 = candidate.get("delivery_line_1", "").strip()
             line2 = candidate.get("delivery_line_2", "").strip()
-            validated_addr = f"{line1} {line2}".strip() if line2 else (line1 or street)
-            item["validated_address"] = validated_addr
+            item["validated_address"] = f"{line1} {line2}".strip() if line2 else (line1 or street)
 
-            # 连锁代收品牌二次过滤
-            is_franchise = bool(FRANCHISE_MAILBOX_KEYWORDS.search(street) or FRANCHISE_MAILBOX_KEYWORDS.search(validated_addr))
+            is_franchise = bool(FRANCHISE_MAILBOX_KEYWORDS.search(street) or FRANCHISE_MAILBOX_KEYWORDS.search(item["validated_address"]))
 
-            # C1 准入评估逻辑
+            # C1 准入评估
             if cmra == "No" and dpv_match == "Y":
                 if is_franchise:
                     item["c1_acceptable"] = False
-                    item["c1_approval_tier"] = "Review Needed (Franchise Risk)"
-                    item["c1_reason"] = "Matched known package store franchise keyword"
+                    item["c1_approval_tier"] = "Review Needed"
+                    item["c1_reason"] = "Known package store keyword"
                 else:
                     item["c1_acceptable"] = True
                     if rdi == "Residential":
                         item["c1_approval_tier"] = "High (Residential Non-CMRA)"
                     else:
-                        item["c1_approval_tier"] = "Medium (Mixed/Office Non-CMRA)"
-                    item["c1_reason"] = "USPS: Active delivery point & Non-CMRA"
+                        item["c1_approval_tier"] = "Medium (Business Non-CMRA)"
+                    item["c1_reason"] = "USPS Non-CMRA active delivery point"
             elif cmra == "Yes":
                 item["c1_acceptable"] = False
                 item["c1_approval_tier"] = "Rejected"
-                item["c1_reason"] = "USPS: Registered CMRA"
+                item["c1_reason"] = "USPS CMRA Flagged"
             else:
                 item["c1_acceptable"] = False
                 item["c1_approval_tier"] = "Uncertain"
@@ -176,7 +176,6 @@ for item in addresses:
             item["cmra"] = "Unknown"
             item["c1_acceptable"] = False
             item["c1_approval_tier"] = "Rejected"
-            item["c1_reason"] = "Address not found by USPS"
 
         item["google_maps_url"] = f"https://www.google.com/maps/search/?api=1&query={encoded_addr}"
 
@@ -186,15 +185,15 @@ for item in addresses:
         item["cmra"] = "Error"
 
     processed_count += 1
-    print(f"[API #{api_called}] {street} | CMRA={item.get('cmra')} | RDI={item.get('rdi')} | Tier={item.get('c1_approval_tier')}")
+    print(f"[{item.get('platform')}] {street} | CMRA={item.get('cmra')} | RDI={item.get('rdi')} | C1={item.get('c1_acceptable')}")
 
     if api_called >= BATCH_SIZE:
-        print(f"Reached batch limit of {BATCH_SIZE} calls.")
+        print(f"达到单次批处理上限: {BATCH_SIZE}")
         break
 
-    time.sleep(0.15)
+    time.sleep(0.12)
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(addresses, f, ensure_ascii=False, indent=2)
 
-print(f"Done. Processed {processed_count} addresses (API calls: {api_called}).")
+print(f"处理完成！本次耗费 API: {api_called} 次，总计推进: {processed_count} 条。")
