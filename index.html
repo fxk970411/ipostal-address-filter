@@ -3,933 +3,423 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>iPostal1 地址筛选</title>
-
+  <title>iPostal1 地址筛选器 - CMRA/RDI/C1 预审与街景查询</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      box-sizing: border-box;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    body {
-      margin: 0;
-      background: #f5f6f8;
-      color: #1d1d1f;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-    }
-
-    .container {
-      width: min(1200px, calc(100% - 32px));
-      margin: 48px auto;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 38px;
-      letter-spacing: -1px;
-    }
-
-    .subtitle {
-      margin-top: 12px;
-      color: #6e6e73;
-      font-size: 17px;
-    }
-
-    .stats {
-      margin-top: 12px;
-      color: #6e6e73;
-      font-size: 14px;
-    }
-
-    .filters {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 12px;
-
-      margin-top: 30px;
-      margin-bottom: 22px;
-
-      padding: 20px;
-
-      background: #ffffff;
-      border-radius: 18px;
-
-      box-shadow:
-        0 4px 18px rgba(0, 0, 0, 0.06);
-    }
-
-    input,
-    select {
-      width: 100%;
-
-      height: 46px;
-
-      border: 1px solid #d2d2d7;
-      border-radius: 10px;
-
-      padding: 0 14px;
-
-      font-size: 15px;
-
-      background: #fff;
-
-      outline: none;
-    }
-
-    input:focus,
-    select:focus {
-      border-color: #0071e3;
-    }
-
-    .result-info {
-      margin-bottom: 14px;
-      color: #6e6e73;
-      font-size: 14px;
-    }
-
-    .card {
-      background: #ffffff;
-
-      padding: 20px 22px;
-
-      border-radius: 16px;
-
-      margin-bottom: 12px;
-
-      box-shadow:
-        0 3px 14px rgba(0, 0, 0, 0.05);
-    }
-
-    .street {
-      font-size: 18px;
-      font-weight: 700;
-
-      margin-bottom: 6px;
-    }
-
-    .location {
-      color: #6e6e73;
-      font-size: 15px;
-    }
-
-    .tags {
-      margin-top: 12px;
-    }
-
-    .tag {
-      display: inline-block;
-
-      background: #f1f4f9;
-
-      border-radius: 7px;
-
-      padding: 5px 9px;
-
-      margin-right: 6px;
-      margin-top: 4px;
-
-      font-size: 13px;
-    }
-
-    .source {
-      display: inline-block;
-
-      margin-top: 12px;
-
-      color: #0071e3;
-
-      text-decoration: none;
-
-      font-size: 13px;
-    }
-
-    .empty,
-    .loading,
-    .error {
-      background: #ffffff;
-
-      padding: 30px;
-
-      text-align: center;
-
-      border-radius: 16px;
-
-      color: #6e6e73;
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      gap: 10px;
-
-      margin-top: 24px;
-      margin-bottom: 50px;
-    }
-
-    button {
-      border: none;
-
-      background: #ffffff;
-
-      padding: 10px 16px;
-
-      border-radius: 9px;
-
-      cursor: pointer;
-
-      font-size: 14px;
-
-      box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    button:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-
-    #pageText {
-      color: #6e6e73;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-
-      .container {
-        margin-top: 28px;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-
-      .filters {
-        grid-template-columns: 1fr;
-      }
-
+    .card-animate {
+      animation: fadeIn 0.25s ease-out forwards;
     }
   </style>
 </head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans">
 
-
-<body>
-
-  <div class="container">
-
-    <h1>iPostal1 地址筛选</h1>
-
-    <div class="subtitle">
-      搜索并筛选 iPostal1 地址
+  <!-- 顶部导航 -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="bg-blue-600 text-white p-2 rounded-xl shadow-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-slate-900 leading-tight">US Address Filter & Explorer</h1>
+          <p class="text-xs text-slate-500">iPostal1 真实地址 · CMRA / RDI 智能风控校验</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-xs font-medium">
+        <span id="stat-total" class="px-3 py-1 bg-slate-100 rounded-full text-slate-600">总数据: 加载中...</span>
+        <span id="stat-c1" class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">C1 优选: 0</span>
+      </div>
     </div>
+  </header>
 
-    <div
-      id="stats"
-      class="stats"
-    >
-      正在读取地址数据...
-    </div>
+  <!-- 主体区域 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
 
+    <!-- 筛选面板 -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
+        
+        <!-- 搜索框 -->
+        <div class="lg:col-span-2">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">关键词搜索</label>
+          <div class="relative">
+            <input type="text" id="filter-search" placeholder="输入街道、城市或邮编..." 
+              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all pl-9" />
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
 
-    <div class="filters">
+        <!-- 州筛选 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">所在州 (State)</label>
+          <select id="filter-state" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            <option value="ALL">全部州 (All)</option>
+          </select>
+        </div>
 
-      <input
-        id="keyword"
-        type="text"
-        placeholder="搜索地址 / 城市 / 州 / ZIP"
-      />
+        <!-- RDI 属性 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">地址属性 (RDI)</label>
+          <select id="filter-rdi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            <option value="ALL">全部 (All)</option>
+            <option value="Residential">住宅 (Residential)</option>
+            <option value="Commercial">商业 (Commercial)</option>
+          </select>
+        </div>
 
-      <select id="state">
+        <!-- CMRA 属性 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">转运标记 (CMRA)</label>
+          <select id="filter-cmra" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            <option value="ALL">全部 (All)</option>
+            <option value="No">非转运机构 (CMRA: No)</option>
+            <option value="Yes">转运/代收机构 (CMRA: Yes)</option>
+          </select>
+        </div>
 
-        <option value="">
-          全部州
-        </option>
+        <!-- C1 预审状态 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">C1 预审准入</label>
+          <select id="filter-c1" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+            <option value="ALL">全部 (All)</option>
+            <option value="YES">通过 (Likely Accepted)</option>
+            <option value="NO">拦截 (Rejected)</option>
+          </select>
+        </div>
 
-      </select>
-
-    </div>
-
-
-    <div
-      id="resultInfo"
-      class="result-info"
-    ></div>
-
-
-    <div id="results">
-
-      <div class="loading">
-        正在加载 addresses.json...
       </div>
 
+      <!-- 快捷标签与重置 -->
+      <div class="mt-4 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-slate-400">快速推荐:</span>
+          <button onclick="setQuickFilter('C1_HIGH')" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg transition-colors font-medium border border-emerald-200">
+            🎯 C1 黄金住宅地址 (CMRA=No & RDI=Residential)
+          </button>
+          <button onclick="setQuickFilter('ALL_NON_CMRA')" class="px-2.5 py-1 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-lg transition-colors font-medium border border-blue-200">
+            🛡️ 全部非 CMRA (通过率较高)
+          </button>
+        </div>
+        <button id="btn-reset" class="text-slate-500 hover:text-slate-800 transition-colors underline">
+          重置所有筛选
+        </button>
+      </div>
     </div>
 
-
-    <div
-      id="pagination"
-      class="pagination"
-      style="display:none;"
-    >
-
-      <button id="prevBtn">
-        上一页
-      </button>
-
-      <span id="pageText"></span>
-
-      <button id="nextBtn">
-        下一页
-      </button>
-
+    <!-- 结果统计与排序状态 -->
+    <div class="flex items-center justify-between mb-4 px-1 text-sm text-slate-500">
+      <div>
+        筛选出 <span id="stat-filtered-count" class="font-bold text-slate-800">0</span> 条符合条件的地址
+      </div>
+      <div class="text-xs">
+        每页显示 30 条
+      </div>
     </div>
 
-  </div>
+    <!-- 地址列表卡片容器 -->
+    <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- 动态插入卡片 -->
+    </div>
 
+    <!-- 空数据展示 -->
+    <div id="empty-state" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-4">
+      <div class="text-slate-300 mb-3">
+        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h3 class="text-base font-semibold text-slate-700">未找到符合条件的地址</h3>
+      <p class="text-xs text-slate-400 mt-1">请尝试清除部分筛选条件或搜索其他关键词</p>
+    </div>
+
+    <!-- 分页控件 -->
+    <div id="pagination" class="mt-8 flex items-center justify-center space-x-2 pb-12">
+      <!-- 分页按钮 -->
+    </div>
+
+  </main>
 
   <script>
-
-    let allAddresses = [];
-
+    let rawAddresses = [];
     let filteredAddresses = [];
-
     let currentPage = 1;
+    const PAGE_SIZE = 30;
 
-    const pageSize = 30;
+    // 获取 DOM 元素
+    const filterSearch = document.getElementById("filter-search");
+    const filterState = document.getElementById("filter-state");
+    const filterRdi = document.getElementById("filter-rdi");
+    const filterCmra = document.getElementById("filter-cmra");
+    const filterC1 = document.getElementById("filter-c1");
+    const btnReset = document.getElementById("btn-reset");
+    const container = document.getElementById("address-container");
+    const emptyState = document.getElementById("empty-state");
+    const pagination = document.getElementById("pagination");
+    const statTotal = document.getElementById("stat-total");
+    const statC1 = document.getElementById("stat-c1");
+    const statFilteredCount = document.getElementById("stat-filtered-count");
 
-
-    const keywordInput =
-      document.getElementById("keyword");
-
-    const stateSelect =
-      document.getElementById("state");
-
-    const results =
-      document.getElementById("results");
-
-    const stats =
-      document.getElementById("stats");
-
-    const resultInfo =
-      document.getElementById("resultInfo");
-
-    const pagination =
-      document.getElementById("pagination");
-
-    const prevBtn =
-      document.getElementById("prevBtn");
-
-    const nextBtn =
-      document.getElementById("nextBtn");
-
-    const pageText =
-      document.getElementById("pageText");
-
-
-    async function loadAddresses() {
-
+    // 从 JSON 加载数据
+    async function loadData() {
       try {
+        const res = await fetch("addresses.json");
+        if (!res.ok) throw new Error("无法加载 addresses.json");
+        rawAddresses = await res.json();
 
-        const response =
-          await fetch(
-            "addresses.json?v=" + Date.now()
-          );
+        initStatesDropdown();
+        readUrlParams();
+        applyFilters();
+      } catch (err) {
+        container.innerHTML = `<div class="col-span-full text-center text-red-500 py-10 font-medium">数据加载失败: ${err.message}</div>`;
+      }
+    }
 
+    // 初始化“州”下拉列表
+    function initStatesDropdown() {
+      const states = Array.from(new Set(rawAddresses.map(a => a.state).filter(Boolean))).sort();
+      states.forEach(st => {
+        const opt = document.createElement("option");
+        opt.value = st;
+        opt.textContent = st;
+        filterState.appendChild(opt);
+      });
+    }
 
-        if (!response.ok) {
+    // 读取 URL 参数以实现与 usaddres.com 一模一样的链接传参
+    function readUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("state")) filterState.value = params.get("state").toUpperCase();
+      if (params.get("rdi")) filterRdi.value = params.get("rdi");
+      if (params.get("cmra")) filterCmra.value = params.get("cmra");
+      if (params.get("c1")) filterC1.value = params.get("c1").toUpperCase();
+      if (params.get("q")) filterSearch.value = params.get("q");
+    }
 
-          throw new Error(
-            "无法读取 addresses.json"
-          );
+    // 同步到 URL 参数
+    function updateUrlParams() {
+      const params = new URLSearchParams();
+      if (filterState.value !== "ALL") params.set("state", filterState.value);
+      if (filterRdi.value !== "ALL") params.set("rdi", filterRdi.value);
+      if (filterCmra.value !== "ALL") params.set("cmra", filterCmra.value);
+      if (filterC1.value !== "ALL") params.set("c1", filterC1.value);
+      if (filterSearch.value.trim()) params.set("q", filterSearch.value.trim());
 
+      const newUrl = `${window.location.pathname}${params.toString() ? "?" + params.toString() : ""}`;
+      window.history.replaceState({}, "", newUrl);
+    }
+
+    // 核心过滤逻辑
+    function applyFilters() {
+      const q = filterSearch.value.toLowerCase().trim();
+      const state = filterState.value;
+      const rdi = filterRdi.value;
+      const cmra = filterCmra.value;
+      const c1 = filterC1.value;
+
+      filteredAddresses = rawAddresses.filter(item => {
+        if (state !== "ALL" && item.state !== state) return false;
+        if (rdi !== "ALL" && item.rdi !== rdi) return false;
+        if (cmra !== "ALL" && item.cmra !== cmra) return false;
+
+        if (c1 === "YES" && !item.c1_acceptable) return false;
+        if (c1 === "NO" && item.c1_acceptable) return false;
+
+        if (q) {
+          const matchStreet = (item.validated_address || item.street || "").toLowerCase().includes(q);
+          const matchCity = (item.city || "").toLowerCase().includes(q);
+          const matchZip = (item.zip || "").toLowerCase().includes(q);
+          if (!matchStreet && !matchCity && !matchZip) return false;
         }
 
-
-        const data =
-          await response.json();
-
-
-        allAddresses =
-          Array.isArray(data)
-          ? data
-          : [];
-
-
-        filteredAddresses =
-          [...allAddresses];
-
-
-        populateStates();
-
-
-        stats.textContent =
-          `当前共读取 ${allAddresses.length} 个地址`;
-
-
-        render();
-
-
-      }
-      catch (error) {
-
-        console.error(error);
-
-
-        stats.textContent =
-          "地址数据读取失败";
-
-
-        results.innerHTML = `
-          <div class="error">
-
-            无法读取 addresses.json
-
-            <br><br>
-
-            请确认 GitHub Actions
-            已成功生成地址文件。
-
-          </div>
-        `;
-
-      }
-
-    }
-
-
-    function populateStates() {
-
-      const states =
-        [
-          ...new Set(
-            allAddresses
-              .map(item => item.state)
-              .filter(Boolean)
-          )
-        ].sort();
-
-
-      states.forEach(state => {
-
-        const option =
-          document.createElement("option");
-
-        option.value = state;
-
-        option.textContent = state;
-
-        stateSelect.appendChild(option);
-
+        return true;
       });
-
-    }
-
-
-    function applyFilters() {
-
-      const keyword =
-        keywordInput.value
-          .trim()
-          .toLowerCase();
-
-
-      const state =
-        stateSelect.value;
-
-
-      filteredAddresses =
-        allAddresses.filter(item => {
-
-          const searchText = `
-
-            ${item.street || ""}
-
-            ${item.city || ""}
-
-            ${item.state || ""}
-
-            ${item.zip || ""}
-
-          `.toLowerCase();
-
-
-          const keywordMatch =
-            !keyword ||
-            searchText.includes(keyword);
-
-
-          const stateMatch =
-            !state ||
-            item.state === state;
-
-
-          return (
-            keywordMatch &&
-            stateMatch
-          );
-
-        });
-
 
       currentPage = 1;
-
-      render();
-
+      updateUrlParams();
+      updateStats();
+      renderCards();
+      renderPagination();
     }
 
+    // 更新统计栏
+    function updateStats() {
+      statTotal.textContent = `总数据: ${rawAddresses.length}`;
+      const c1Count = rawAddresses.filter(a => a.c1_acceptable).length;
+      statC1.textContent = `C1 优选: ${c1Count}`;
+      statFilteredCount.textContent = filteredAddresses.length;
+    }
 
-    function render() {
+    // 渲染卡片
+    function renderCards() {
+      container.innerHTML = "";
 
-      resultInfo.textContent =
-        `找到 ${filteredAddresses.length} 个结果`;
+      if (filteredAddresses.length === 0) {
+        emptyState.classList.remove("hidden");
+        pagination.classList.add("hidden");
+        return;
+      }
 
+      emptyState.classList.add("hidden");
+      pagination.classList.remove("hidden");
 
-      if (
-        filteredAddresses.length === 0
-      ) {
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const pageItems = filteredAddresses.slice(start, start + PAGE_SIZE);
 
-        results.innerHTML = `
-          <div class="empty">
+      pageItems.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between card-animate";
 
-            没有找到符合条件的地址
+        const street = item.validated_address || item.street;
+        const fullAddr = `${street}, ${item.city}, ${item.state} ${item.zip}`;
+        const price = item.monthly_price ? `$${item.monthly_price}/月` : "$9.99/月";
 
+        // C1 状态徽章
+        let c1Badge = "";
+        if (item.c1_acceptable) {
+          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200">✅ C1 极大概率通过</span>`;
+        } else if (item.cmra === "Yes") {
+          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-rose-100 text-rose-800 border border-rose-200">❌ C1 拦截 (CMRA)</span>`;
+        } else {
+          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-slate-100 text-slate-600">待验证</span>`;
+        }
+
+        // CMRA 徽章
+        let cmraBadge = item.cmra === "No" 
+          ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">CMRA: No</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-rose-50 text-rose-700 border border-rose-200">CMRA: Yes</span>`;
+
+        // RDI 徽章
+        let rdiBadge = item.rdi === "Residential"
+          ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200">RDI: 住宅</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-slate-100 text-slate-700">RDI: 商业</span>`;
+
+        // 地图与街景链接
+        const mapsUrl = item.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddr)}`;
+        const streetViewUrl = item.google_street_view_url || `https://www.google.com/maps/@?api=1&map_action=pano&query=${encodeURIComponent(fullAddr)}`;
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <span class="text-sm font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg">${price}</span>
+              ${c1Badge}
+            </div>
+
+            <h4 class="text-base font-bold text-slate-900 leading-snug line-clamp-2 mt-1">${street}</h4>
+            <p class="text-xs text-slate-500 font-medium mt-0.5 mb-3">${item.city}, ${item.state} ${item.zip}</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${cmraBadge}
+              ${rdiBadge}
+              <span class="px-2 py-0.5 text-[11px] rounded bg-slate-50 text-slate-500 border border-slate-200">DPV: ${item.dpv_match_code || 'N/A'}</span>
+            </div>
+          </div>
+
+          <div class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
+            <button onclick="copyToClipboard('${fullAddr.replace(/'/g, "\\'")}', this)" 
+              class="text-slate-600 hover:text-blue-600 flex items-center space-x-1 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span>复制地址</span>
+            </button>
+
+            <div class="flex items-center space-x-3">
+              <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" 
+                class="text-slate-500 hover:text-blue-600 flex items-center space-x-0.5 transition-colors" title="在 Google 地图查看">
+                <span>地图</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" 
+                class="text-emerald-600 hover:text-emerald-700 flex items-center space-x-0.5 font-semibold transition-colors" title="查看 Google 街景实景">
+                <span>实景</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </a>
+            </div>
           </div>
         `;
 
-
-        pagination.style.display =
-          "none";
-
-        return;
-
-      }
-
-
-      const totalPages =
-        Math.ceil(
-          filteredAddresses.length /
-          pageSize
-        );
-
-
-      if (
-        currentPage > totalPages
-      ) {
-
-        currentPage =
-          totalPages;
-
-      }
-
-
-      const start =
-        (currentPage - 1) *
-        pageSize;
-
-
-      const pageItems =
-        filteredAddresses.slice(
-          start,
-          start + pageSize
-        );
-
-
-      results.innerHTML =
-        pageItems
-          .map(item => {
-
-            const sourceLink =
-              item.source
-              ? `
-                <a
-                  class="source"
-                  href="${item.source}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  查看 iPostal1 来源
-                </a>
-              `
-              : "";
-
-
-            return `
-
-              <div class="card">
-
-                <div class="street">
-
-                  ${escapeHtml(
-                    item.street || "未知地址"
-                  )}
-
-                </div>
-
-
-                <div class="location">
-
-                  ${escapeHtml(
-                    item.city || ""
-                  )}
-
-                  ${item.city ? "," : ""}
-
-                  ${escapeHtml(
-                    item.state || ""
-                  )}
-
-                  ${escapeHtml(
-                    item.zip || ""
-                  )}
-
-                </div>
-
-
-                <div class="tags">
-
-                  ${
-                    item.state
-                    ? `
-                      <span class="tag">
-
-                        State:
-                        ${escapeHtml(
-                          item.state
-                        )}
-
-                      </span>
-                    `
-                    : ""
-                  }
-
-
-                  ${
-                    item.zip
-                    ? `
-                      <span class="tag">
-
-                        ZIP:
-                        ${escapeHtml(
-                          item.zip
-                        )}
-
-                      </span>
-                    `
-                    : ""
-                  }
-
-                </div>
-
-
-                ${sourceLink}
-
-              </div>
-
-            `;
-
-          })
-          .join("");
-
-
-      pagination.style.display =
-        "flex";
-
-
-      pageText.textContent =
-        `第 ${currentPage} / ${totalPages} 页`;
-
-
-      prevBtn.disabled =
-        currentPage <= 1;
-
-
-      nextBtn.disabled =
-        currentPage >= totalPages;
-
-    }
-
-
-    function escapeHtml(value) {
-
-      return String(value)
-
-        .replaceAll(
-          "&",
-          "&amp;"
-        )
-
-        .replaceAll(
-          "<",
-          "&lt;"
-        )
-
-        .replaceAll(
-          ">",
-          "&gt;"
-        )
-
-        .replaceAll(
-          '"',
-          "&quot;"
-        )
-
-        .replaceAll(
-          "'",
-          "&#039;"
-        );
-
-    }
-
-
-    keywordInput.addEventListener(
-      "input",
-      applyFilters
-    );
-
-
-    stateSelect.addEventListener(
-      "change",
-      applyFilters
-    );
-
-
-    prevBtn.addEventListener(
-      "click",
-      () => {
-
-        if (
-          currentPage > 1
-        ) {
-
-          currentPage--;
-
-          render();
-
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-
-        }
-
-      }
-    );
-
-
-    nextBtn.addEventListener(
-      "click",
-      () => {
-
-        const totalPages =
-          Math.ceil(
-            filteredAddresses.length /
-            pageSize
-          );
-
-
-        if (
-          currentPage < totalPages
-        ) {
-
-          currentPage++;
-
-          render();
-
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-
-        }
-
-      }
-    );
-
-
-    loadAddresses();
-
-  </script>
-
-</body>
-</html>    }
-
-    .filters input,
-    .filters select {
-      padding: 10px;
-      margin: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    .address {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: #666;
-      margin-bottom: 5px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 4px 8px;
-      margin-right: 6px;
-      border-radius: 6px;
-      background: #eef2ff;
-      font-size: 13px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <h1>iPostal1 地址筛选</h1>
-    <div class="subtitle">
-      用于筛选州、城市、Residential、CMRA 等属性
-    </div>
-
-    <div class="filters">
-      <input
-        type="text"
-        id="keyword"
-        placeholder="搜索地址 / 城市 / ZIP"
-        oninput="filterAddresses()"
-      />
-
-      <select id="state" onchange="filterAddresses()">
-        <option value="">全部州</option>
-        <option value="CA">California</option>
-        <option value="NY">New York</option>
-        <option value="TX">Texas</option>
-        <option value="FL">Florida</option>
-      </select>
-
-      <select id="rdi" onchange="filterAddresses()">
-        <option value="">全部 RDI</option>
-        <option value="Residential">Residential</option>
-        <option value="Commercial">Commercial</option>
-      </select>
-
-      <select id="cmra" onchange="filterAddresses()">
-        <option value="">全部 CMRA</option>
-        <option value="No">CMRA No</option>
-        <option value="Yes">CMRA Yes</option>
-      </select>
-    </div>
-
-    <div id="results"></div>
-  </div>
-
-  <script>
-    const addresses = [
-      {
-        address: "123 Main St",
-        city: "Los Angeles",
-        state: "CA",
-        zip: "90001",
-        rdi: "Residential",
-        cmra: "No"
-      },
-      {
-        address: "456 Market St",
-        city: "San Francisco",
-        state: "CA",
-        zip: "94105",
-        rdi: "Commercial",
-        cmra: "Yes"
-      },
-      {
-        address: "789 Broadway",
-        city: "New York",
-        state: "NY",
-        zip: "10003",
-        rdi: "Residential",
-        cmra: "No"
-      },
-      {
-        address: "321 Ocean Dr",
-        city: "Miami",
-        state: "FL",
-        zip: "33139",
-        rdi: "Residential",
-        cmra: "Yes"
-      }
-    ];
-
-    function renderAddresses(list) {
-      const container = document.getElementById("results");
-
-      if (list.length === 0) {
-        container.innerHTML = "<p>没有找到符合条件的地址。</p>";
-        return;
-      }
-
-      container.innerHTML = list.map(item => `
-        <div class="card">
-          <div class="address">
-            ${item.address}
-          </div>
-
-          <div class="meta">
-            ${item.city}, ${item.state} ${item.zip}
-          </div>
-
-          <span class="tag">
-            RDI: ${item.rdi}
-          </span>
-
-          <span class="tag">
-            CMRA: ${item.cmra}
-          </span>
-        </div>
-      `).join("");
-    }
-
-    function filterAddresses() {
-      const keyword =
-        document.getElementById("keyword").value.toLowerCase();
-
-      const state =
-        document.getElementById("state").value;
-
-      const rdi =
-        document.getElementById("rdi").value;
-
-      const cmra =
-        document.getElementById("cmra").value;
-
-      const filtered = addresses.filter(item => {
-        const text =
-          `${item.address} ${item.city} ${item.state} ${item.zip}`
-          .toLowerCase();
-
-        return (
-          text.includes(keyword) &&
-          (!state || item.state === state) &&
-          (!rdi || item.rdi === rdi) &&
-          (!cmra || item.cmra === cmra)
-        );
+        container.appendChild(card);
       });
-
-      renderAddresses(filtered);
     }
 
-    renderAddresses(addresses);
+    // 渲染分页按钮
+    function renderPagination() {
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(filteredAddresses.length / PAGE_SIZE);
+      if (totalPages <= 1) return;
+
+      const prevBtn = document.createElement("button");
+      prevBtn.textContent = "上一页";
+      prevBtn.className = `px-3 py-1.5 rounded-lg border text-xs font-semibold ${currentPage === 1 ? 'border-slate-200 text-slate-300 cursor-not-allowed' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-50'}`;
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => { currentPage--; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+      pagination.appendChild(prevBtn);
+
+      const indicator = document.createElement("span");
+      indicator.className = "text-xs text-slate-500 px-3";
+      indicator.textContent = `第 ${currentPage} / ${totalPages} 页`;
+      pagination.appendChild(indicator);
+
+      const nextBtn = document.createElement("button");
+      nextBtn.textContent = "下一页";
+      nextBtn.className = `px-3 py-1.5 rounded-lg border text-xs font-semibold ${currentPage === totalPages ? 'border-slate-200 text-slate-300 cursor-not-allowed' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-50'}`;
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.onclick = () => { currentPage++; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+      pagination.appendChild(nextBtn);
+    }
+
+    // 一键复制
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<span class="text-emerald-600 font-semibold">已复制!</span>`;
+        setTimeout(() => { btn.innerHTML = originalText; }, 1500);
+      });
+    }
+
+    // 快捷推荐
+    function setQuickFilter(type) {
+      if (type === "C1_HIGH") {
+        filterCmra.value = "No";
+        filterRdi.value = "Residential";
+        filterC1.value = "YES";
+      } else if (type === "ALL_NON_CMRA") {
+        filterCmra.value = "No";
+        filterRdi.value = "ALL";
+        filterC1.value = "ALL";
+      }
+      applyFilters();
+    }
+
+    // 重置所有筛选
+    btnReset.onclick = () => {
+      filterSearch.value = "";
+      filterState.value = "ALL";
+      filterRdi.value = "ALL";
+      filterCmra.value = "ALL";
+      filterC1.value = "ALL";
+      applyFilters();
+    };
+
+    // 监听筛选事件
+    filterSearch.addEventListener("input", () => applyFilters());
+    filterState.addEventListener("change", () => applyFilters());
+    filterRdi.addEventListener("change", () => applyFilters());
+    filterCmra.addEventListener("change", () => applyFilters());
+    filterC1.addEventListener("change", () => applyFilters());
+
+    // 启动
+    loadData();
   </script>
 </body>
 </html>
