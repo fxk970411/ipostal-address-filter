@@ -2,9 +2,6 @@ name: Enrich Address Data
 
 on:
   workflow_dispatch:
-  schedule:
-    # 每月 1 号凌晨 2:00 自动触发执行一次
-    - cron: '0 2 1 * *'
 
 permissions:
   contents: write
@@ -12,7 +9,6 @@ permissions:
 jobs:
   enrich:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,21 +20,20 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run Smarty enrichment
+      - name: Run USPS enrichment
         env:
-          SMARTY_AUTH_ID: ${{ secrets.SMARTY_AUTH_ID }}
-          SMARTY_AUTH_TOKEN: ${{ secrets.SMARTY_AUTH_TOKEN }}
+          USPS_CLIENT_ID: ${{ secrets.USPS_CLIENT_ID }}
+          USPS_CLIENT_SECRET: ${{ secrets.USPS_CLIENT_SECRET }}
         run: |
           python enrich.py
 
-      - name: Commit enriched data
+      - name: Commit enriched address data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add addresses.json
-          git commit -m "Auto-enrich address data" || exit 0
+          git commit -m "Auto-enrich address data via USPS official API" || exit 0
           git pull --rebase origin main
           git push origin main
