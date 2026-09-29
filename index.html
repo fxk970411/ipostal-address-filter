@@ -1,105 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>US Address Explorer | 美卡四大平台合规信箱风控系统</title>
+  <title>US Address Intelligence | 商业与住宅风控检索系统</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: { 800: '#111827', 850: '#0e1626', 900: '#090d16' }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(8px); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .card-entry { animation: slideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .card-load { animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    /* 自定义纤细滚动条 */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #090d16; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
   </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-[#070a0f] text-slate-200 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- 浮动复制提示框 -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700 text-xs font-bold">
-    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+  <!-- 浮动复制提示 (Toast) -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-slate-900/90 backdrop-blur-md text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700/60 text-xs font-bold">
+    <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
     <span id="toast-text">地址已复制到剪贴板</span>
   </div>
 
-  <!-- 顶部导航 -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+  <!-- 顶部科技感导航栏 -->
+  <header class="bg-[#0b101b]/80 backdrop-blur-xl border-b border-slate-800/80 sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/10 border border-white/10">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="text-base font-extrabold text-slate-900 tracking-tight">US Address Intelligence</h1>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-700 tracking-wide">4-PLATFORM LIVE</span>
+            <h1 class="text-sm sm:text-base font-extrabold text-white tracking-tight">US Address Intelligence</h1>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wide uppercase">CIP Verified</span>
           </div>
-          <p class="text-[11px] text-slate-500 font-medium">全网信箱风控数据库 · iPostal1 / Anytime / Sasquatch / Escapees</p>
+          <p class="text-[11px] text-slate-400 font-medium">四大虚拟信箱平台 · 商业与住宅 (RDI) · CMRA 数据库</p>
         </div>
       </div>
 
-      <!-- 全局数据看板 -->
-      <div class="flex items-center gap-2 text-xs font-bold">
-        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 rounded-lg text-slate-600 border border-slate-200">
-          <span class="w-2 h-2 rounded-full bg-slate-400"></span>
-          <span>总库: <strong id="stat-total" class="text-slate-900 font-black">0</strong></span>
+      <!-- 数据全局统计 -->
+      <div class="flex items-center gap-2 text-xs font-semibold">
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/60 rounded-xl text-slate-300 border border-slate-700/50">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+          <span>总库: <strong id="stat-total" class="text-white font-bold">0</strong></span>
         </div>
-        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 rounded-lg text-emerald-700 border border-emerald-200">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>C1 优选: <strong id="stat-c1" class="text-emerald-800 font-black">0</strong></span>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/10 rounded-xl text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>C1 优选: <strong id="stat-c1" class="text-white font-bold">0</strong></span>
         </div>
-        <button id="btn-show-bookmarks" class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold">
+        <button id="btn-show-bookmarks" class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-xl hover:bg-amber-500/20 transition-all font-bold">
           <span>⭐ 收藏 (<span id="stat-bookmark-count">0</span>)</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 主体工作区 -->
+  <!-- 主体区域 -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
 
     <!-- 筛选面板 -->
-    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+    <div class="bg-[#0d1322] rounded-2xl border border-slate-800/90 shadow-2xl p-5 space-y-4">
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5">
         
-        <!-- 搜索框 -->
+        <!-- 关键词搜索 -->
         <div class="lg:col-span-4">
-          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">关键词搜索</label>
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">关键词搜索</label>
           <div class="relative">
-            <input type="text" id="filter-search" placeholder="输入街道名称、城市或五位邮编..." 
-              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all pl-9 text-slate-800 placeholder-slate-400" />
-            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <input type="text" id="filter-search" placeholder="输入街道、城市或 5 位邮编..." 
+              class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3.5 py-2.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pl-9 text-white placeholder-slate-500" />
+            <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
           </div>
         </div>
 
-        <!-- 来源平台 (四大平台) -->
+        <!-- 平台选择 -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">信箱平台 (Platform)</label>
-          <select id="filter-platform" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">来源平台</label>
+          <select id="filter-platform" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
             <option value="ALL">全部四大平台 (All)</option>
-            <option value="Escapees RV Club">⛺ Escapees RV Club (常住住所)</option>
-            <option value="Sasquatch Mail">🟢 Sasquatch Mail (独栋低调)</option>
-            <option value="Anytime Mailbox">🟣 Anytime Mailbox (偏远下沉)</option>
-            <option value="iPostal1">🔵 iPostal1 (全美最大加盟)</option>
+            <option value="Escapees RV Club">⛺ Escapees RV Club</option>
+            <option value="Sasquatch Mail">🟢 Sasquatch Mail</option>
+            <option value="Anytime Mailbox">🟣 Anytime Mailbox</option>
+            <option value="iPostal1">🔵 iPostal1</option>
           </select>
         </div>
 
         <!-- 所在州 -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">所在州 (State)</label>
-          <select id="filter-state" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">所在州 (State)</label>
+          <select id="filter-state" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
             <option value="ALL">全部州 (All)</option>
           </select>
         </div>
 
-        <!-- 地址属性 RDI -->
+        <!-- 地址属性 (RDI) -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">住宅/商业 (RDI)</label>
-          <select id="filter-rdi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">住宅 / 商业 (RDI)</label>
+          <select id="filter-rdi" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
             <option value="ALL">全部 (All)</option>
             <option value="Residential">🏡 住宅 (Residential)</option>
             <option value="Commercial">🏢 商业 (Commercial)</option>
@@ -108,48 +126,48 @@
 
         <!-- CMRA 状态 -->
         <div class="lg:col-span-2">
-          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">转运标记 (CMRA)</label>
-          <select id="filter-cmra" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
+          <label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1.5">代收转运标记 (CMRA)</label>
+          <select id="filter-cmra" class="w-full bg-[#131c31] border border-slate-700/60 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer">
             <option value="ALL">全部 (All)</option>
             <option value="No">🛡️ CMRA: No (非转运机构)</option>
-            <option value="Yes">⚠️ CMRA: Yes (代收点)</option>
+            <option value="Yes">⚠️ CMRA: Yes (代收转运点)</option>
           </select>
         </div>
 
       </div>
 
-      <!-- 快捷标签排 -->
-      <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <!-- 快捷标签栏 -->
+      <div class="pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div class="flex flex-wrap items-center gap-2">
-          <span class="text-slate-400 font-bold text-[11px]">快捷直达:</span>
+          <span class="text-slate-500 font-bold text-[11px]">快捷预设:</span>
           
-          <button id="btn-quick-escapees" class="px-2.5 py-1 bg-amber-50 text-amber-800 hover:bg-amber-100 rounded-lg transition-colors font-black border border-amber-300 shadow-sm flex items-center gap-1">
-            <span>⛺ Escapees 旅居常住中心</span>
+          <button id="btn-quick-escapees" class="px-2.5 py-1 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 rounded-lg transition-colors font-bold border border-amber-500/30 flex items-center gap-1">
+            <span>⛺ Escapees 常住住所</span>
           </button>
 
-          <button id="btn-quick-c1" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg transition-colors font-black border border-emerald-200 shadow-sm flex items-center gap-1">
+          <button id="btn-quick-c1" class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 rounded-lg transition-colors font-bold border border-emerald-500/30 flex items-center gap-1">
             <span>🎯 C1 黄金住宅地址</span>
           </button>
           
-          <button id="btn-quick-taxfree" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-lg transition-colors font-black border border-indigo-200 shadow-sm flex items-center gap-1">
-            <span>🏝️ 免税州优选 (AK, FL, NV, TX, WA)</span>
+          <button id="btn-quick-taxfree" class="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 rounded-lg transition-colors font-bold border border-indigo-500/30 flex items-center gap-1">
+            <span>🏝️ 免税州 (AK, FL, NV, TX, WA)</span>
           </button>
 
-          <button id="btn-quick-sasquatch" class="px-2.5 py-1 bg-teal-50 text-teal-700 hover:bg-teal-100 rounded-lg transition-colors font-black border border-teal-200 shadow-sm flex items-center gap-1">
-            <span>🟢 Sasquatch 独立平房</span>
+          <button id="btn-quick-sasquatch" class="px-2.5 py-1 bg-teal-500/10 text-teal-300 hover:bg-teal-500/20 rounded-lg transition-colors font-bold border border-teal-500/30 flex items-center gap-1">
+            <span>🟢 Sasquatch 独栋平房</span>
           </button>
 
-          <button id="btn-quick-anytime" class="px-2.5 py-1 bg-purple-50 text-purple-700 hover:bg-purple-100 rounded-lg transition-colors font-black border border-purple-200 shadow-sm flex items-center gap-1">
+          <button id="btn-quick-anytime" class="px-2.5 py-1 bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 rounded-lg transition-colors font-bold border border-purple-500/30 flex items-center gap-1">
             <span>🟣 Anytime 下沉小镇</span>
           </button>
         </div>
 
         <div class="flex items-center gap-4">
-          <button id="btn-export-csv" class="text-blue-600 hover:text-blue-800 font-black transition-colors flex items-center gap-1">
+          <button id="btn-export-csv" class="text-blue-400 hover:text-blue-300 font-bold transition-colors flex items-center gap-1">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             <span>导出 CSV</span>
           </button>
-          <button id="btn-reset" class="text-slate-400 hover:text-slate-700 font-bold transition-colors underline">
+          <button id="btn-reset" class="text-slate-500 hover:text-slate-300 font-medium transition-colors underline">
             重置所有条件
           </button>
         </div>
@@ -157,28 +175,28 @@
 
     </div>
 
-    <!-- 结果状态栏 -->
-    <div class="flex items-center justify-between px-1 text-xs text-slate-500 font-medium">
+    <!-- 结果状态统计 -->
+    <div class="flex items-center justify-between px-1 text-xs text-slate-400 font-medium">
       <div class="flex items-center gap-1.5">
-        <span>当前筛选出</span>
-        <span id="stat-filtered-count" class="font-black text-sm text-slate-900 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-sm">0</span>
-        <span>个合规可用地址</span>
+        <span>匹配到</span>
+        <span id="stat-filtered-count" class="font-extrabold text-sm text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">0</span>
+        <span>个完全符合条件的地址</span>
       </div>
       <div>
         <span>分页模式 · 30 条 / 页</span>
       </div>
     </div>
 
-    <!-- 卡片栅格容器 -->
+    <!-- 地址列表卡片容器 -->
     <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <!-- 无结果空状态 -->
-    <div id="empty-state" class="hidden text-center py-20 bg-white rounded-2xl border border-slate-200 shadow-sm">
-      <div class="w-14 h-14 mx-auto mb-3 text-slate-300">
+    <div id="empty-state" class="hidden text-center py-20 bg-[#0d1322] rounded-2xl border border-slate-800 shadow-xl">
+      <div class="w-12 h-12 mx-auto mb-3 text-slate-600">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
       </div>
-      <h3 class="text-sm font-bold text-slate-800">未找到符合当前条件的地址</h3>
-      <p class="text-xs text-slate-400 mt-1">请尝试放宽筛选条件，或重置筛选后重新查找。</p>
+      <h3 class="text-sm font-bold text-slate-300">未找到符合当前条件的地址</h3>
+      <p class="text-xs text-slate-500 mt-1">请尝试清除部分筛选条件或重置筛选。</p>
     </div>
 
     <!-- 分页条 -->
@@ -193,7 +211,6 @@
     const PAGE_SIZE = 30;
     const TAX_FREE_STATES = ["AK", "FL", "NV", "SD", "TN", "TX", "WA", "WY"];
 
-    // 收藏夹
     let bookmarks = [];
     try {
       bookmarks = JSON.parse(localStorage.getItem("ipostal_bookmarks") || "[]");
@@ -202,7 +219,7 @@
     }
     let showBookmarksOnly = false;
 
-    // DOM 元素引用
+    // DOM 引用
     const filterSearch = document.getElementById("filter-search");
     const filterPlatform = document.getElementById("filter-platform");
     const filterState = document.getElementById("filter-state");
@@ -225,10 +242,9 @@
         rawAddresses = await res.json();
 
         if (!Array.isArray(rawAddresses) || rawAddresses.length === 0) {
-          throw new Error("addresses.json 文件为空或格式非数组");
+          throw new Error("addresses.json 文件为空");
         }
 
-        // 智能补齐平台标识
         rawAddresses.forEach(item => {
           if (!item.platform) {
             if (item.source && item.source.includes("escapees")) {
@@ -250,10 +266,9 @@
       } catch (err) {
         console.error("加载数据错误:", err);
         container.innerHTML = `
-          <div class="col-span-full text-center py-16 bg-white rounded-2xl border border-red-200 p-6 shadow-sm">
-            <div class="text-red-500 font-bold text-base mb-1">⚠️ 数据加载未成功</div>
-            <div class="text-slate-600 text-xs mb-3 font-mono">${err.message}</div>
-            <div class="text-xs text-slate-400">请确认 addresses.json 在仓库根目录，且 GitHub Actions 已执行生成。</div>
+          <div class="col-span-full text-center py-16 bg-[#0d1322] rounded-2xl border border-rose-900/40 p-6">
+            <div class="text-rose-400 font-bold text-sm mb-1">⚠️ 数据加载未成功</div>
+            <div class="text-slate-400 text-xs mb-3 font-mono">${err.message}</div>
           </div>`;
       }
     }
@@ -264,7 +279,7 @@
       states.forEach(st => {
         const opt = document.createElement("option");
         opt.value = st;
-        opt.textContent = st + (TAX_FREE_STATES.includes(st) ? " · 免税州" : "");
+        opt.textContent = st + (TAX_FREE_STATES.includes(st) ? " · 免税" : "");
         filterState.appendChild(opt);
       });
     }
@@ -330,17 +345,16 @@
       statFilteredCount.textContent = filteredAddresses.length;
     }
 
-    // 四大平台专属色彩徽章
     function getPlatformStyle(platform) {
       switch(platform) {
         case "Escapees RV Club":
-          return "bg-amber-100 text-amber-900 border-amber-300 font-black";
+          return "bg-amber-500/15 text-amber-300 border-amber-500/30";
         case "Sasquatch Mail":
-          return "bg-teal-50 text-teal-700 border-teal-200/80 font-bold";
+          return "bg-teal-500/15 text-teal-300 border-teal-500/30";
         case "Anytime Mailbox":
-          return "bg-purple-50 text-purple-700 border-purple-200/80 font-bold";
+          return "bg-purple-500/15 text-purple-300 border-purple-500/30";
         default:
-          return "bg-sky-50 text-sky-700 border-sky-200/80 font-bold";
+          return "bg-blue-500/15 text-blue-300 border-blue-500/30";
       }
     }
 
@@ -362,34 +376,34 @@
       pageItems.forEach((item, index) => {
         const globalIdx = start + index;
         const card = document.createElement("div");
-        card.className = "bg-white border border-slate-200/80 rounded-2xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-lg hover:border-blue-200 transition-all flex flex-col justify-between card-entry relative group";
+        card.className = "bg-[#0d1322] border border-slate-800/90 rounded-2xl p-5 shadow-lg hover:border-slate-700 hover:shadow-2xl transition-all flex flex-col justify-between card-load relative";
 
         const street = item.validated_address || item.street || "未知地址";
         const fullAddr = `${street}, ${item.city || ''}, ${item.state || ''} ${item.zip || ''}`;
         const price = item.monthly_price ? `$${item.monthly_price}` : "$9.99";
         const isBookmarked = bookmarks.includes(fullAddr);
-        const platformBadgeStyle = getPlatformStyle(item.platform);
+        const platformStyle = getPlatformStyle(item.platform);
 
         let c1Badge = "";
         if (item.c1_acceptable) {
-          c1Badge = `<span class="px-2.5 py-1 text-[11px] font-black rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1 shadow-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>C1 机审秒过
+          c1Badge = `<span class="px-2.5 py-0.5 text-[11px] font-bold rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>C1 机审秒过
           </span>`;
         } else if (item.cmra === "Yes") {
-          c1Badge = `<span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>CMRA 拦截
+          c1Badge = `<span class="px-2.5 py-0.5 text-[11px] font-bold rounded-lg bg-rose-500/15 text-rose-400 border border-rose-500/30 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>CMRA 拦截
           </span>`;
         } else {
-          c1Badge = `<span class="px-2 py-0.5 text-[11px] font-medium rounded-lg bg-slate-100 text-slate-500">待检测</span>`;
+          c1Badge = `<span class="px-2 py-0.5 text-[11px] font-medium rounded-lg bg-slate-800 text-slate-400">待检测</span>`;
         }
 
         let cmraBadge = item.cmra === "No" 
-          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-700 border border-emerald-500/20">CMRA: 否 (安全)</span>`
-          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded-md bg-rose-50 text-rose-600 border border-rose-100">CMRA: 是 (代收点)</span>`;
+          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">CMRA: 否</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-medium rounded-md bg-rose-500/10 text-rose-300 border border-rose-500/20">CMRA: 是</span>`;
 
         let rdiBadge = item.rdi === "Residential"
-          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-blue-50 text-blue-700 border border-blue-200/80">🏡 住宅 (Residential)</span>`
-          : `<span class="px-2 py-0.5 text-[11px] font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">🏢 商业 (Commercial)</span>`;
+          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20">🏡 住宅 (Residential)</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-medium rounded-md bg-slate-800 text-slate-300 border border-slate-700/50">🏢 商业 (Commercial)</span>`;
 
         const mapsUrl = item.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddr)}`;
         const streetViewUrl = item.google_street_view_url || `https://www.google.com/maps/@?api=1&map_action=pano&query=${encodeURIComponent(fullAddr)}`;
@@ -398,34 +412,34 @@
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 text-[10px] uppercase tracking-wide rounded-md border ${platformBadgeStyle}">
+                <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-md border ${platformStyle}">
                   ${item.platform || 'iPostal1'}
                 </span>
-                <span class="text-xs font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200/60">
-                  ${price}<span class="text-[10px] font-normal text-slate-400">/mo</span>
+                <span class="text-xs font-bold text-white bg-slate-800 px-2 py-0.5 rounded-md border border-slate-700">
+                  ${price}<span class="text-[10px] text-slate-400 font-normal">/mo</span>
                 </span>
               </div>
               ${c1Badge}
             </div>
 
-            <h4 class="text-sm font-extrabold text-slate-900 leading-snug line-clamp-2 select-all">${escapeHtml(street)}</h4>
-            <p class="text-xs text-slate-500 font-semibold mt-1 mb-3">${escapeHtml(item.city || '')}, ${item.state || ''} ${item.zip || ''}</p>
+            <h4 class="text-sm font-bold text-white leading-snug line-clamp-2 select-all">${escapeHtml(street)}</h4>
+            <p class="text-xs text-slate-400 font-medium mt-1 mb-3">${escapeHtml(item.city || '')}, ${item.state || ''} ${item.zip || ''}</p>
 
             <div class="flex flex-wrap gap-1.5 mb-4">
               ${cmraBadge}
               ${rdiBadge}
-              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-50 text-slate-400 border border-slate-200">DPV: ${item.dpv_match_code || 'N/A'}</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-800/80 text-slate-400 border border-slate-700/50">DPV: ${item.dpv_match_code || 'N/A'}</span>
             </div>
           </div>
 
-          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+          <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold">
             <div class="flex items-center gap-2">
               <button data-action="bookmark" data-idx="${globalIdx}" 
-                class="w-7 h-7 rounded-lg border border-slate-200 hover:bg-slate-50 flex items-center justify-center transition-colors" title="收藏地址">
-                <span class="${isBookmarked ? 'text-amber-500' : 'text-slate-300'} text-xs pointer-events-none">★</span>
+                class="w-7 h-7 rounded-lg border border-slate-700/70 hover:bg-slate-800 flex items-center justify-center transition-colors">
+                <span class="${isBookmarked ? 'text-amber-400' : 'text-slate-600'} text-xs pointer-events-none">★</span>
               </button>
               <button data-action="copy" data-idx="${globalIdx}" 
-                class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 flex items-center gap-1.5 transition-all active:scale-95">
+                class="px-2.5 py-1.5 rounded-lg border border-slate-700/70 hover:bg-slate-800 text-slate-300 flex items-center gap-1.5 transition-all">
                 <svg class="w-3.5 h-3.5 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 <span class="pointer-events-none">复制</span>
               </button>
@@ -433,12 +447,12 @@
 
             <div class="flex items-center gap-2">
               <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" 
-                class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 flex items-center gap-1 transition-all" title="在 Google Maps 查看位置">
+                class="px-2.5 py-1.5 rounded-lg border border-slate-700/70 hover:bg-slate-800 text-slate-300 flex items-center gap-1 transition-all">
                 <span>地图</span>
-                <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
               <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" 
-                class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1 transition-all shadow-sm shadow-emerald-600/20 font-bold" title="直接打开 360° 实景街景">
+                class="px-2.5 py-1.5 rounded-lg bg-emerald-600/90 hover:bg-emerald-500 text-white flex items-center gap-1 transition-all shadow-md font-bold">
                 <span>实景</span>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
               </a>
@@ -450,7 +464,6 @@
       });
     }
 
-    // 事件委托机制
     container.addEventListener("click", e => {
       const btn = e.target.closest("button[data-action]");
       if (!btn) return;
@@ -466,7 +479,7 @@
         navigator.clipboard.writeText(fullAddr).then(() => {
           showToast("已成功复制完整地址！");
           const original = btn.innerHTML;
-          btn.innerHTML = `<span class="text-emerald-600 font-bold">已复制!</span>`;
+          btn.innerHTML = `<span class="text-emerald-400 font-bold">已复制!</span>`;
           setTimeout(() => { btn.innerHTML = original; }, 1500);
         });
       } else if (action === "bookmark") {
@@ -508,19 +521,19 @@
 
       const prevBtn = document.createElement("button");
       prevBtn.innerHTML = "&larr; 上一页";
-      prevBtn.className = `px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === 1 ? 'border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm'}`;
+      prevBtn.className = `px-3.5 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === 1 ? 'border-slate-800 text-slate-600 cursor-not-allowed bg-slate-900/50' : 'border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700'}`;
       prevBtn.disabled = currentPage === 1;
       prevBtn.onclick = () => { currentPage--; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       pagination.appendChild(prevBtn);
 
       const indicator = document.createElement("span");
-      indicator.className = "text-xs font-bold text-slate-500 px-4";
+      indicator.className = "text-xs font-bold text-slate-400 px-4";
       indicator.textContent = `${currentPage} / ${totalPages}`;
       pagination.appendChild(indicator);
 
       const nextBtn = document.createElement("button");
       nextBtn.innerHTML = "下一页 &rarr;";
-      nextBtn.className = `px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === totalPages ? 'border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm'}`;
+      nextBtn.className = `px-3.5 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === totalPages ? 'border-slate-800 text-slate-600 cursor-not-allowed bg-slate-900/50' : 'border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700'}`;
       nextBtn.disabled = currentPage === totalPages;
       nextBtn.onclick = () => { currentPage++; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       pagination.appendChild(nextBtn);
@@ -533,14 +546,13 @@
     btnShowBookmarks.onclick = () => {
       showBookmarksOnly = !showBookmarksOnly;
       if (showBookmarksOnly) {
-        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-500 text-white rounded-lg transition-all shadow-sm font-black";
+        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-500 text-slate-950 rounded-xl transition-all shadow-md font-bold";
       } else {
-        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold";
+        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-xl hover:bg-amber-500/20 transition-all font-bold";
       }
       applyFilters();
     };
 
-    // 快捷推荐
     document.getElementById("btn-quick-escapees").onclick = () => {
       showBookmarksOnly = false;
       filterPlatform.value = "Escapees RV Club";
@@ -620,7 +632,7 @@
       filterRdi.value = "ALL";
       filterCmra.value = "ALL";
       showBookmarksOnly = false;
-      btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold";
+      btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-xl hover:bg-amber-500/20 transition-all font-bold";
       applyFilters();
     };
 
