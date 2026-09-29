@@ -12,7 +12,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .card-animate {
-      animation: fadeIn 0.25s ease-out forwards;
+      animation: fadeIn 0.2s ease-out forwards;
     }
   </style>
 </head>
@@ -36,6 +36,9 @@
       <div class="flex items-center space-x-2 text-xs font-medium">
         <span id="stat-total" class="px-3 py-1 bg-slate-100 rounded-full text-slate-600">总数据: 加载中...</span>
         <span id="stat-c1" class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">C1 优选: 0</span>
+        <button onclick="toggleBookmarkOnly()" id="btn-show-bookmarks" class="px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full hover:bg-amber-100 transition-colors">
+          ⭐ 收藏夹 (<span id="stat-bookmark-count">0</span>)
+        </button>
       </div>
     </div>
   </header>
@@ -99,24 +102,33 @@
 
       </div>
 
-      <!-- 快捷标签与重置 -->
+      <!-- 快捷标签、导出与重置 -->
       <div class="mt-4 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-slate-400">快速推荐:</span>
           <button onclick="setQuickFilter('C1_HIGH')" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg transition-colors font-medium border border-emerald-200">
-            🎯 C1 黄金住宅地址 (CMRA=No & RDI=Residential)
+            🎯 C1 黄金住宅地址
+          </button>
+          <button onclick="setQuickFilter('TAX_FREE')" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-lg transition-colors font-medium border border-indigo-200">
+            🏝️ 免税州 C1 优选 (AK, FL, NV, TX, WA 等)
           </button>
           <button onclick="setQuickFilter('ALL_NON_CMRA')" class="px-2.5 py-1 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-lg transition-colors font-medium border border-blue-200">
-            🛡️ 全部非 CMRA (通过率较高)
+            🛡️ 全部非 CMRA 地址
           </button>
         </div>
-        <button id="btn-reset" class="text-slate-500 hover:text-slate-800 transition-colors underline">
-          重置所有筛选
-        </button>
+        <div class="flex items-center space-x-3">
+          <button onclick="exportToCSV()" class="text-blue-600 hover:text-blue-800 transition-colors font-medium flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>导出 CSV</span>
+          </button>
+          <button id="btn-reset" class="text-slate-400 hover:text-slate-700 transition-colors underline">
+            重置筛选
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- 结果统计与排序状态 -->
+    <!-- 结果统计 -->
     <div class="flex items-center justify-between mb-4 px-1 text-sm text-slate-500">
       <div>
         筛选出 <span id="stat-filtered-count" class="font-bold text-slate-800">0</span> 条符合条件的地址
@@ -127,9 +139,7 @@
     </div>
 
     <!-- 地址列表卡片容器 -->
-    <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- 动态插入卡片 -->
-    </div>
+    <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <!-- 空数据展示 -->
     <div id="empty-state" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-4">
@@ -139,23 +149,25 @@
         </svg>
       </div>
       <h3 class="text-base font-semibold text-slate-700">未找到符合条件的地址</h3>
-      <p class="text-xs text-slate-400 mt-1">请尝试清除部分筛选条件或搜索其他关键词</p>
+      <p class="text-xs text-slate-400 mt-1">请尝试放宽筛选条件或搜索其他关键词</p>
     </div>
 
     <!-- 分页控件 -->
-    <div id="pagination" class="mt-8 flex items-center justify-center space-x-2 pb-12">
-      <!-- 分页按钮 -->
-    </div>
+    <div id="pagination" class="mt-8 flex items-center justify-center space-x-2 pb-12"></div>
 
   </main>
 
   <script>
     let rawAddresses = [];
     let filteredAddresses = [];
+    let bookmarks = JSON.parse(localStorage.getItem("ipostal_bookmarks") || "[]");
+    let showBookmarksOnly = false;
     let currentPage = 1;
     const PAGE_SIZE = 30;
 
-    // 获取 DOM 元素
+    const TAX_FREE_STATES = ["AK", "FL", "NV", "SD", "TN", "TX", "WA", "WY"];
+
+    // DOM 元素
     const filterSearch = document.getElementById("filter-search");
     const filterState = document.getElementById("filter-state");
     const filterRdi = document.getElementById("filter-rdi");
@@ -167,9 +179,10 @@
     const pagination = document.getElementById("pagination");
     const statTotal = document.getElementById("stat-total");
     const statC1 = document.getElementById("stat-c1");
+    const statBookmarkCount = document.getElementById("stat-bookmark-count");
     const statFilteredCount = document.getElementById("stat-filtered-count");
 
-    // 从 JSON 加载数据
+    // 加载数据
     async function loadData() {
       try {
         const res = await fetch("addresses.json");
@@ -178,24 +191,23 @@
 
         initStatesDropdown();
         readUrlParams();
+        updateBookmarkCount();
         applyFilters();
       } catch (err) {
         container.innerHTML = `<div class="col-span-full text-center text-red-500 py-10 font-medium">数据加载失败: ${err.message}</div>`;
       }
     }
 
-    // 初始化“州”下拉列表
     function initStatesDropdown() {
       const states = Array.from(new Set(rawAddresses.map(a => a.state).filter(Boolean))).sort();
       states.forEach(st => {
         const opt = document.createElement("option");
         opt.value = st;
-        opt.textContent = st;
+        opt.textContent = st + (TAX_FREE_STATES.includes(st) ? " (免税)" : "");
         filterState.appendChild(opt);
       });
     }
 
-    // 读取 URL 参数以实现与 usaddres.com 一模一样的链接传参
     function readUrlParams() {
       const params = new URLSearchParams(window.location.search);
       if (params.get("state")) filterState.value = params.get("state").toUpperCase();
@@ -205,7 +217,6 @@
       if (params.get("q")) filterSearch.value = params.get("q");
     }
 
-    // 同步到 URL 参数
     function updateUrlParams() {
       const params = new URLSearchParams();
       if (filterState.value !== "ALL") params.set("state", filterState.value);
@@ -218,7 +229,6 @@
       window.history.replaceState({}, "", newUrl);
     }
 
-    // 核心过滤逻辑
     function applyFilters() {
       const q = filterSearch.value.toLowerCase().trim();
       const state = filterState.value;
@@ -227,6 +237,9 @@
       const c1 = filterC1.value;
 
       filteredAddresses = rawAddresses.filter(item => {
+        const fullAddr = `${item.validated_address || item.street}, ${item.city}, ${item.state} ${item.zip}`;
+
+        if (showBookmarksOnly && !bookmarks.includes(fullAddr)) return false;
         if (state !== "ALL" && item.state !== state) return false;
         if (rdi !== "ALL" && item.rdi !== rdi) return false;
         if (cmra !== "ALL" && item.cmra !== cmra) return false;
@@ -251,7 +264,6 @@
       renderPagination();
     }
 
-    // 更新统计栏
     function updateStats() {
       statTotal.textContent = `总数据: ${rawAddresses.length}`;
       const c1Count = rawAddresses.filter(a => a.c1_acceptable).length;
@@ -259,7 +271,6 @@
       statFilteredCount.textContent = filteredAddresses.length;
     }
 
-    // 渲染卡片
     function renderCards() {
       container.innerHTML = "";
 
@@ -282,8 +293,8 @@
         const street = item.validated_address || item.street;
         const fullAddr = `${street}, ${item.city}, ${item.state} ${item.zip}`;
         const price = item.monthly_price ? `$${item.monthly_price}/月` : "$9.99/月";
+        const isBookmarked = bookmarks.includes(fullAddr);
 
-        // C1 状态徽章
         let c1Badge = "";
         if (item.c1_acceptable) {
           c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200">✅ C1 极大概率通过</span>`;
@@ -293,17 +304,14 @@
           c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-slate-100 text-slate-600">待验证</span>`;
         }
 
-        // CMRA 徽章
         let cmraBadge = item.cmra === "No" 
           ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">CMRA: No</span>`
           : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-rose-50 text-rose-700 border border-rose-200">CMRA: Yes</span>`;
 
-        // RDI 徽章
         let rdiBadge = item.rdi === "Residential"
           ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200">RDI: 住宅</span>`
           : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-slate-100 text-slate-700">RDI: 商业</span>`;
 
-        // 地图与街景链接
         const mapsUrl = item.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddr)}`;
         const streetViewUrl = item.google_street_view_url || `https://www.google.com/maps/@?api=1&map_action=pano&query=${encodeURIComponent(fullAddr)}`;
 
@@ -325,22 +333,26 @@
           </div>
 
           <div class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
-            <button onclick="copyToClipboard('${fullAddr.replace(/'/g, "\\'")}', this)" 
-              class="text-slate-600 hover:text-blue-600 flex items-center space-x-1 transition-colors">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
-              <span>复制地址</span>
-            </button>
+            <div class="flex items-center space-x-2">
+              <button onclick="toggleBookmark('${fullAddr.replace(/'/g, "\\'")}')" 
+                class="p-1 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors" title="收藏">
+                <span class="${isBookmarked ? 'text-amber-500' : 'text-slate-300'} text-sm leading-none">★</span>
+              </button>
+              <button onclick="copyToClipboard('${fullAddr.replace(/'/g, "\\'")}', this)" 
+                class="text-slate-600 hover:text-blue-600 flex items-center space-x-1 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>复制</span>
+              </button>
+            </div>
 
             <div class="flex items-center space-x-3">
               <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" 
-                class="text-slate-500 hover:text-blue-600 flex items-center space-x-0.5 transition-colors" title="在 Google 地图查看">
+                class="text-slate-500 hover:text-blue-600 flex items-center space-x-0.5 transition-colors">
                 <span>地图</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
               <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" 
-                class="text-emerald-600 hover:text-emerald-700 flex items-center space-x-0.5 font-semibold transition-colors" title="查看 Google 街景实景">
+                class="text-emerald-600 hover:text-emerald-700 flex items-center space-x-0.5 font-semibold transition-colors">
                 <span>实景</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
               </a>
@@ -352,7 +364,6 @@
       });
     }
 
-    // 渲染分页按钮
     function renderPagination() {
       pagination.innerHTML = "";
       const totalPages = Math.ceil(filteredAddresses.length / PAGE_SIZE);
@@ -378,7 +389,6 @@
       pagination.appendChild(nextBtn);
     }
 
-    // 一键复制
     function copyToClipboard(text, btn) {
       navigator.clipboard.writeText(text).then(() => {
         const originalText = btn.innerHTML;
@@ -387,38 +397,101 @@
       });
     }
 
-    // 快捷推荐
-    function setQuickFilter(type) {
-      if (type === "C1_HIGH") {
-        filterCmra.value = "No";
-        filterRdi.value = "Residential";
-        filterC1.value = "YES";
-      } else if (type === "ALL_NON_CMRA") {
-        filterCmra.value = "No";
-        filterRdi.value = "ALL";
-        filterC1.value = "ALL";
+    function toggleBookmark(addr) {
+      if (bookmarks.includes(addr)) {
+        bookmarks = bookmarks.filter(b => b !== addr);
+      } else {
+        bookmarks.push(addr);
+      }
+      localStorage.setItem("ipostal_bookmarks", JSON.stringify(bookmarks));
+      updateBookmarkCount();
+      renderCards();
+    }
+
+    function updateBookmarkCount() {
+      statBookmarkCount.textContent = bookmarks.length;
+    }
+
+    function toggleBookmarkOnly() {
+      showBookmarksOnly = !showBookmarksOnly;
+      const btn = document.getElementById("btn-show-bookmarks");
+      if (showBookmarksOnly) {
+        btn.classList.add("bg-amber-500", "text-white");
+        btn.classList.remove("bg-amber-50", "text-amber-700");
+      } else {
+        btn.classList.remove("bg-amber-500", "text-white");
+        btn.classList.add("bg-amber-50", "text-amber-700");
       }
       applyFilters();
     }
 
-    // 重置所有筛选
+    function setQuickFilter(type) {
+      showBookmarksOnly = false;
+      document.getElementById("btn-show-bookmarks").classList.remove("bg-amber-500", "text-white");
+
+      if (type === "C1_HIGH") {
+        filterCmra.value = "No";
+        filterRdi.value = "Residential";
+        filterC1.value = "YES";
+        filterState.value = "ALL";
+      } else if (type === "TAX_FREE") {
+        filterCmra.value = "No";
+        filterC1.value = "YES";
+        filterRdi.value = "ALL";
+        // 自动定位首个有数据的免税州，或综合过滤
+        filterSearch.value = "";
+      } else if (type === "ALL_NON_CMRA") {
+        filterCmra.value = "No";
+        filterRdi.value = "ALL";
+        filterC1.value = "ALL";
+        filterState.value = "ALL";
+      }
+      applyFilters();
+    }
+
+    function exportToCSV() {
+      if (filteredAddresses.length === 0) return alert("没有可导出的数据");
+      const headers = ["Street", "City", "State", "Zip", "Price", "RDI", "CMRA", "C1_Pass", "Google_Maps", "Street_View"];
+      const rows = filteredAddresses.map(a => [
+        `"${(a.validated_address || a.street).replace(/"/g, '""')}"`,
+        `"${a.city}"`,
+        `"${a.state}"`,
+        `"${a.zip}"`,
+        `"${a.monthly_price || 9.99}"`,
+        `"${a.rdi || ''}"`,
+        `"${a.cmra || ''}"`,
+        `"${a.c1_acceptable ? 'YES' : 'NO'}"`,
+        `"${a.google_maps_url || ''}"`,
+        `"${a.google_street_view_url || ''}"`
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `addresses_export_${new Date().toISOString().slice(0,10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
     btnReset.onclick = () => {
       filterSearch.value = "";
       filterState.value = "ALL";
       filterRdi.value = "ALL";
       filterCmra.value = "ALL";
       filterC1.value = "ALL";
+      showBookmarksOnly = false;
+      document.getElementById("btn-show-bookmarks").classList.remove("bg-amber-500", "text-white");
       applyFilters();
     };
 
-    // 监听筛选事件
     filterSearch.addEventListener("input", () => applyFilters());
     filterState.addEventListener("change", () => applyFilters());
     filterRdi.addEventListener("change", () => applyFilters());
     filterCmra.addEventListener("change", () => applyFilters());
     filterC1.addEventListener("change", () => applyFilters());
 
-    // 启动
     loadData();
   </script>
 </body>
