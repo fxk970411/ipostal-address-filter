@@ -5,7 +5,16 @@
     "state": "AK",
     "zip": "99501",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "243 E 5th Ave",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=243+E+5th+Ave%2C+Anchorage%2C+AK+99501",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=61.21766,-149.88018"
   },
   {
     "street": "3300 Arctic Blvd Suite 201",
@@ -13,7 +22,16 @@
     "state": "AK",
     "zip": "99503",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3300 Arctic Blvd Ste 201",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3300+Arctic+Blvd+Ste+201%2C+Anchorage%2C+AK+99503",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=61.19074,-149.89814"
   },
   {
     "street": "750 W Dimond Blvd Ste 103",
@@ -21,7 +39,16 @@
     "state": "AK",
     "zip": "99515",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "750 W Dimond Blvd Ste 103",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=750+W+Dimond+Blvd+Ste+103%2C+Anchorage%2C+AK+99515",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=61.14199,-149.90135"
   },
   {
     "street": "500 E 5th Ave Suite C",
@@ -29,7 +56,16 @@
     "state": "AK",
     "zip": "99705",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "500 E 5th Ave Ste C",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=500+E+5th+Ave+Ste+C%2C+North+Pole%2C+AK+99705",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=64.74533,-147.32766"
   },
   {
     "street": "170 Brothers Rd",
@@ -37,7 +73,16 @@
     "state": "AL",
     "zip": "35951",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "170 Brothers Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=170+Brothers+Rd%2C+Albertville%2C+AL+35951",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.36361,-86.13191"
   },
   {
     "street": "8171 US Highway 431 Suite E",
@@ -45,7 +90,16 @@
     "state": "AL",
     "zip": "35950",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "8171 US Highway 431 Ste E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=8171+US+Highway+431+Ste+E%2C+Albertville%2C+AL+35950",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.29146,-86.24842"
   },
   {
     "street": "1036 Highway 72 East",
@@ -53,7 +107,16 @@
     "state": "AL",
     "zip": "35611",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1036 US Highway 72 E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1036+US+Highway+72+E%2C+Athens%2C+AL+35611",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.79043,-86.98221"
   },
   {
     "street": "1207 E Forrest St Suite D",
@@ -61,7 +124,16 @@
     "state": "AL",
     "zip": "35613",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1207 E Forrest St Ste D",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1207+E+Forrest+St+Ste+D%2C+Athens%2C+AL+35613",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.7966,-86.95129"
   },
   {
     "street": "105 Vulcan Road Ste 221",
@@ -69,7 +141,16 @@
     "state": "AL",
     "zip": "35209",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "105 Vulcan Rd Ste 221",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=105+Vulcan+Rd+Ste+221%2C+Birmingham%2C+AL+35209",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.46403,-86.82797"
   },
   {
     "street": "120 19th Street North, Suite 200",
@@ -77,7 +158,16 @@
     "state": "AL",
     "zip": "35203",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "120 19th St N Ste 200",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=120+19th+St+N+Ste+200%2C+Birmingham%2C+AL+35203",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.51392,-86.8073"
   },
   {
     "street": "1401 Doug Baker Blvd Ste 107",
@@ -85,7 +175,16 @@
     "state": "AL",
     "zip": "35242",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1401 Doug Baker Blvd Ste 107",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1401+Doug+Baker+Blvd+Ste+107%2C+Birmingham%2C+AL+35242",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.40933,-86.66989"
   },
   {
     "street": "1430 Gadsden Hwy Ste 116",
@@ -93,7 +192,16 @@
     "state": "AL",
     "zip": "35235",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1430 Gadsden Hwy Ste 116",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1430+Gadsden+Hwy+Ste+116%2C+Birmingham%2C+AL+35235",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.59674,-86.64538"
   },
   {
     "street": "1905 Edwards Lake Road",
@@ -101,7 +209,16 @@
     "state": "AL",
     "zip": "35235",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1905 Edwards Lake Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1905+Edwards+Lake+Rd%2C+Birmingham%2C+AL+35235",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.59579,-86.64835"
   },
   {
     "street": "3659 Lorna Rd Ste 165",
@@ -109,7 +226,16 @@
     "state": "AL",
     "zip": "35216",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3659 Lorna Rd Ste 165",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3659+Lorna+Rd+Ste+165%2C+Birmingham%2C+AL+35216",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.37986,-86.79939"
   },
   {
     "street": "505 20th St North Suite 1220",
@@ -117,7 +243,16 @@
     "state": "AL",
     "zip": "35203",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "505 20th St N Ste 1220",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=505+20th+St+N+Ste+1220%2C+Birmingham%2C+AL+35203",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.51825,-86.80808"
   },
   {
     "street": "5607 1st Ave S",
@@ -125,7 +260,16 @@
     "state": "AL",
     "zip": "35212",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5607 1st Ave S",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5607+1st+Ave+S%2C+Birmingham%2C+AL+35212",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.54059,-86.75016"
   },
   {
     "street": "60 Chelsea Corners",
@@ -133,7 +277,16 @@
     "state": "AL",
     "zip": "35043",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "60 Chelsea Cors",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=60+Chelsea+Cors%2C+Chelsea%2C+AL+35043",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.34635,-86.63418"
   },
   {
     "street": "26050 Equity Dr Ste E",
@@ -141,7 +294,16 @@
     "state": "AL",
     "zip": "36526",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "26050 Equity Dr Ste E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=26050+Equity+Dr+Ste+E%2C+Daphne%2C+AL+36526",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.60411,-87.87227"
   },
   {
     "street": "817 Beltline Rd SW",
@@ -149,7 +311,16 @@
     "state": "AL",
     "zip": "35601",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "817 Beltline Rd SW",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=817+Beltline+Rd+SW%2C+Decatur%2C+AL+35601",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.56042,-87.00487"
   },
   {
     "street": "1110 Boll Weevil Cir Ste D",
@@ -157,7 +328,16 @@
     "state": "AL",
     "zip": "36330-1390",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1110 Boll Weevil Cir Ste D",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1110+Boll+Weevil+Cir+Ste+D%2C+Enterprise%2C+AL+36330-1390",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=31.33513,-85.85382"
   },
   {
     "street": "11468 US Highway 431 South",
@@ -165,7 +345,16 @@
     "state": "AL",
     "zip": "35976",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "11468 US Highway 431",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=11468+US+Highway+431%2C+Guntersville%2C+AL+35976",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.30247,-86.27933"
   },
   {
     "street": "108 Commercial St NE",
@@ -173,7 +362,16 @@
     "state": "AL",
     "zip": "35077",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "108 Commercial St NE",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=108+Commercial+St+NE%2C+Hanceville%2C+AL+35077",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.05949,-86.768"
   },
   {
     "street": "105 Washington St. SE Suite 201",
@@ -181,7 +379,16 @@
     "state": "AL",
     "zip": "35801",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "105 Washington St SE Ste 201",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=105+Washington+St+SE+Ste+201%2C+Huntsville%2C+AL+35801",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.72067,-86.58346"
   },
   {
     "street": "1300 Meridian St N Suite 200a",
@@ -189,7 +396,16 @@
     "state": "AL",
     "zip": "35801",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1300 Meridian St N Ste 200A",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1300+Meridian+St+N+Ste+200A%2C+Huntsville%2C+AL+35801",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.74685,-86.58402"
   },
   {
     "street": "143 Martin Rd SW Ste B",
@@ -197,7 +413,16 @@
     "state": "AL",
     "zip": "35824",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "143 Martin Rd SW Ste B",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Commercial Non-CMRA)",
+    "c1_reason": "Valid delivery point and not flagged as CMRA",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=143+Martin+Rd+SW+Ste+B%2C+Huntsville%2C+AL+35824",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.64783,-86.7316"
   },
   {
     "street": "600 Boulevard South SW Suite 104",
@@ -205,7 +430,16 @@
     "state": "AL",
     "zip": "35802",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "600 Boulevard South SW Ste 104",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Commercial Non-CMRA)",
+    "c1_reason": "Valid delivery point and not flagged as CMRA",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=600+Boulevard+South+SW+Ste+104%2C+Huntsville%2C+AL+35802",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.66938,-86.57525"
   },
   {
     "street": "805 Wellman Ave NE",
@@ -213,7 +447,16 @@
     "state": "AL",
     "zip": "35801",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "805 Wellman Ave NE",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=805+Wellman+Ave+NE%2C+Huntsville%2C+AL+35801",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.73777,-86.57522"
   },
   {
     "street": "9032 Memorial Parkway SW, STE A",
@@ -221,7 +464,16 @@
     "state": "AL",
     "zip": "35802",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "9032 Memorial Pkwy SW Ste A",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=9032+Memorial+Pkwy+SW+Ste+A%2C+Huntsville%2C+AL+35802",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.64942,-86.5671"
   },
   {
     "street": "7830 Highway 72 STE 100",
@@ -229,7 +481,16 @@
     "state": "AL",
     "zip": "35758",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "7830 Highway 72 W Ste 100",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7830+Highway+72+W+Ste+100%2C+Madison%2C+AL+35758",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.7538,-86.7423"
   },
   {
     "street": "1111 East I-65 Service Rd South Ste 104",
@@ -237,7 +498,16 @@
     "state": "AL",
     "zip": "36606",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1111 E I65 Service Rd S Ste 104",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1111+E+I65+Service+Rd+S+Ste+104%2C+Mobile%2C+AL+36606",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.66731,-88.12675"
   },
   {
     "street": "800 Downtowner Blvd Suite 105",
@@ -245,7 +515,16 @@
     "state": "AL",
     "zip": "36609",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "800 Downtowner Blvd Ste 105",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=800+Downtowner+Blvd+Ste+105%2C+Mobile%2C+AL+36609",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.67349,-88.14023"
   },
   {
     "street": "4171 LOMAC STREET SUITE G",
@@ -253,7 +532,16 @@
     "state": "AL",
     "zip": "36106",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4171 Lomac St Ste G",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4171+Lomac+St+Ste+G%2C+Montgomery%2C+AL+36106",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.3577,-86.23407"
   },
   {
     "street": "4171 Lomac Street Suite F",
@@ -261,7 +549,16 @@
     "state": "AL",
     "zip": "36106",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4171 Lomac St Ste F",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4171+Lomac+St+Ste+F%2C+Montgomery%2C+AL+36106",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.3577,-86.23407"
   },
   {
     "street": "5065 US Hwy 78 W Suite A",
@@ -269,7 +566,16 @@
     "state": "AL",
     "zip": "36203",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5065 US Highway 78 W Ste A",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5065+US+Highway+78+W+Ste+A%2C+Oxford%2C+AL+36203",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.59678,-85.93164"
   },
   {
     "street": "3552 Pelham Parkway",
@@ -277,7 +583,16 @@
     "state": "AL",
     "zip": "35124",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3552 Pelham Pkwy",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3552+Pelham+Pkwy%2C+Pelham+%28Birmingham%29%2C+AL+35124",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.26648,-86.81039"
   },
   {
     "street": "3331 Rainbow Dr Ste E",
@@ -285,7 +600,16 @@
     "state": "AL",
     "zip": "35906",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "3331 Rainbow Dr Ste E",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3331+Rainbow+Dr+Ste+E%2C+Rainbow+City%2C+AL+35906",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.96119,-86.03335"
   },
   {
     "street": "7272 Theodore Dawes Rd Ste C",
@@ -293,7 +617,16 @@
     "state": "AL",
     "zip": "36582",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "7272 Theodore Dawes Rd Ste C",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Commercial Non-CMRA)",
+    "c1_reason": "Valid delivery point and not flagged as CMRA",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=7272+Theodore+Dawes+Rd+Ste+C%2C+Theodore%2C+AL+36582",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.56312,-88.21398"
   },
   {
     "street": "8872 Gadsden Hwy",
@@ -301,7 +634,16 @@
     "state": "AL",
     "zip": "35173",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "8872 Gadsden Hwy",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=8872+Gadsden+Hwy%2C+Trussville%2C+AL+35173",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.69111,-86.5272"
   },
   {
     "street": "4049 US Highway 231",
@@ -309,7 +651,16 @@
     "state": "AL",
     "zip": "36093",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "4049 US Highway 231",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=4049+US+Highway+231%2C+Wetumpka%2C+AL+36093",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.50195,-86.21626"
   },
   {
     "street": "412 Town Center East",
@@ -317,7 +668,16 @@
     "state": "AR",
     "zip": "72714",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "412 Town Ctr NE",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=412+Town+Ctr+NE%2C+Bella+Vista%2C+AR+72714",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.47655,-94.24645"
   },
   {
     "street": "1116 S. Walton Blvd Suite 210",
@@ -325,7 +685,16 @@
     "state": "AR",
     "zip": "72712",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "1116 S Walton Blvd Ste 210",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=1116+S+Walton+Blvd+Ste+210%2C+Bentonville%2C+AR+72712",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.35992,-94.21592"
   },
   {
     "street": "3604 NW Frontage Rd Suite 6",
@@ -333,7 +702,16 @@
     "state": "AR",
     "zip": "72712",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "3604 NW Frontage Rd # 6",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Commercial Non-CMRA)",
+    "c1_reason": "Valid delivery point and not flagged as CMRA",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=3604+NW+Frontage+Rd+%23+6%2C+Bentonville%2C+AR+72712",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.41923,-94.22198"
   },
   {
     "street": "900 SE 5th St Suite 22",
@@ -341,7 +719,16 @@
     "state": "AR",
     "zip": "72712",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "900 SE 5th St Ste 22",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=900+SE+5th+St+Ste+22%2C+Bentonville%2C+AR+72712",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.36752,-94.20061"
   },
   {
     "street": "5313 Hwy 5 Suite 305",
@@ -349,7 +736,16 @@
     "state": "AR",
     "zip": "72022",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "5313 Highway 5 N Ste 305",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5313+Highway+5+N+Ste+305%2C+Bryant%2C+AR+72022",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.62269,-92.50324"
   },
   {
     "street": "813 Oak Street Suite 10",
@@ -357,7 +753,16 @@
     "state": "AR",
     "zip": "72032",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "813 Oak St Ste 10",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=813+Oak+St+Ste+10%2C+Conway%2C+AR+72032",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=35.09169,-92.43517"
   },
   {
     "street": "287 S Broadview Ste D1",
@@ -365,7 +770,16 @@
     "state": "AR",
     "zip": "72058",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "No",
+    "dpv_match_code": "Y",
+    "validated_address": "287 S Broadview St # D1",
+    "c1_acceptable": true,
+    "c1_approval_tier": "Medium (Commercial Non-CMRA)",
+    "c1_reason": "Valid delivery point and not flagged as CMRA",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=287+S+Broadview+St+%23+D1%2C+Greenbrier%2C+AR+72058",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=35.21584,-92.38845"
   },
   {
     "street": "909 W Main St",
@@ -373,7 +787,16 @@
     "state": "AR",
     "zip": "72076",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "909 W Main St",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=909+W+Main+St%2C+Jacksonville%2C+AR+72076",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.8672,-92.11944"
   },
   {
     "street": "361 Southwest Drive",
@@ -381,7 +804,16 @@
     "state": "AR",
     "zip": "72401",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "361 Southwest Dr",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=361+Southwest+Dr%2C+Jonesboro%2C+AR+72401",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=35.81768,-90.70795"
   },
   {
     "street": "6834 Cantrell Road",
@@ -389,7 +821,16 @@
     "state": "AR",
     "zip": "72207",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "6834 Cantrell Rd",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=6834+Cantrell+Rd%2C+Little+Rock%2C+AR+72207",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.76842,-92.35027"
   },
   {
     "street": "40 Plaza Way Ste 8",
@@ -397,7 +838,16 @@
     "state": "AR",
     "zip": "72653",
     "monthly_price": 9.99,
-    "source": "https://ipostal1.com/digital-mailbox-addresses.php"
+    "source": "https://ipostal1.com/digital-mailbox-addresses.php",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "dpv_match_code": "Y",
+    "validated_address": "40 Plaza Way Ste 8",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Failed: Address is registered as CMRA (Virtual Mailbox)",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=40+Plaza+Way+Ste+8%2C+Mountain+Home%2C+AR+72653",
+    "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=36.35673,-92.33936"
   },
   {
     "street": "2910 E. Harding Ave.",
