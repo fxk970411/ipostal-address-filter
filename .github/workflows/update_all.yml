@@ -1,0 +1,36 @@
+name: Update Multi-Platform Addresses
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run multi-platform scraper
+        run: |
+          python scraper_all.py
+
+      - name: Commit updated addresses
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add addresses.json
+          git commit -m "Inject niche seeds and scrape multi-platform addresses" || exit 0
+          git pull --rebase origin main
+          git push origin main
