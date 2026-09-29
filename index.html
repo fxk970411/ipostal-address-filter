@@ -3,176 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iPostal1 地址筛选器 - CMRA/RDI/C1 预审与街景查询</title>
-  <!-- Tailwind CSS CDN -->
+  <title>US Address Explorer | 美卡四大平台合规信箱风控系统</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .card-animate {
-      animation: fadeIn 0.2s ease-out forwards;
-    }
+    .card-entry { animation: slideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans">
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- 浮动复制提示框 -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-slate-700 text-xs font-bold">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-text">地址已复制到剪贴板</span>
+  </div>
 
   <!-- 顶部导航 -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <div class="bg-blue-600 text-white p-2 rounded-xl shadow-sm">
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
         <div>
-          <h1 class="text-lg font-bold text-slate-900 leading-tight">US Address Filter & Explorer</h1>
-          <p class="text-xs text-slate-500">iPostal1 真实地址 · CMRA / RDI 智能风控校验</p>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base font-extrabold text-slate-900 tracking-tight">US Address Intelligence</h1>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-700 tracking-wide">4-PLATFORM LIVE</span>
+          </div>
+          <p class="text-[11px] text-slate-500 font-medium">全网信箱风控数据库 · iPostal1 / Anytime / Sasquatch / Escapees</p>
         </div>
       </div>
-      <div class="flex items-center space-x-2 text-xs font-medium">
-        <span id="stat-total" class="px-3 py-1 bg-slate-100 rounded-full text-slate-600">总数据: 加载中...</span>
-        <span id="stat-c1" class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">C1 优选: 0</span>
-        <button onclick="toggleBookmarkOnly()" id="btn-show-bookmarks" class="px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full hover:bg-amber-100 transition-colors">
-          ⭐ 收藏夹 (<span id="stat-bookmark-count">0</span>)
+
+      <!-- 全局数据看板 -->
+      <div class="flex items-center gap-2 text-xs font-bold">
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 rounded-lg text-slate-600 border border-slate-200">
+          <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+          <span>总库: <strong id="stat-total" class="text-slate-900 font-black">0</strong></span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 rounded-lg text-emerald-700 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>C1 优选: <strong id="stat-c1" class="text-emerald-800 font-black">0</strong></span>
+        </div>
+        <button id="btn-show-bookmarks" class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold">
+          <span>⭐ 收藏 (<span id="stat-bookmark-count">0</span>)</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 主体区域 -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
+  <!-- 主体工作区 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
 
     <!-- 筛选面板 -->
-    <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm mb-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5">
         
         <!-- 搜索框 -->
-        <div class="lg:col-span-2">
-          <label class="block text-xs font-semibold text-slate-600 mb-1">关键词搜索</label>
+        <div class="lg:col-span-4">
+          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">关键词搜索</label>
           <div class="relative">
-            <input type="text" id="filter-search" placeholder="输入街道、城市或邮编..." 
-              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all pl-9" />
+            <input type="text" id="filter-search" placeholder="输入街道名称、城市或五位邮编..." 
+              class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all pl-9 text-slate-800 placeholder-slate-400" />
             <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
           </div>
         </div>
 
-        <!-- 州筛选 -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">所在州 (State)</label>
-          <select id="filter-state" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+        <!-- 来源平台 (四大平台) -->
+        <div class="lg:col-span-2">
+          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">信箱平台 (Platform)</label>
+          <select id="filter-platform" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
+            <option value="ALL">全部四大平台 (All)</option>
+            <option value="Escapees RV Club">⛺ Escapees RV Club (常住住所)</option>
+            <option value="Sasquatch Mail">🟢 Sasquatch Mail (独栋低调)</option>
+            <option value="Anytime Mailbox">🟣 Anytime Mailbox (偏远下沉)</option>
+            <option value="iPostal1">🔵 iPostal1 (全美最大加盟)</option>
+          </select>
+        </div>
+
+        <!-- 所在州 -->
+        <div class="lg:col-span-2">
+          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">所在州 (State)</label>
+          <select id="filter-state" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
             <option value="ALL">全部州 (All)</option>
           </select>
         </div>
 
-        <!-- RDI 属性 -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">地址属性 (RDI)</label>
-          <select id="filter-rdi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+        <!-- 地址属性 RDI -->
+        <div class="lg:col-span-2">
+          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">住宅/商业 (RDI)</label>
+          <select id="filter-rdi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
             <option value="ALL">全部 (All)</option>
-            <option value="Residential">住宅 (Residential)</option>
-            <option value="Commercial">商业 (Commercial)</option>
+            <option value="Residential">🏡 住宅 (Residential)</option>
+            <option value="Commercial">🏢 商业 (Commercial)</option>
           </select>
         </div>
 
-        <!-- CMRA 属性 -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">转运标记 (CMRA)</label>
-          <select id="filter-cmra" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+        <!-- CMRA 状态 -->
+        <div class="lg:col-span-2">
+          <label class="block text-[11px] font-black tracking-wider text-slate-500 uppercase mb-1.5">转运标记 (CMRA)</label>
+          <select id="filter-cmra" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all cursor-pointer">
             <option value="ALL">全部 (All)</option>
-            <option value="No">非转运机构 (CMRA: No)</option>
-            <option value="Yes">转运/代收机构 (CMRA: Yes)</option>
-          </select>
-        </div>
-
-        <!-- C1 预审状态 -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">C1 预审准入</label>
-          <select id="filter-c1" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-            <option value="ALL">全部 (All)</option>
-            <option value="YES">通过 (Likely Accepted)</option>
-            <option value="NO">拦截 (Rejected)</option>
+            <option value="No">🛡️ CMRA: No (非转运机构)</option>
+            <option value="Yes">⚠️ CMRA: Yes (代收点)</option>
           </select>
         </div>
 
       </div>
 
-      <!-- 快捷标签、导出与重置 -->
-      <div class="mt-4 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <!-- 快捷标签排 -->
+      <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div class="flex flex-wrap items-center gap-2">
-          <span class="text-slate-400">快速推荐:</span>
-          <button onclick="setQuickFilter('C1_HIGH')" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg transition-colors font-medium border border-emerald-200">
-            🎯 C1 黄金住宅地址
+          <span class="text-slate-400 font-bold text-[11px]">快捷直达:</span>
+          
+          <button id="btn-quick-escapees" class="px-2.5 py-1 bg-amber-50 text-amber-800 hover:bg-amber-100 rounded-lg transition-colors font-black border border-amber-300 shadow-sm flex items-center gap-1">
+            <span>⛺ Escapees 旅居常住中心</span>
           </button>
-          <button onclick="setQuickFilter('TAX_FREE')" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-lg transition-colors font-medium border border-indigo-200">
-            🏝️ 免税州 C1 优选 (AK, FL, NV, TX, WA 等)
+
+          <button id="btn-quick-c1" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg transition-colors font-black border border-emerald-200 shadow-sm flex items-center gap-1">
+            <span>🎯 C1 黄金住宅地址</span>
           </button>
-          <button onclick="setQuickFilter('ALL_NON_CMRA')" class="px-2.5 py-1 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-lg transition-colors font-medium border border-blue-200">
-            🛡️ 全部非 CMRA 地址
+          
+          <button id="btn-quick-taxfree" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-lg transition-colors font-black border border-indigo-200 shadow-sm flex items-center gap-1">
+            <span>🏝️ 免税州优选 (AK, FL, NV, TX, WA)</span>
+          </button>
+
+          <button id="btn-quick-sasquatch" class="px-2.5 py-1 bg-teal-50 text-teal-700 hover:bg-teal-100 rounded-lg transition-colors font-black border border-teal-200 shadow-sm flex items-center gap-1">
+            <span>🟢 Sasquatch 独立平房</span>
+          </button>
+
+          <button id="btn-quick-anytime" class="px-2.5 py-1 bg-purple-50 text-purple-700 hover:bg-purple-100 rounded-lg transition-colors font-black border border-purple-200 shadow-sm flex items-center gap-1">
+            <span>🟣 Anytime 下沉小镇</span>
           </button>
         </div>
-        <div class="flex items-center space-x-3">
-          <button onclick="exportToCSV()" class="text-blue-600 hover:text-blue-800 transition-colors font-medium flex items-center space-x-1">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+
+        <div class="flex items-center gap-4">
+          <button id="btn-export-csv" class="text-blue-600 hover:text-blue-800 font-black transition-colors flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             <span>导出 CSV</span>
           </button>
-          <button id="btn-reset" class="text-slate-400 hover:text-slate-700 transition-colors underline">
-            重置筛选
+          <button id="btn-reset" class="text-slate-400 hover:text-slate-700 font-bold transition-colors underline">
+            重置所有条件
           </button>
         </div>
       </div>
+
     </div>
 
-    <!-- 结果统计 -->
-    <div class="flex items-center justify-between mb-4 px-1 text-sm text-slate-500">
+    <!-- 结果状态栏 -->
+    <div class="flex items-center justify-between px-1 text-xs text-slate-500 font-medium">
+      <div class="flex items-center gap-1.5">
+        <span>当前筛选出</span>
+        <span id="stat-filtered-count" class="font-black text-sm text-slate-900 bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-sm">0</span>
+        <span>个合规可用地址</span>
+      </div>
       <div>
-        筛选出 <span id="stat-filtered-count" class="font-bold text-slate-800">0</span> 条符合条件的地址
-      </div>
-      <div class="text-xs">
-        每页显示 30 条
+        <span>分页模式 · 30 条 / 页</span>
       </div>
     </div>
 
-    <!-- 地址列表卡片容器 -->
+    <!-- 卡片栅格容器 -->
     <div id="address-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-    <!-- 空数据展示 -->
-    <div id="empty-state" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-4">
-      <div class="text-slate-300 mb-3">
-        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
+    <!-- 无结果空状态 -->
+    <div id="empty-state" class="hidden text-center py-20 bg-white rounded-2xl border border-slate-200 shadow-sm">
+      <div class="w-14 h-14 mx-auto mb-3 text-slate-300">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
       </div>
-      <h3 class="text-base font-semibold text-slate-700">未找到符合条件的地址</h3>
-      <p class="text-xs text-slate-400 mt-1">请尝试放宽筛选条件或搜索其他关键词</p>
+      <h3 class="text-sm font-bold text-slate-800">未找到符合当前条件的地址</h3>
+      <p class="text-xs text-slate-400 mt-1">请尝试放宽筛选条件，或重置筛选后重新查找。</p>
     </div>
 
-    <!-- 分页控件 -->
-    <div id="pagination" class="mt-8 flex items-center justify-center space-x-2 pb-12"></div>
+    <!-- 分页条 -->
+    <div id="pagination" class="flex items-center justify-center gap-1.5 py-6"></div>
 
   </main>
 
   <script>
     let rawAddresses = [];
     let filteredAddresses = [];
-    let bookmarks = JSON.parse(localStorage.getItem("ipostal_bookmarks") || "[]");
-    let showBookmarksOnly = false;
     let currentPage = 1;
     const PAGE_SIZE = 30;
-
     const TAX_FREE_STATES = ["AK", "FL", "NV", "SD", "TN", "TX", "WA", "WY"];
 
-    // DOM 元素
+    // 收藏夹
+    let bookmarks = [];
+    try {
+      bookmarks = JSON.parse(localStorage.getItem("ipostal_bookmarks") || "[]");
+    } catch(e) {
+      bookmarks = [];
+    }
+    let showBookmarksOnly = false;
+
+    // DOM 元素引用
     const filterSearch = document.getElementById("filter-search");
+    const filterPlatform = document.getElementById("filter-platform");
     const filterState = document.getElementById("filter-state");
     const filterRdi = document.getElementById("filter-rdi");
     const filterCmra = document.getElementById("filter-cmra");
-    const filterC1 = document.getElementById("filter-c1");
     const btnReset = document.getElementById("btn-reset");
     const container = document.getElementById("address-container");
     const emptyState = document.getElementById("empty-state");
@@ -181,71 +216,95 @@
     const statC1 = document.getElementById("stat-c1");
     const statBookmarkCount = document.getElementById("stat-bookmark-count");
     const statFilteredCount = document.getElementById("stat-filtered-count");
+    const btnShowBookmarks = document.getElementById("btn-show-bookmarks");
 
-    // 加载数据
     async function loadData() {
       try {
-        const res = await fetch("addresses.json");
-        if (!res.ok) throw new Error("无法加载 addresses.json");
+        const res = await fetch("./addresses.json?_t=" + Date.now());
+        if (!res.ok) throw new Error("HTTP 状态码: " + res.status);
         rawAddresses = await res.json();
+
+        if (!Array.isArray(rawAddresses) || rawAddresses.length === 0) {
+          throw new Error("addresses.json 文件为空或格式非数组");
+        }
+
+        // 智能补齐平台标识
+        rawAddresses.forEach(item => {
+          if (!item.platform) {
+            if (item.source && item.source.includes("escapees")) {
+              item.platform = "Escapees RV Club";
+            } else if (item.source && item.source.includes("sasquatch")) {
+              item.platform = "Sasquatch Mail";
+            } else if (item.source && item.source.includes("anytimemailbox")) {
+              item.platform = "Anytime Mailbox";
+            } else {
+              item.platform = "iPostal1";
+            }
+          }
+        });
 
         initStatesDropdown();
         readUrlParams();
         updateBookmarkCount();
         applyFilters();
       } catch (err) {
-        container.innerHTML = `<div class="col-span-full text-center text-red-500 py-10 font-medium">数据加载失败: ${err.message}</div>`;
+        console.error("加载数据错误:", err);
+        container.innerHTML = `
+          <div class="col-span-full text-center py-16 bg-white rounded-2xl border border-red-200 p-6 shadow-sm">
+            <div class="text-red-500 font-bold text-base mb-1">⚠️ 数据加载未成功</div>
+            <div class="text-slate-600 text-xs mb-3 font-mono">${err.message}</div>
+            <div class="text-xs text-slate-400">请确认 addresses.json 在仓库根目录，且 GitHub Actions 已执行生成。</div>
+          </div>`;
       }
     }
 
     function initStatesDropdown() {
       const states = Array.from(new Set(rawAddresses.map(a => a.state).filter(Boolean))).sort();
+      filterState.innerHTML = '<option value="ALL">全部州 (All)</option>';
       states.forEach(st => {
         const opt = document.createElement("option");
         opt.value = st;
-        opt.textContent = st + (TAX_FREE_STATES.includes(st) ? " (免税)" : "");
+        opt.textContent = st + (TAX_FREE_STATES.includes(st) ? " · 免税州" : "");
         filterState.appendChild(opt);
       });
     }
 
     function readUrlParams() {
       const params = new URLSearchParams(window.location.search);
+      if (params.get("platform")) filterPlatform.value = params.get("platform");
       if (params.get("state")) filterState.value = params.get("state").toUpperCase();
       if (params.get("rdi")) filterRdi.value = params.get("rdi");
       if (params.get("cmra")) filterCmra.value = params.get("cmra");
-      if (params.get("c1")) filterC1.value = params.get("c1").toUpperCase();
       if (params.get("q")) filterSearch.value = params.get("q");
     }
 
     function updateUrlParams() {
       const params = new URLSearchParams();
+      if (filterPlatform.value !== "ALL") params.set("platform", filterPlatform.value);
       if (filterState.value !== "ALL") params.set("state", filterState.value);
       if (filterRdi.value !== "ALL") params.set("rdi", filterRdi.value);
       if (filterCmra.value !== "ALL") params.set("cmra", filterCmra.value);
-      if (filterC1.value !== "ALL") params.set("c1", filterC1.value);
       if (filterSearch.value.trim()) params.set("q", filterSearch.value.trim());
 
-      const newUrl = `${window.location.pathname}${params.toString() ? "?" + params.toString() : ""}`;
-      window.history.replaceState({}, "", newUrl);
+      const query = params.toString() ? "?" + params.toString() : "";
+      window.history.replaceState({}, "", window.location.pathname + query);
     }
 
     function applyFilters() {
       const q = filterSearch.value.toLowerCase().trim();
+      const platform = filterPlatform.value;
       const state = filterState.value;
       const rdi = filterRdi.value;
       const cmra = filterCmra.value;
-      const c1 = filterC1.value;
 
       filteredAddresses = rawAddresses.filter(item => {
-        const fullAddr = `${item.validated_address || item.street}, ${item.city}, ${item.state} ${item.zip}`;
+        const fullAddr = `${item.validated_address || item.street || ''}, ${item.city || ''}, ${item.state || ''} ${item.zip || ''}`;
 
         if (showBookmarksOnly && !bookmarks.includes(fullAddr)) return false;
+        if (platform !== "ALL" && item.platform !== platform) return false;
         if (state !== "ALL" && item.state !== state) return false;
         if (rdi !== "ALL" && item.rdi !== rdi) return false;
         if (cmra !== "ALL" && item.cmra !== cmra) return false;
-
-        if (c1 === "YES" && !item.c1_acceptable) return false;
-        if (c1 === "NO" && item.c1_acceptable) return false;
 
         if (q) {
           const matchStreet = (item.validated_address || item.street || "").toLowerCase().includes(q);
@@ -265,10 +324,24 @@
     }
 
     function updateStats() {
-      statTotal.textContent = `总数据: ${rawAddresses.length}`;
+      statTotal.textContent = rawAddresses.length;
       const c1Count = rawAddresses.filter(a => a.c1_acceptable).length;
-      statC1.textContent = `C1 优选: ${c1Count}`;
+      statC1.textContent = c1Count;
       statFilteredCount.textContent = filteredAddresses.length;
+    }
+
+    // 四大平台专属色彩徽章
+    function getPlatformStyle(platform) {
+      switch(platform) {
+        case "Escapees RV Club":
+          return "bg-amber-100 text-amber-900 border-amber-300 font-black";
+        case "Sasquatch Mail":
+          return "bg-teal-50 text-teal-700 border-teal-200/80 font-bold";
+        case "Anytime Mailbox":
+          return "bg-purple-50 text-purple-700 border-purple-200/80 font-bold";
+        default:
+          return "bg-sky-50 text-sky-700 border-sky-200/80 font-bold";
+      }
     }
 
     function renderCards() {
@@ -286,75 +359,88 @@
       const start = (currentPage - 1) * PAGE_SIZE;
       const pageItems = filteredAddresses.slice(start, start + PAGE_SIZE);
 
-      pageItems.forEach(item => {
+      pageItems.forEach((item, index) => {
+        const globalIdx = start + index;
         const card = document.createElement("div");
-        card.className = "bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between card-animate";
+        card.className = "bg-white border border-slate-200/80 rounded-2xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-lg hover:border-blue-200 transition-all flex flex-col justify-between card-entry relative group";
 
-        const street = item.validated_address || item.street;
-        const fullAddr = `${street}, ${item.city}, ${item.state} ${item.zip}`;
-        const price = item.monthly_price ? `$${item.monthly_price}/月` : "$9.99/月";
+        const street = item.validated_address || item.street || "未知地址";
+        const fullAddr = `${street}, ${item.city || ''}, ${item.state || ''} ${item.zip || ''}`;
+        const price = item.monthly_price ? `$${item.monthly_price}` : "$9.99";
         const isBookmarked = bookmarks.includes(fullAddr);
+        const platformBadgeStyle = getPlatformStyle(item.platform);
 
         let c1Badge = "";
         if (item.c1_acceptable) {
-          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200">✅ C1 极大概率通过</span>`;
+          c1Badge = `<span class="px-2.5 py-1 text-[11px] font-black rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>C1 机审秒过
+          </span>`;
         } else if (item.cmra === "Yes") {
-          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-rose-100 text-rose-800 border border-rose-200">❌ C1 拦截 (CMRA)</span>`;
+          c1Badge = `<span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>CMRA 拦截
+          </span>`;
         } else {
-          c1Badge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-md bg-slate-100 text-slate-600">待验证</span>`;
+          c1Badge = `<span class="px-2 py-0.5 text-[11px] font-medium rounded-lg bg-slate-100 text-slate-500">待检测</span>`;
         }
 
         let cmraBadge = item.cmra === "No" 
-          ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">CMRA: No</span>`
-          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-rose-50 text-rose-700 border border-rose-200">CMRA: Yes</span>`;
+          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-700 border border-emerald-500/20">CMRA: 否 (安全)</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded-md bg-rose-50 text-rose-600 border border-rose-100">CMRA: 是 (代收点)</span>`;
 
         let rdiBadge = item.rdi === "Residential"
-          ? `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-blue-50 text-blue-700 border border-blue-200">RDI: 住宅</span>`
-          : `<span class="px-2 py-0.5 text-[11px] font-semibold rounded bg-slate-100 text-slate-700">RDI: 商业</span>`;
+          ? `<span class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-blue-50 text-blue-700 border border-blue-200/80">🏡 住宅 (Residential)</span>`
+          : `<span class="px-2 py-0.5 text-[11px] font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">🏢 商业 (Commercial)</span>`;
 
         const mapsUrl = item.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddr)}`;
         const streetViewUrl = item.google_street_view_url || `https://www.google.com/maps/@?api=1&map_action=pano&query=${encodeURIComponent(fullAddr)}`;
 
         card.innerHTML = `
           <div>
-            <div class="flex items-start justify-between gap-2 mb-2">
-              <span class="text-sm font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-lg">${price}</span>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] uppercase tracking-wide rounded-md border ${platformBadgeStyle}">
+                  ${item.platform || 'iPostal1'}
+                </span>
+                <span class="text-xs font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200/60">
+                  ${price}<span class="text-[10px] font-normal text-slate-400">/mo</span>
+                </span>
+              </div>
               ${c1Badge}
             </div>
 
-            <h4 class="text-base font-bold text-slate-900 leading-snug line-clamp-2 mt-1">${street}</h4>
-            <p class="text-xs text-slate-500 font-medium mt-0.5 mb-3">${item.city}, ${item.state} ${item.zip}</p>
+            <h4 class="text-sm font-extrabold text-slate-900 leading-snug line-clamp-2 select-all">${escapeHtml(street)}</h4>
+            <p class="text-xs text-slate-500 font-semibold mt-1 mb-3">${escapeHtml(item.city || '')}, ${item.state || ''} ${item.zip || ''}</p>
 
             <div class="flex flex-wrap gap-1.5 mb-4">
               ${cmraBadge}
               ${rdiBadge}
-              <span class="px-2 py-0.5 text-[11px] rounded bg-slate-50 text-slate-500 border border-slate-200">DPV: ${item.dpv_match_code || 'N/A'}</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-50 text-slate-400 border border-slate-200">DPV: ${item.dpv_match_code || 'N/A'}</span>
             </div>
           </div>
 
-          <div class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-medium">
-            <div class="flex items-center space-x-2">
-              <button onclick="toggleBookmark('${fullAddr.replace(/'/g, "\\'")}')" 
-                class="p-1 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors" title="收藏">
-                <span class="${isBookmarked ? 'text-amber-500' : 'text-slate-300'} text-sm leading-none">★</span>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
+            <div class="flex items-center gap-2">
+              <button data-action="bookmark" data-idx="${globalIdx}" 
+                class="w-7 h-7 rounded-lg border border-slate-200 hover:bg-slate-50 flex items-center justify-center transition-colors" title="收藏地址">
+                <span class="${isBookmarked ? 'text-amber-500' : 'text-slate-300'} text-xs pointer-events-none">★</span>
               </button>
-              <button onclick="copyToClipboard('${fullAddr.replace(/'/g, "\\'")}', this)" 
-                class="text-slate-600 hover:text-blue-600 flex items-center space-x-1 transition-colors">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                <span>复制</span>
+              <button data-action="copy" data-idx="${globalIdx}" 
+                class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 flex items-center gap-1.5 transition-all active:scale-95">
+                <svg class="w-3.5 h-3.5 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span class="pointer-events-none">复制</span>
               </button>
             </div>
 
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center gap-2">
               <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" 
-                class="text-slate-500 hover:text-blue-600 flex items-center space-x-0.5 transition-colors">
+                class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 flex items-center gap-1 transition-all" title="在 Google Maps 查看位置">
                 <span>地图</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
               <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" 
-                class="text-emerald-600 hover:text-emerald-700 flex items-center space-x-0.5 font-semibold transition-colors">
+                class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1 transition-all shadow-sm shadow-emerald-600/20 font-bold" title="直接打开 360° 实景街景">
                 <span>实景</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
               </a>
             </div>
           </div>
@@ -364,99 +450,151 @@
       });
     }
 
+    // 事件委托机制
+    container.addEventListener("click", e => {
+      const btn = e.target.closest("button[data-action]");
+      if (!btn) return;
+
+      const action = btn.dataset.action;
+      const idx = parseInt(btn.dataset.idx, 10);
+      const item = filteredAddresses[idx];
+      if (!item) return;
+
+      const fullAddr = `${item.validated_address || item.street}, ${item.city}, ${item.state} ${item.zip}`;
+
+      if (action === "copy") {
+        navigator.clipboard.writeText(fullAddr).then(() => {
+          showToast("已成功复制完整地址！");
+          const original = btn.innerHTML;
+          btn.innerHTML = `<span class="text-emerald-600 font-bold">已复制!</span>`;
+          setTimeout(() => { btn.innerHTML = original; }, 1500);
+        });
+      } else if (action === "bookmark") {
+        if (bookmarks.includes(fullAddr)) {
+          bookmarks = bookmarks.filter(b => b !== fullAddr);
+          showToast("已从收藏夹移除");
+        } else {
+          bookmarks.push(fullAddr);
+          showToast("已加入收藏夹 ⭐");
+        }
+        localStorage.setItem("ipostal_bookmarks", JSON.stringify(bookmarks));
+        updateBookmarkCount();
+        renderCards();
+      }
+    });
+
+    function showToast(text) {
+      const toast = document.getElementById("toast");
+      const toastText = document.getElementById("toast-text");
+      toastText.textContent = text;
+      toast.classList.remove("translate-y-16", "opacity-0");
+      toast.classList.add("translate-y-0", "opacity-100");
+      setTimeout(() => {
+        toast.classList.remove("translate-y-0", "opacity-100");
+        toast.classList.add("translate-y-16", "opacity-0");
+      }, 2000);
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[m]);
+    }
+
     function renderPagination() {
       pagination.innerHTML = "";
       const totalPages = Math.ceil(filteredAddresses.length / PAGE_SIZE);
       if (totalPages <= 1) return;
 
       const prevBtn = document.createElement("button");
-      prevBtn.textContent = "上一页";
-      prevBtn.className = `px-3 py-1.5 rounded-lg border text-xs font-semibold ${currentPage === 1 ? 'border-slate-200 text-slate-300 cursor-not-allowed' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-50'}`;
+      prevBtn.innerHTML = "&larr; 上一页";
+      prevBtn.className = `px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === 1 ? 'border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm'}`;
       prevBtn.disabled = currentPage === 1;
       prevBtn.onclick = () => { currentPage--; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       pagination.appendChild(prevBtn);
 
       const indicator = document.createElement("span");
-      indicator.className = "text-xs text-slate-500 px-3";
-      indicator.textContent = `第 ${currentPage} / ${totalPages} 页`;
+      indicator.className = "text-xs font-bold text-slate-500 px-4";
+      indicator.textContent = `${currentPage} / ${totalPages}`;
       pagination.appendChild(indicator);
 
       const nextBtn = document.createElement("button");
-      nextBtn.textContent = "下一页";
-      nextBtn.className = `px-3 py-1.5 rounded-lg border text-xs font-semibold ${currentPage === totalPages ? 'border-slate-200 text-slate-300 cursor-not-allowed' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-50'}`;
+      nextBtn.innerHTML = "下一页 &rarr;";
+      nextBtn.className = `px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${currentPage === totalPages ? 'border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50' : 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100 shadow-sm'}`;
       nextBtn.disabled = currentPage === totalPages;
       nextBtn.onclick = () => { currentPage++; renderCards(); renderPagination(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
       pagination.appendChild(nextBtn);
-    }
-
-    function copyToClipboard(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = `<span class="text-emerald-600 font-semibold">已复制!</span>`;
-        setTimeout(() => { btn.innerHTML = originalText; }, 1500);
-      });
-    }
-
-    function toggleBookmark(addr) {
-      if (bookmarks.includes(addr)) {
-        bookmarks = bookmarks.filter(b => b !== addr);
-      } else {
-        bookmarks.push(addr);
-      }
-      localStorage.setItem("ipostal_bookmarks", JSON.stringify(bookmarks));
-      updateBookmarkCount();
-      renderCards();
     }
 
     function updateBookmarkCount() {
       statBookmarkCount.textContent = bookmarks.length;
     }
 
-    function toggleBookmarkOnly() {
+    btnShowBookmarks.onclick = () => {
       showBookmarksOnly = !showBookmarksOnly;
-      const btn = document.getElementById("btn-show-bookmarks");
       if (showBookmarksOnly) {
-        btn.classList.add("bg-amber-500", "text-white");
-        btn.classList.remove("bg-amber-50", "text-amber-700");
+        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-500 text-white rounded-lg transition-all shadow-sm font-black";
       } else {
-        btn.classList.remove("bg-amber-500", "text-white");
-        btn.classList.add("bg-amber-50", "text-amber-700");
+        btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold";
       }
       applyFilters();
-    }
+    };
 
-    function setQuickFilter(type) {
+    // 快捷推荐
+    document.getElementById("btn-quick-escapees").onclick = () => {
       showBookmarksOnly = false;
-      document.getElementById("btn-show-bookmarks").classList.remove("bg-amber-500", "text-white");
-
-      if (type === "C1_HIGH") {
-        filterCmra.value = "No";
-        filterRdi.value = "Residential";
-        filterC1.value = "YES";
-        filterState.value = "ALL";
-      } else if (type === "TAX_FREE") {
-        filterCmra.value = "No";
-        filterC1.value = "YES";
-        filterRdi.value = "ALL";
-        // 自动定位首个有数据的免税州，或综合过滤
-        filterSearch.value = "";
-      } else if (type === "ALL_NON_CMRA") {
-        filterCmra.value = "No";
-        filterRdi.value = "ALL";
-        filterC1.value = "ALL";
-        filterState.value = "ALL";
-      }
+      filterPlatform.value = "Escapees RV Club";
+      filterState.value = "ALL";
+      filterRdi.value = "ALL";
+      filterCmra.value = "ALL";
       applyFilters();
-    }
+    };
 
-    function exportToCSV() {
-      if (filteredAddresses.length === 0) return alert("没有可导出的数据");
-      const headers = ["Street", "City", "State", "Zip", "Price", "RDI", "CMRA", "C1_Pass", "Google_Maps", "Street_View"];
+    document.getElementById("btn-quick-c1").onclick = () => {
+      showBookmarksOnly = false;
+      filterPlatform.value = "ALL";
+      filterState.value = "ALL";
+      filterRdi.value = "Residential";
+      filterCmra.value = "No";
+      applyFilters();
+    };
+
+    document.getElementById("btn-quick-taxfree").onclick = () => {
+      showBookmarksOnly = false;
+      filterPlatform.value = "ALL";
+      filterRdi.value = "ALL";
+      filterCmra.value = "No";
+      filterSearch.value = "";
+      applyFilters();
+    };
+
+    document.getElementById("btn-quick-sasquatch").onclick = () => {
+      showBookmarksOnly = false;
+      filterPlatform.value = "Sasquatch Mail";
+      filterState.value = "ALL";
+      filterCmra.value = "ALL";
+      filterRdi.value = "ALL";
+      applyFilters();
+    };
+
+    document.getElementById("btn-quick-anytime").onclick = () => {
+      showBookmarksOnly = false;
+      filterPlatform.value = "Anytime Mailbox";
+      filterState.value = "ALL";
+      filterCmra.value = "ALL";
+      filterRdi.value = "ALL";
+      applyFilters();
+    };
+
+    document.getElementById("btn-export-csv").onclick = () => {
+      if (filteredAddresses.length === 0) return alert("当前无符合条件的数据可导出");
+      const headers = ["Platform", "Street", "City", "State", "Zip", "Price", "RDI", "CMRA", "C1_Pass", "Google_Maps", "Street_View"];
       const rows = filteredAddresses.map(a => [
-        `"${(a.validated_address || a.street).replace(/"/g, '""')}"`,
-        `"${a.city}"`,
-        `"${a.state}"`,
-        `"${a.zip}"`,
+        `"${a.platform || 'iPostal1'}"`,
+        `"${(a.validated_address || a.street || '').replace(/"/g, '""')}"`,
+        `"${a.city || ''}"`,
+        `"${a.state || ''}"`,
+        `"${a.zip || ''}"`,
         `"${a.monthly_price || 9.99}"`,
         `"${a.rdi || ''}"`,
         `"${a.cmra || ''}"`,
@@ -468,29 +606,29 @@
       const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
       const encodedUri = encodeURI(csvContent);
       const link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `addresses_export_${new Date().toISOString().slice(0,10)}.csv`);
+      link.href = encodedUri;
+      link.download = `c1_addresses_${new Date().toISOString().slice(0,10)}.csv`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }
+    };
 
     btnReset.onclick = () => {
       filterSearch.value = "";
+      filterPlatform.value = "ALL";
       filterState.value = "ALL";
       filterRdi.value = "ALL";
       filterCmra.value = "ALL";
-      filterC1.value = "ALL";
       showBookmarksOnly = false;
-      document.getElementById("btn-show-bookmarks").classList.remove("bg-amber-500", "text-white");
+      btnShowBookmarks.className = "flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 border border-amber-200 rounded-lg hover:bg-amber-100 transition-all font-bold";
       applyFilters();
     };
 
     filterSearch.addEventListener("input", () => applyFilters());
+    filterPlatform.addEventListener("change", () => applyFilters());
     filterState.addEventListener("change", () => applyFilters());
     filterRdi.addEventListener("change", () => applyFilters());
     filterCmra.addEventListener("change", () => applyFilters());
-    filterC1.addEventListener("change", () => applyFilters());
 
     loadData();
   </script>
