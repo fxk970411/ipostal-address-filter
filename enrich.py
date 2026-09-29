@@ -5,57 +5,67 @@ import urllib.parse
 import re
 import requests
 
-# 支持单 Key 或用英文逗号分隔的多 Key 轮询 (例如 "id1,id2" 与 "token1,token2")
-RAW_AUTH_IDS = [x.strip() for x in os.environ.get("SMARTY_AUTH_ID", "").split(",") if x.strip()]
-RAW_AUTH_TOKENS = [x.strip() for x in os.environ.get("SMARTY_AUTH_TOKEN", "").split(",") if x.strip()]
+CLIENT_ID = os.environ.get("USPS_CLIENT_ID", "").strip()
+CLIENT_SECRET = os.environ.get("USPS_CLIENT_SECRET", "").strip()
 
 INPUT_FILE = "addresses.json"
 OUTPUT_FILE = "addresses.json"
-API_URL = "https://us-street.api.smarty.com/street-address"
 
-# 极小众与高端商务平台清单 (优先排在前面验证)
+# 官方规范标准生产 Endpoint (注意 apis 带 s)
+TOKEN_URL = "https://apis.usps.com/oauth2/v3/token"
+STANDARDIZE_URL = "https://apis.usps.com/addresses/v3/address"
+
 PRIORITY_PLATFORMS = {
     "St. Brendan's Isle", "Texas Home Base", "DakotaPost", 
     "America's Mailbox", "MyRVMail", "Escapees RV Club", 
     "Northwest Agent", "Expansive", "Opus Offices"
 }
 
-# 明确的重型商业高楼/转运特征 (本地直接拦截，0 消耗 API)
 STRICT_COMMERCIAL_PATTERNS = re.compile(
     r"\b("
-    r"PMB\s*\d+|"                               # 法定转运
-    r"(?:Suite|Ste)\s*[1-9]\d{3,}|"             # 四位数以上大写字间
-    r"Floor|Fl\s*\d+|"                          # 楼层
-    r"Tower|Towers|"                            # 大厦
-    r"Corporate\s*(?:Park|Center)"              # 科技园区
+    r"PMB\s*\d+|"
+    r"(?:Suite|Ste)\s*[1-9]\d{3,}|"
+    r"Floor|Fl\s*\d+|"
+    r"Tower|Towers|"
+    r"Corporate\s*(?:Park|Center)"
     r")\b",
     re.IGNORECASE
 )
 
-# 常见隐蔽连锁代收点
 FRANCHISE_MAILBOX_KEYWORDS = re.compile(
     r"\b(PostalAnnex|PostNet|Pak\s*Mail|Safe\s*Ship|Mail\s*Boxes|Goin\s*Postal|AIM\s*Mail|The\s*UPS\s*Store)\b",
     re.IGNORECASE
 )
 
-class SmartyKeyManager:
-    def __init__(self, ids, tokens):
-        self.pairs = list(zip(ids, tokens))
-        self.current_idx = 0
+class USPSAuthManager:
+    """遵循 USPS OpenAPI 规范的 Client Credentials 鉴权管理器"""
+    def __init__(self, client_id, client_secret):
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.token = None
+        self.expire_time = 0
 
-    def get_current(self):
-        if not self.pairs:
-            return None, None
-        return self.pairs[self.current_idx]
+    def get_token(self):
+        now = time.time()
+        if self.token and now < self.expire_time - 60:
+            return self.token
 
-    def switch_next(self):
-        if self.current_idx + 1 < len(self.pairs):
-            self.current_idx += 1
-            print(f">>> 切换到下一组 Smarty API 凭据 [账号 #{self.current_idx + 1}]")
-            return True
-        return False
-
-key_mgr = SmartyKeyManager(RAW_AUTH_IDS, RAW_AUTH_TOKENS)
+        payload = {
+            "client_id": self.client_id,
+            "client_secret": self.client_secret,
+            "grant_type": "client_credentials"
+        }
+        headers = {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+        resp = requests.post(TOKEN_URL, data=payload, headers=headers, timeout=25)
+        resp.raise_for_status()
+        data = resp.json()
+        self.token = data.get("access_token")
+        expires_in = int(data.get("expires_in", 3600))
+        self.expire_time = now + expires_in
+        print(">>> 成功获取 USPS 官方 Access Token")
+        return self.token
 
 def evaluate_address_potential(item):
     platform = item.get("platform", "")
@@ -64,7 +74,7 @@ def evaluate_address_potential(item):
     score = 50
 
     if platform in PRIORITY_PLATFORMS:
-        return -100, f"Priority niche platform: {platform}"
+        return -100, f"Priority platform: {platform}"
 
     if STRICT_COMMERCIAL_PATTERNS.search(street):
         return 999, "Commercial tower / PMB heuristic"
@@ -81,21 +91,26 @@ def evaluate_address_potential(item):
 
     return score, "Candidate"
 
-# 读取并排序全量地址
+if not CLIENT_ID or not CLIENT_SECRET:
+    print("错误: 未检测到 USPS_CLIENT_ID 或 USPS_CLIENT_SECRET，请在 GitHub Secrets 中配置。")
+    exit(1)
+
+auth_mgr = USPSAuthManager(CLIENT_ID, CLIENT_SECRET)
+
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     addresses = json.load(f)
 
-# 优先处理极小众平台与高潜力平房
+# 优先级排序
 addresses.sort(key=lambda x: evaluate_address_potential(x)[0])
 
-api_called = 0
 processed_count = 0
+api_called = 0
 auto_save_counter = 0
 
-print(f"=== 开始全量地址校验任务 (待审总库: {len(addresses)} 条) ===")
+print(f"=== 开始 USPS 官方接口地址全量核查 (总数据: {len(addresses)} 条) ===")
 
-for idx, item in enumerate(addresses):
-    # 已经具有明确校验结论的地址跳过，避免重复消耗
+for item in addresses:
+    # 已完成明确核验的跳过，避免重复调用
     if item.get("rdi") and item.get("cmra") and ("c1_acceptable" in item) and item.get("c1_approval_tier") != "Uncertain":
         continue
 
@@ -105,7 +120,7 @@ for idx, item in enumerate(addresses):
 
     score, reason = evaluate_address_potential(item)
 
-    # 1. 命中重度商业死刑词：本地直接拦截
+    # 1. 规则预检拦截
     if score >= 900:
         item["rdi"] = "Commercial"
         item["cmra"] = "Yes"
@@ -118,96 +133,91 @@ for idx, item in enumerate(addresses):
         processed_count += 1
         continue
 
-    # 2. 调用 Smarty 验证候选地址
-    auth_id, auth_token = key_mgr.get_current()
-    if not auth_id or not auth_token:
-        print("未检测到有效的 SMARTY_AUTH_ID 或 SMARTY_AUTH_TOKEN，停止调用。")
-        break
-
-    params = {
-        "auth-id": auth_id,
-        "auth-token": auth_token,
-        "street": street,
-        "city": item.get("city", ""),
-        "state": item.get("state", ""),
-        "zipcode": item.get("zip", ""),
-        "candidates": 1
-    }
-
+    # 2. 调用 USPS 官方 Addresses 3.0 API
     try:
-        response = requests.get(API_URL, params=params, timeout=20)
-        
-        # 额度耗尽处理 (401 未授权或 402 配额耗尽)
-        if response.status_code in [401, 402]:
-            print(f"当前 Smarty 账号配额已耗尽 (HTTP {response.status_code})。")
-            if key_mgr.switch_next():
-                # 切换成功，重试当前地址
-                auth_id, auth_token = key_mgr.get_current()
-                params["auth-id"] = auth_id
-                params["auth-token"] = auth_token
-                response = requests.get(API_URL, params=params, timeout=20)
-            else:
-                print("所有 Smarty 账号额度均已耗尽，保存当前进度并退出。")
-                break
+        token = auth_mgr.get_token()
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
+        }
+        params = {
+            "streetAddress": street,
+            "city": item.get("city", ""),
+            "state": item.get("state", ""),
+            "ZIPCode": item.get("zip", "")
+        }
 
-        response.raise_for_status()
-        data = response.json()
+        resp = requests.get(STANDARDIZE_URL, headers=headers, params=params, timeout=20)
         api_called += 1
 
-        if data:
-            candidate = data[0]
-            metadata = candidate.get("metadata", {})
-            analysis = candidate.get("analysis", {})
+        if resp.status_code == 200:
+            data = resp.json()
+            addr_info = data.get("address", {})
+            extra_info = data.get("additionalInfo", {})
 
-            rdi = metadata.get("rdi", "Unknown")
+            # 遵循 OpenAPI 规范解析 RDI 属性:
+            # 优先根据 DPVUsageCode (A=住宅, B=商业, C=偏住宅) 或 DPVBusiness (N=住宅)
+            usage_code = extra_info.get("DPVUsageCode", "").strip()
+            dpv_business = extra_info.get("DPVBusiness", "")
+            
+            if usage_code == "A" or dpv_business == "N":
+                rdi = "Residential"
+            elif usage_code in ["B", "D"] or dpv_business == "Y":
+                rdi = "Commercial"
+            elif usage_code == "C":
+                rdi = "Residential"  # 商住混合但以住宅为主
+            else:
+                rdi = "Unknown"
             item["rdi"] = rdi
 
-            dpv_cmra = analysis.get("dpv_cmra", "")
-            cmra = "Yes" if dpv_cmra == "Y" else ("No" if dpv_cmra == "N" else "Unknown")
+            # CMRA 标记解析
+            raw_cmra = extra_info.get("DPVCMRA", "")
+            cmra = "Yes" if raw_cmra == "Y" else ("No" if raw_cmra == "N" else "Unknown")
             item["cmra"] = cmra
 
-            dpv_match = analysis.get("dpv_match_code", "")
-            item["dpv_match_code"] = dpv_match
-            
-            line1 = candidate.get("delivery_line_1", "").strip()
-            line2 = candidate.get("delivery_line_2", "").strip()
-            item["validated_address"] = f"{line1} {line2}".strip() if line2 else (line1 or street)
+            # DPV 确认状态
+            dpv_confirm = extra_info.get("DPVConfirmation", "")
+            item["dpv_match_code"] = dpv_confirm
+
+            # 检查是否包含 PMB 转运代收盒号
+            has_pmb = bool(extra_info.get("parsedPMBDesignator") or extra_info.get("parsedPMBNumber"))
+
+            line1 = addr_info.get("streetAddress", street)
+            sec = addr_info.get("secondaryAddress", "")
+            item["validated_address"] = f"{line1} {sec}".strip() if sec else line1
 
             is_franchise = bool(FRANCHISE_MAILBOX_KEYWORDS.search(street) or FRANCHISE_MAILBOX_KEYWORDS.search(item["validated_address"]))
 
-            # C1 准入评估
-            if cmra == "No" and dpv_match in ["Y", "D", "S"]:
+            # C1 风控准入判定
+            if cmra == "No" and not has_pmb and dpv_confirm in ["Y", "S", "D"]:
                 if is_franchise:
                     item["c1_acceptable"] = False
                     item["c1_approval_tier"] = "Review Needed"
-                    item["c1_reason"] = "Matched known package store franchise keyword"
+                    item["c1_reason"] = "Matched known package store keyword"
                 else:
                     item["c1_acceptable"] = True
                     item["c1_approval_tier"] = "High (Residential Non-CMRA)" if rdi == "Residential" else "Medium (Business Non-CMRA)"
-                    item["c1_reason"] = "USPS Non-CMRA active delivery point"
-            elif cmra == "Yes":
+                    item["c1_reason"] = "USPS Official Non-CMRA Delivery Point"
+            elif cmra == "Yes" or has_pmb:
                 item["c1_acceptable"] = False
                 item["c1_approval_tier"] = "Rejected"
-                item["c1_reason"] = "USPS CMRA Flagged"
+                item["c1_reason"] = "USPS Official CMRA / PMB Flagged"
             else:
                 item["c1_acceptable"] = False
                 item["c1_approval_tier"] = "Uncertain"
-                item["c1_reason"] = f"DPV status: {dpv_match}, CMRA: {cmra}"
+                item["c1_reason"] = f"DPV: {dpv_confirm}, CMRA: {cmra}"
 
-            lat = metadata.get("latitude")
-            lon = metadata.get("longitude")
-            if lat and lon:
-                item["google_street_view_url"] = f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lon}"
-            else:
-                item["google_street_view_url"] = f"https://www.google.com/maps/@?api=1&map_action=pano&query={encoded_addr}"
-        else:
+        elif resp.status_code == 404:
             item["rdi"] = "Unknown"
             item["cmra"] = "Unknown"
             item["c1_acceptable"] = False
             item["c1_approval_tier"] = "Rejected"
-            item["c1_reason"] = "Address not found by USPS"
+            item["c1_reason"] = "Address Not Recognized by USPS"
+        else:
+            print(f"USPS 返回状态码 {resp.status_code}: {resp.text}")
 
         item["google_maps_url"] = f"https://www.google.com/maps/search/?api=1&query={encoded_addr}"
+        item["google_street_view_url"] = f"https://www.google.com/maps/@?api=1&map_action=pano&query={encoded_addr}"
 
     except Exception as e:
         print(f"校验异常 {street}: {e}")
@@ -216,18 +226,18 @@ for idx, item in enumerate(addresses):
     auto_save_counter += 1
 
     if processed_count % 20 == 0:
-        print(f"进度: 已处理 {processed_count} 条 | 实际调用 API {api_called} 次 | 当前: {street} -> CMRA={item.get('cmra')} RDI={item.get('rdi')}")
+        print(f"进度: 已推进 {processed_count} 条 | API 调用 {api_called} 次 | 当前: {street} -> CMRA={item.get('cmra')} RDI={item.get('rdi')} C1={item.get('c1_acceptable')}")
 
-    # 每处理 50 条自动保存一次磁盘，防止意外中断
+    # 每验证 50 条自动落盘保存一次
     if auto_save_counter >= 50:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             json.dump(addresses, f, ensure_ascii=False, indent=2)
         auto_save_counter = 0
 
-    time.sleep(0.1)
+    time.sleep(0.08)
 
-# 最终全量写盘
+# 最终全量落盘
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(addresses, f, ensure_ascii=False, indent=2)
 
-print(f"\n=== 全量校验执行完毕！共推进处理 {processed_count} 个地址，累计消耗 API {api_called} 次 ===")
+print(f"\n=== 全量核查完成！共推进处理 {processed_count} 条地址，调用 USPS API {api_called} 次 ===")
