@@ -8416,12 +8416,12 @@
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
     "platform": "iPostal1",
     "rdi": "Commercial",
-    "cmra": "No",
+    "cmra": "Yes",
     "dpv_match_code": "Y",
     "validated_address": "34125 Center Ridge Rd",
-    "c1_acceptable": true,
-    "c1_approval_tier": "Medium (Business Non-CMRA)",
-    "c1_reason": "USPS Non-CMRA active delivery point",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza",
     "google_street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39875,-81.99483",
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=34125+Center+Ridge+Rd%2C+North+Ridgeville%2C+OH+44039"
   },
@@ -15179,7 +15179,12 @@
     "zip": "94044",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "72-811 Highway 111",
@@ -16259,7 +16264,12 @@
     "zip": "80922",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "330 E Costilla St",
@@ -16673,7 +16683,12 @@
     "zip": "19720-4207",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1 Chestnut Hill Plaza",
@@ -16682,7 +16697,12 @@
     "zip": "19713",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "11 Polly Drummond Shpg Ctr",
@@ -16736,7 +16756,12 @@
     "zip": "19806-3334",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3200 Kirkwood Highway",
@@ -18176,7 +18201,12 @@
     "zip": "33880",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "38439 5th Ave",
@@ -18392,7 +18422,12 @@
     "zip": "30038",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "111 Lower Elm Street",
@@ -18644,7 +18679,12 @@
     "zip": "83221",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "582 E Boise Ave",
@@ -19490,7 +19530,12 @@
     "zip": "01720",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "284 Hartford Ave",
@@ -19508,7 +19553,12 @@
     "zip": "02108",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "6 Liberty Square",
@@ -19517,7 +19567,12 @@
     "zip": "02109",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "27 Central Square",
@@ -19526,7 +19581,12 @@
     "zip": "02324",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "601 Centre St",
@@ -19535,7 +19595,12 @@
     "zip": "02302",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "111 Middlesex Turnpike",
@@ -19679,7 +19744,12 @@
     "zip": "01970",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "179 Highland Ave",
@@ -19733,7 +19803,12 @@
     "zip": "02451",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1129 Riverdale Street",
@@ -20012,7 +20087,12 @@
     "zip": "04401",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "75 Park St",
@@ -20795,7 +20875,12 @@
     "zip": "27519",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1710 East Franklin Street",
@@ -20831,7 +20916,12 @@
     "zip": "27520",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "57 Union St. S",
@@ -21065,7 +21155,12 @@
     "zip": "28786",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "127 Goldsboro St S",
@@ -21182,7 +21277,12 @@
     "zip": "03104",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "252 Daniel Webster Hwy",
@@ -21218,7 +21318,12 @@
     "zip": "03894",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "506 Myrtle Ave",
@@ -21515,7 +21620,12 @@
     "zip": "07675",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "760 Route 46 West",
@@ -22379,7 +22489,12 @@
     "zip": "11731",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "138 Main St",
@@ -22415,7 +22530,12 @@
     "zip": "11735",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "31 Covert Avenue",
@@ -22820,7 +22940,12 @@
     "zip": "10003",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "535 Fifth Avenue, 4th Flr",
@@ -22901,7 +23026,12 @@
     "zip": "12901",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5141 Nesconset Hwy",
@@ -22982,7 +23112,12 @@
     "zip": "10573-2822",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3035 Route 50",
@@ -23036,7 +23171,12 @@
     "zip": "11556",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "80 W. Sunrise Hwy",
@@ -23108,7 +23248,12 @@
     "zip": "44022",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2345 Ashland Ave",
@@ -23243,7 +23388,12 @@
     "zip": "44035",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3939 Trueman Blvd",
@@ -23423,7 +23573,12 @@
     "zip": "73064",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "18846 State Highway 9",
@@ -23810,7 +23965,12 @@
     "zip": "17815",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "755 West Lancaster Avenue",
@@ -23828,7 +23988,12 @@
     "zip": "16001",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "128 South 32nd Street",
@@ -24026,7 +24191,12 @@
     "zip": "19047-1078",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1120 E Old Cumberland St",
@@ -24287,7 +24457,12 @@
     "zip": "19390",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "453 Arena Hub Plaza",
@@ -24296,7 +24471,12 @@
     "zip": "18702",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1915 East 3rd St",
@@ -25178,7 +25358,12 @@
     "zip": "76137-2043",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "6340 Lake Worth Blvd",
@@ -25862,7 +26047,12 @@
     "zip": "23834",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "429 Meadowbrook Shopping Center",
@@ -25871,7 +26061,12 @@
     "zip": "22701",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "9480 Main St",
@@ -26024,7 +26219,12 @@
     "zip": "05403",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "38 N Main St",
@@ -26177,7 +26377,12 @@
     "zip": "98270",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "16232 Bothell Everett Highway",
@@ -26447,7 +26652,12 @@
     "zip": "25801",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "800 Nitro Mkt. Place",
@@ -26663,7 +26873,12 @@
     "zip": "92677",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "6100 Horseshoe Bar Rd Ste A",
@@ -26708,7 +26923,12 @@
     "zip": "92260",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "78206 Varner Road Suite D",
@@ -26735,7 +26955,12 @@
     "zip": "92108-4552",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5610 Scotts Valley Dr Ste B",
@@ -28247,7 +28472,12 @@
     "zip": "30286-4164",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2535 Dallas Highway SW STE B",
@@ -28337,7 +28567,12 @@
     "zip": "01906",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "9 Aberdeen Shopping Plz Ste B",
@@ -29642,7 +29877,12 @@
     "zip": "92154",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2907 Shelter Island Dr Ste 105",
@@ -29669,7 +29909,12 @@
     "zip": "92154",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8690 Aero Dr Ste 115",
@@ -29687,7 +29932,12 @@
     "zip": "92069",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "41593 Winchester Rd, Suite 200",
@@ -31028,7 +31278,12 @@
     "zip": "08096",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1404 Oak Tree Road Ste 4",
@@ -31919,7 +32174,12 @@
     "zip": "77584",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "6009 W Parker Rd Ste 149",
@@ -32117,7 +32377,12 @@
     "zip": "22182",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1832 Kempsville Rd Ste 112",
@@ -33026,7 +33291,12 @@
     "zip": "92037",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8334 Clairemont Mesa Blvd Unit 101",
@@ -33242,7 +33512,12 @@
     "zip": "80111",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "205 Ken Pratt Blvd Suite 120",
@@ -33575,7 +33850,12 @@
     "zip": "32258",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "13475 Atlantic Blvd. Unit 8",
@@ -33836,7 +34116,12 @@
     "zip": "33573",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "630 E Twincourt Trail Ste 105",
@@ -34097,7 +34382,12 @@
     "zip": "30346",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4009 Winder Hwy Unit 285",
@@ -34214,7 +34504,12 @@
     "zip": "30076",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "11605 Abercorn St Suite 100",
@@ -34691,7 +34986,12 @@
     "zip": "04210-6313",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "770 Roosevelt Trail STE 8",
@@ -34799,7 +35099,12 @@
     "zip": "63368",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "701 Market St Ste 110",
@@ -35888,7 +36193,12 @@
     "zip": "29532",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1646 W Hwy 160 Suite 105",
@@ -36095,7 +36405,12 @@
     "zip": "78746",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "663 W State Highway 71 Unit 111",
@@ -36284,7 +36599,12 @@
     "zip": "76137",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1510 Eldridge Pkwy Ste 110",
@@ -36788,7 +37108,12 @@
     "zip": "20105",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "201 N. Union St. Suite 110",
@@ -36824,7 +37149,12 @@
     "zip": "20147",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "23710 Schooler Plaza Suite 275",
@@ -36833,7 +37163,12 @@
     "zip": "20148",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "555 Belaire Ave Suite 210",
@@ -37373,7 +37708,12 @@
     "zip": "92610",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "10400 Twin Cities Rd Ste 20",
@@ -37481,7 +37821,12 @@
     "zip": "93036",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "11440 W Bernardo Court, Suite 300",
@@ -38075,7 +38420,12 @@
     "zip": "60443",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1900 E. Golf Rd Suite 950",
@@ -39650,7 +40000,12 @@
     "zip": "92037",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "27702 Crown Valley Pkwy Ste D4",
@@ -40658,7 +41013,12 @@
     "zip": "33619",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2500 Garden St STE C2",
@@ -41198,7 +41558,12 @@
     "zip": "21157",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "240 US Route 1 Unit B1",
@@ -41477,7 +41842,12 @@
     "zip": "03878",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1820 Chapel Avenue W Suite 300",
@@ -42629,7 +42999,12 @@
     "zip": "76226",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "500 N Central Expy Suite 500",
@@ -42746,7 +43121,12 @@
     "zip": "77478",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "16949 N Eldridge Pkwy Ste 770",
@@ -42836,7 +43216,12 @@
     "zip": "22902",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "11166 Fairfax Blvd Suite 500",
@@ -42854,7 +43239,12 @@
     "zip": "20109",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "13195 Warwick Blvd Ste 2F",
@@ -43052,7 +43442,12 @@
     "zip": "85003",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2828 N Central Ave Suite 1000",
@@ -43061,7 +43456,12 @@
     "zip": "85004",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4800 N Scottsdale Rd Suite 4500",
@@ -43070,7 +43470,12 @@
     "zip": "85251",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5151 E Broadway Blvd Suite 1700",
@@ -43079,7 +43484,12 @@
     "zip": "85711",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "East Tower Suite 333",
@@ -43088,7 +43498,12 @@
     "zip": "90212",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5th floor",
@@ -43106,7 +43521,12 @@
     "zip": "95008",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "7777 Sunrise Blvd Ste 3300",
@@ -43115,7 +43535,12 @@
     "zip": "95610",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "222 N Pacific Coast Hwy Suite 2000",
@@ -43124,7 +43549,12 @@
     "zip": "90245",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2030 Main St, Suite 1300",
@@ -43133,7 +43563,12 @@
     "zip": "92614",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "92 Corporate Park Ste C",
@@ -43142,7 +43577,12 @@
     "zip": "92606",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "29991 Canyon hills rd Ste 1709",
@@ -43151,7 +43591,12 @@
     "zip": "92532",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "100 Oceangate, Suite 1200",
@@ -43160,7 +43605,12 @@
     "zip": "90802",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3711 Long Beach blvd Suite 4057",
@@ -43169,7 +43619,12 @@
     "zip": "90807",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "11150 West Olympic Blvd Suite 1050",
@@ -43178,7 +43633,12 @@
     "zip": "90064",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "355 S Grand Ave Suite 2450",
@@ -43187,7 +43647,12 @@
     "zip": "90071",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4000 MacArthur Blvd, Suite 600 East Tower",
@@ -43196,7 +43661,12 @@
     "zip": "92660",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4th Floor",
@@ -43214,7 +43684,12 @@
     "zip": "94612",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "500 N State College Suite 1100",
@@ -43223,7 +43698,12 @@
     "zip": "92868",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4th floor",
@@ -43259,7 +43739,12 @@
     "zip": "94104",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2570 N First St, 2nd Floor",
@@ -43286,7 +43771,12 @@
     "zip": "91403",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3655 Torrance Blvd, 3rd floor",
@@ -43322,7 +43812,12 @@
     "zip": "80301",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "110 16th Street, Suite 1400",
@@ -43331,7 +43826,12 @@
     "zip": "80202",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "6222 E Pine Lane Suite 6212",
@@ -43340,7 +43840,12 @@
     "zip": "80138",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2nd Floor",
@@ -43358,7 +43863,12 @@
     "zip": "32714",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "121 Alhambra Plaza Suite 1000",
@@ -43367,7 +43877,12 @@
     "zip": "33134",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1992 Lewis Turner Blvd Suite 1067",
@@ -43376,7 +43891,12 @@
     "zip": "32547",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1st Floor",
@@ -43394,7 +43914,12 @@
     "zip": "33131",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "117 NE 1st Avenue, 9th Floor",
@@ -43412,7 +43937,12 @@
     "zip": "33131",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "14 NE 1st Avenue Suite 1403",
@@ -43421,7 +43951,12 @@
     "zip": "33132",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8th Floor",
@@ -43466,7 +44001,12 @@
     "zip": "32765",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3941 Tamiami Trl Ste 3157",
@@ -43475,7 +44015,12 @@
     "zip": "33950",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "400 N Ashley Dr Suite 1900",
@@ -43484,7 +44029,12 @@
     "zip": "33602",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "311 Golf Road Suite 1000",
@@ -43493,7 +44043,12 @@
     "zip": "33407",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5555 Whittlesey Blvd Suite 1200",
@@ -43502,7 +44057,12 @@
     "zip": "31909",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "500 Buford Hwy NE Suite 1001",
@@ -43511,7 +44071,12 @@
     "zip": "30024",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1003 Bishop Street Suite 2700",
@@ -43520,7 +44085,12 @@
     "zip": "96813",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "318 W Adams St Suite 1600",
@@ -43529,7 +44099,12 @@
     "zip": "60606",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "35th Floor",
@@ -43574,7 +44149,12 @@
     "zip": "01453",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "Floor 5",
@@ -43610,7 +44190,12 @@
     "zip": "48084",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3800 American Blvd. West Suite 1500",
@@ -43619,7 +44204,12 @@
     "zip": "55431",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1st Floor",
@@ -43637,7 +44227,12 @@
     "zip": "28227",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2120 E Fire Tower Rd Suite 107",
@@ -43646,7 +44241,12 @@
     "zip": "27858-8013",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "FL 1",
@@ -43664,7 +44264,12 @@
     "zip": "07310",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "69 State Street Suite 1300",
@@ -43673,7 +44278,12 @@
     "zip": "12207",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "480 Bedford Road Suite 3201",
@@ -43682,7 +44292,12 @@
     "zip": "10514",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "108 W 39th Street Ste 1006",
@@ -43691,7 +44306,12 @@
     "zip": "10018",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1178 Broadway, 3rd Floor",
@@ -43754,7 +44374,12 @@
     "zip": "10170",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "447 Broadway, 2nd Floor",
@@ -43772,7 +44397,12 @@
     "zip": "10005",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "4th Floor",
@@ -43862,7 +44492,12 @@
     "zip": "19102",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "15th Floor",
@@ -43898,7 +44533,12 @@
     "zip": "17901",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3rd Floor",
@@ -43916,7 +44556,12 @@
     "zip": "02879",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "18th Floor",
@@ -43943,7 +44588,12 @@
     "zip": "37203",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8911 North Capital of Texas Highway, Suite 4200",
@@ -43952,7 +44602,12 @@
     "zip": "78759",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8190 Barker Cypress Rd Ste 1900",
@@ -43961,7 +44616,12 @@
     "zip": "77433",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1000 Fort Worth Ave Suite 1216",
@@ -43970,7 +44630,12 @@
     "zip": "75208",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1910 Pacific Ave Suite 2000",
@@ -43979,7 +44644,12 @@
     "zip": "75201",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3010 LBJ Freeway Suite 1200",
@@ -43988,7 +44658,12 @@
     "zip": "75234",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "3838 Oak Lawn Avenue, Suite 1000",
@@ -43997,7 +44672,12 @@
     "zip": "75219",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8080 N Central Expressway, Suite 1700",
@@ -44006,7 +44686,12 @@
     "zip": "75206",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2800 Highway 121 Suite 1000",
@@ -44015,7 +44700,12 @@
     "zip": "76039",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "640 Taylor St. Suite 1200",
@@ -44024,7 +44714,12 @@
     "zip": "76102",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1000 Main Street Suite 2300",
@@ -44033,7 +44728,12 @@
     "zip": "77002",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "13100 Wortham Center Drive, 3rd Floor",
@@ -44042,7 +44742,12 @@
     "zip": "77065",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "24 Greenway Plaza Suite 1800",
@@ -44051,7 +44756,12 @@
     "zip": "77046",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "5718 Westheimer Rd Suite 1000",
@@ -44060,7 +44770,12 @@
     "zip": "77057",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "8751 Collin Mckinney Parkway, SUITE 1102",
@@ -44069,7 +44784,12 @@
     "zip": "75070",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "205 S Main St Ste 1008",
@@ -44078,7 +44798,12 @@
     "zip": "75154",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "2nd floor",
@@ -44105,7 +44830,12 @@
     "zip": "99157",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1511 3rd Ave Suite 1002",
@@ -44114,7 +44844,12 @@
     "zip": "98101",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   },
   {
     "street": "1700 Seventh Ave, Suite 2100",
@@ -44123,6 +44858,11 @@
     "zip": "98101",
     "monthly_price": 9.99,
     "source": "https://ipostal1.com/digital-mailbox-addresses.php",
-    "platform": "iPostal1"
+    "platform": "iPostal1",
+    "rdi": "Commercial",
+    "cmra": "Yes",
+    "c1_acceptable": false,
+    "c1_approval_tier": "Rejected",
+    "c1_reason": "Local Heuristic: Matched Storage / Storefront / Plaza"
   }
 ]
